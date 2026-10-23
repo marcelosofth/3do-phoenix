@@ -1,0 +1,10 @@
+--- madam.h.orig	2026-10-21 04:26:32.346381200 +0000
++++ madam.h	2026-10-21 04:26:32.359360593 +0000
+@@ -26,6 +26,7 @@
+     void    *ud;
+     void     (*reg0_write)(void *ud, int8_t ch);              /* Poke 0x000: vtable(+0xc0) do objeto global, argumento (char)valor */
+     void     (*dma580_write)(void *ud, uint32_t v);           /* Poke 0x580: ponteiro-membro em madam+0x1000bb8/bc0/bc8 (nulo => ignora) */
++    void     (*mctl_write)(void *ud, uint32_t v);             /* Poke 0x008 com PLAYXEN (0x8000): DMA8 da PBUS (controles) - port do Opera HandleDMA8 */
+     uint32_t (*cel_exec)(void *ud, uint8_t async);            /* FUN_00488700 (motor de CEL); retorno = stall (ciclos) */
+     void     (*cel_sync)(void *ud);                           /* FUN_00704850: espera a fila assincrona do CEL */
+     void     (*scope_begin)(void *ud, uint32_t arg);          /* vtable global +0xd0 */

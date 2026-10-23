@@ -1,0 +1,11 @@
+--- madam.c.orig	2026-10-21 04:26:32.345233833 +0000
++++ madam.c	2026-10-21 04:26:32.358763072 +0000
+@@ -138,7 +138,7 @@
+     uint32_t off = addr & 0x7fc, hi = off >> 8;
+     if (hi == 0) {
+         if (off == 4) { m->regs[1] = 0x29; return 0; }
+-        if (off == 8) { m->regs[2] = v; return 0; }
++        if (off == 8) { m->regs[2] = v; if ((v & 0x8000u) && m->mctl_write) m->mctl_write(m->ud, v); return 0; }
+         if (off == 0) { if (m->reg0_write) m->reg0_write(m->ud, (int8_t)v); return 0; }
+     } else if (hi == 1) {
+         return cel_write(m, off - 0x100, v);

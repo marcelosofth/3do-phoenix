@@ -1,0 +1,57 @@
+--- machine.c.orig2	2026-10-21 04:26:32.347473873 +0000
++++ machine.c	2026-10-21 04:27:33.875893469 +0000
+@@ -1,3 +1,4 @@
++#include <stdio.h>
+ #include "machine.h"
+ #include <stdlib.h>
+ #include <string.h>
+@@ -136,6 +137,23 @@
+  * grava HEADVDL = valor (ja mascarado com 0xfffffc pelo madam_poke); CURRENTVDL so e carregado na linha 0. */
+ static void c_dma580(void *u, uint32_t v) { ph_machine_t *m = u; vdlp_set_head(&m->vdlp, v); }
+ 
++/* MADAM MCTL (0x008) com PLAYXEN (0x8000): DMA8 da PBUS. Port do HandleDMA8/DMAPBus do Opera (opera_madam.c).
++ * Sem controles conectados o buffer da PBUS fica todo 0xFFFFFFFF (1a palavra = 'sludge' do control port, depois
++ * Length bytes). Ao terminar: PLAYXEN limpo e INT1 bit 0 (CLIO_INT1 = DMA da PBUS) -- o kernel (eventbroker/controles) espera isso. */
++static void c_mctl(void *u, uint32_t v) {
++    ph_machine_t *m = u; (void)v;
++    uint32_t *R = m->madam.regs;
++    int32_t len = (int32_t)R[0x574 >> 2];
++    if (len >= 0) {
++        uint32_t dst = R[0x570 >> 2], prog = R[0x578 >> 2];
++        m->ram[(dst & 0x1ffffcu) >> 2] = 0xffffffffu; dst += 4; prog += 4;
++        while (len > 0) { m->ram[(dst & 0x1ffffcu) >> 2] = 0xffffffffu; len -= 4; dst += 4; prog += 4; }
++        R[0x570 >> 2] = dst; R[0x578 >> 2] = prog; R[0x574 >> 2] = 0xfffffffcu;
++    }
++    R[2] &= ~0x8000u;
++    clio_raise_irq(&m->clio, 0, 1);
++}
++
+ /* MADAM cel_exec (FUN_00488700): async=1 so mede (devolve 0); async=0 percorre a cadeia de CCBs (PARTE19) */
+ static uint32_t c_cel_exec(void *u, uint8_t async) { ph_machine_t *m = u; return celexec_run(&m->cel, &m->madam, m->ram, async); }
+ 
+@@ -145,7 +163,15 @@
+  * com ele ela segue a sequencia completa, emite o 0x10 (leitura), o setor 0 e lido e o DMA XBUS termina (IRQ0 0x20000000).
+  * Nota: a decompilacao anterior (Ghidra 12.1.4) achava que FUN_004aa150 so consultava watchpoints; o comportamento
+  * observado na BIOS real mostra que o bit 0x4 e necessario. */
+-static void c_cd_tick(void *u, uint32_t cyc) { ph_machine_t *m = u; cd_tick(&m->cd, cyc); }
++/* IRQ do XBUS/CD por NIVEL, como o opera_xbus_tick: enquanto a condicao do drive persistir (status/dado pendente COM o
++ * enable ligado), o bit 2 de IRQ0 e re-levantado a cada passo. O cd.c so avisa na transicao (irq_check); se a BIOS limpar o
++ * pendente antes de tratar o status, o aviso se perdia. */
++static void c_cd_tick(void *u, uint32_t cyc) {
++    ph_machine_t *m = u; cd_tick(&m->cd, cyc);
++#ifndef PH_CD_EDGE
++    if (((m->cd.S & 0x11) == 0x11) || ((m->cd.S & 0x22) == 0x22)) clio_raise_irq(&m->clio, 0x4u, 0);
++#endif
++}
+ static void c_cd_irq(void *u) { ph_machine_t *m = u; clio_raise_irq(&m->clio, 0x4u, 0); }
+ 
+ int ph_init(ph_machine_t *m) {
+@@ -169,7 +195,7 @@
+     m->clio.dev[0] = &m->cd_dev; m->clio.cd_tick = c_cd_tick;
+     m->clio.madam_peek = c_madam_peek; m->clio.madam_poke = c_madam_poke;
+     m->clio.vdlp_line_pending = c_vdlp_pending; m->clio.vdlp_line = c_vdlp_frame;
+-    m->madam.dma580_write = c_dma580; m->madam.cel_exec = c_cel_exec;
++    m->madam.dma580_write = c_dma580; m->madam.mctl_write = c_mctl; m->madam.cel_exec = c_cel_exec;
+     if (vdlp_init(&m->vdlp, 0, &m->ram[0x200000u >> 2]) != 0) return -1;   /* VRAM = RAM + 2 MB */
+     return 0;
+ }

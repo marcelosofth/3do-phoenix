@@ -1,0 +1,19 @@
+Correcao do joystick (Phoenix 3DO)  -  copie joybus.c, joybus.h e libretro.c para a pasta do projeto
+(machine.c NAO mudou). Depois:   touch *.c *.h Makefile ; make clean ; make libretro
+
+O que estava errado em joybus.c:
+  1. Bits do pacote PBUS misturados (Down/Right/A no mesmo bit, Up/Left no mesmo bit, C e X no mesmo botao...).
+  2. As palavras iam para a RAM em little-endian; a RAM do 3DO guarda o valor big-endian (byte 0 = bits 31..24).
+  3. So existia a porta 1, e o botao era lido invertido.
+
+Agora (igual ao opera_pbus.c / lr_input.c do Opera):
+  byte0 = 0x80 | D<<4 | U<<3 | R<<2 | L<<1 | A      byte1 = B<<7 | C<<6 | P<<5 | X<<4 | RT<<3 | LT<<2
+  Cadeia: jogador 1, jogador 2 (se ligado), enchimento 0xFF.
+
+Mapeamento RetroPad -> 3DO:
+  Y->A   B->B   A->C   Start ou X->P   Select->X   L->LT   R->RT   D-pad->direcional
+  (cima+baixo / esquerda+direita ao mesmo tempo sao anulados)
+
+libretro.c: porta 1 = Joypad 3DO (padrao); porta 2 = pode ser ligada em Controles > Tipo de dispositivo
+  (ou desligada com "Nenhum"); nomes dos botoes no menu de controles do RetroArch; input_poll chamado uma vez por quadro.
+test_pad.c: compara joybus.c com o opera_pbus.c em 25 mil combinacoes (0 diferencas).

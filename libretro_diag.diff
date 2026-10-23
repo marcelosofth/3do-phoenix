@@ -1,0 +1,118 @@
+--- libretro.c.orig	2026-10-22 03:59:55.516979021 +0000
++++ libretro.c	2026-10-22 04:11:41.505314067 +0000
+@@ -110,15 +110,12 @@
+  * (machine.c); aqui so entram o fim de quadro, o blit (RGB24 -> formato do frontend) e o audio. */
+ static void h_vdlp_frame(void *ud) { 
+     ph_machine_t *m = ud; 
+-    logf_(RETRO_LOG_INFO, "h_vdlp_frame: frame=%u PC=%08x", g_frames, m->cpu.r[15]);
+     vdlp_frame_end(&m->vdlp); 
+     g_frame_ready = 1; 
+     g_frames++; 
+-    logf_(RETRO_LOG_INFO, "h_vdlp_frame: done");
+ }
+ static void h_blit(void *ud, uint32_t id, int y0, int count, const uint8_t *rgb, int width) {
+     (void)ud; (void)id;
+-    logf_(RETRO_LOG_INFO, "h_blit: id=%u y0=%d count=%d width=%d", id, y0, count, width);
+     if (!g_fb || width <= 0 || width > LR_MAX_W || y0 < 0) { logf_(RETRO_LOG_INFO, "h_blit: early return"); return; }
+     if (y0 + count > LR_MAX_H) count = LR_MAX_H - y0;
+     for (int y = 0; y < count; y++) {
+@@ -131,7 +128,55 @@
+             for (int x = 0; x < width; x++, src += 3) dst[x] = ((uint32_t)src[0] << 16) | ((uint32_t)src[1] << 8) | src[2];
+         }
+     }
+-    logf_(RETRO_LOG_INFO, "h_blit: done");
++}
++
++/* ------------------------------------------------------------------ DIAGNOSTICO (travamento apos carregar)
++ * KDBG: texto de debug do kernel 3DO (SWI 0x1000e, 1 char por chamada); STAT: uma linha por segundo com PC, IRQs,
++ * CEL (desenhados / nao suportados), CD e histograma dos SWIs. Tudo vai para o log do RetroArch. */
++#define SWI_SLOTS 64
++static struct { uint32_t imm, n, pc, r0, r1, r2, lr; } g_swi[SWI_SLOTS];
++static unsigned g_swi_other, g_a7_logged;
++static int diag_swi(void *u, uint32_t imm) {
++    (void)u;
++    unsigned i;
++    for (i = 0; i < SWI_SLOTS && g_swi[i].n && g_swi[i].imm != imm; i++) {}
++    if (i == SWI_SLOTS) { g_swi_other++; return 0; }
++    g_swi[i].imm = imm; g_swi[i].n++; g_swi[i].pc = g_m.cpu.r[15];
++    g_swi[i].r0 = g_m.cpu.r[0]; g_swi[i].r1 = g_m.cpu.r[1]; g_swi[i].r2 = g_m.cpu.r[2]; g_swi[i].lr = g_m.cpu.r[14];
++    if (imm == 0x40007 && g_a7_logged < 3 && (g_swi[i].n == 1 || g_swi[i].n == 5000)) {   /* audio folio, funcao 7: le registradores de hardware */
++        uint32_t a = g_m.cpu.r[0] & 0x3ffffcu; char b[400]; int n = 0;
++        for (int k = 0; k < 16 && a + 4u * (unsigned)k < 0x300000u; k++) n += snprintf(b + n, sizeof b - (size_t)n, " %08x", g_m.ram[(a >> 2) + (unsigned)k]);
++        g_a7_logged++;
++        logf_(RETRO_LOG_INFO, "A7 args@%06x:%s | clio3c00:", a, b);
++        for (int k = 0; k < 16; k++) logf_(RETRO_LOG_INFO, " %08x", ph_read32(&g_m, 0x03403c00u + 4u * (unsigned)k));
++        logf_(RETRO_LOG_INFO, "\n | madam400:");
++        for (int k = 0; k < 33; k++) logf_(RETRO_LOG_INFO, " %08x", ph_read32(&g_m, 0x03300400u + 4u * (unsigned)k));
++        logf_(RETRO_LOG_INFO, "\n");
++    }
++    return 0;
++}
++static void diag_dump(void) {                  /* RAM (3 MB, big-endian) + registradores do CLIO, para analise offline */
++    char p[1500]; FILE *f; uint8_t *tmp = malloc(0x300000);
++    if (!tmp) return;
++    for (unsigned i = 0; i < 0xC0000; i++) { uint32_t w = g_m.ram[i]; tmp[4*i] = (uint8_t)(w >> 24); tmp[4*i+1] = (uint8_t)(w >> 16); tmp[4*i+2] = (uint8_t)(w >> 8); tmp[4*i+3] = (uint8_t)w; }
++    snprintf(p, sizeof p, "%s/phoenix_dump_ram.bin", g_system_dir);
++    if ((f = fopen(p, "wb"))) { fwrite(tmp, 1, 0x300000, f); fclose(f); logf_(RETRO_LOG_INFO, "DUMP: RAM gravada em %s\n", p); }
++    else logf_(RETRO_LOG_ERROR, "DUMP: nao consegui gravar %s\n", p);
++    snprintf(p, sizeof p, "%s/phoenix_dump_clio.bin", g_system_dir);
++    if ((f = fopen(p, "wb"))) { fwrite(g_m.clio.R, 1, 0x10000, f); fclose(f); }
++    free(tmp);
++}
++static void diag_second(unsigned sec) {
++    logf_(RETRO_LOG_INFO, "STAT t=%us PC=%08x CPSR=%08x IRQ0=%08x EN0=%08x IRQ1=%08x EN1=%08x cel(drawn=%u unsup=%u poly=%u) cd(S=%02x lba=%d) otherSWI=%u\n",
++          sec, g_m.cpu.r[15], g_m.cpu.cpsr, g_m.clio.R[0x40 >> 2], g_m.clio.R[0x48 >> 2], g_m.clio.R[0x60 >> 2], g_m.clio.R[0x68 >> 2],
++          g_m.cel.drawn, g_m.cel.unsupported, g_m.cel.poly, g_m.cd.S, g_m.cd.lba, g_swi_other);
++    for (unsigned i = 0; i < SWI_SLOTS && g_swi[i].n; i++)
++        logf_(RETRO_LOG_INFO, "SWI t=%us imm=%06x n=%u lastpc=%08x lr=%08x r0=%08x r1=%08x r2=%08x\n", sec, g_swi[i].imm, g_swi[i].n, g_swi[i].pc, g_swi[i].lr, g_swi[i].r0, g_swi[i].r1, g_swi[i].r2);
++    logf_(RETRO_LOG_INFO, "REG t=%us r0-r14: %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x\n", sec,
++          g_m.cpu.r[0], g_m.cpu.r[1], g_m.cpu.r[2], g_m.cpu.r[3], g_m.cpu.r[4], g_m.cpu.r[5], g_m.cpu.r[6], g_m.cpu.r[7], g_m.cpu.r[8],
++          g_m.cpu.r[9], g_m.cpu.r[10], g_m.cpu.r[11], g_m.cpu.r[12], g_m.cpu.r[13], g_m.cpu.r[14]);
++    memset(g_swi, 0, sizeof g_swi); g_swi_other = 0; if (sec % 5 == 0) g_a7_logged = 0;
++    if (sec == 35) diag_dump();
+ }
+ static void h_audio_out(void *ud, uint32_t s) {                                                 /* L = 16 bits altos, R = baixos (suposicao: sem DSP ainda) */
+     (void)ud;
+@@ -210,6 +255,7 @@
+      * 3do_phoenix.zip ainda NAO tem isso (PC=0, vram_flag=0): se for o caso, o front-end completa o reset aqui, sem alterar o nucleo. */
+     if (g_m.cpu.r[15] == 0) { g_m.cpu.r[15] = 0x03000000u; g_m.vram_flag = 1; }
+     g_audio_n = 0;
++    g_m.cpu.swi_hook = diag_swi;
+     return 1;
+ }
+ 
+@@ -359,7 +405,6 @@
+     
+     unsigned w = g_pal ? 384 : 320, h = g_pal ? 288 : 240;
+     if (g_have_machine) {
+-        logf_(RETRO_LOG_INFO, "retro_run: pre-ph_run frame=%u", frame_dbg);
+         w = (unsigned)g_m.vdlp.width; h = (unsigned)g_m.vdlp.lines;
+         /* roda ate o VDLP fechar o quadro visivel; teto de 2,2 quadros de ciclos para nao travar se a CPU/linhas pararem */
+         uint32_t frame_cyc = g_pal ? (uint32_t)(PAL_LINES * 799) : (uint32_t)(NTSC_LINES * 792);
+@@ -370,24 +415,16 @@
+             ph_run(&g_m, 1024);
+             spent += g_m.total_cycles - t0;
+         }
+-        logf_(RETRO_LOG_INFO, "retro_run: post-ph_run frame=%u", frame_dbg);
+     }
+-    logf_(RETRO_LOG_INFO, "retro_run: pre-video_cb frame=%u", frame_dbg);
+     if (video_cb) {
+         size_t bpp = (g_fmt == LR_RGB565) ? 2 : 4;
+         video_cb(g_have_machine ? g_fb : NULL, w, h, w * bpp);
+     }
+-    logf_(RETRO_LOG_INFO, "retro_run: pre-flush_audio frame=%u", frame_dbg);
+     flush_audio();
+-    if (g_have_machine) {                    /* depuracao: estado a cada 5 s (ate 24 linhas) */
++    if (g_have_machine) {                    /* diagnostico: uma linha STAT por segundo (ate 240) */
+         static unsigned nrun, nlog;
+-        if (++nrun % 300 == 0 && nlog < 24) {
+-            nlog++;
+-            logf_(RETRO_LOG_INFO, "t=%us PC=%08x IRQ0=%08x EN0=%08x cdS=%02x cdR=%02x lba=%d\n", nrun / 60, g_m.cpu.r[15],
+-                  g_m.clio.R[0x40 >> 2], g_m.clio.R[0x48 >> 2], g_m.cd.S, g_m.cd.R, g_m.cd.lba);
+-        }
++        if (++nrun % 60 == 0 && nlog < 240) { nlog++; diag_second(nrun / 60); }
+     }
+-    logf_(RETRO_LOG_INFO, "retro_run: done frame=%u", frame_dbg);
+ }
+ 
+ RETRO_API size_t retro_serialize_size(void)                       { return 0; }

@@ -1,0 +1,346 @@
+--- user/phoenix/arm60.c	2026-10-22 15:34:34.000000000 +0000
++++ merged/arm60.c	2026-10-23 00:54:48.192589695 +0000
+@@ -47,11 +47,12 @@
+ void arm60_reset(arm60_t *c){
+     arm60_t t=*c; memset(c,0,sizeof *c);
+     c->ud=t.ud;c->rd32=t.rd32;c->fetch=t.fetch;c->rd8=t.rd8;c->wr32=t.wr32;c->wr8=t.wr8;
+-    c->swi_hook=t.swi_hook;c->mode_hook=t.mode_hook;
++    c->swi_hook=t.swi_hook;c->mode_hook=t.mode_hook;c->debug_log=t.debug_log;c->trace=t.trace;
+     c->cpsr=0xc0|M_SVC; c->cur_bank=3;
+ }
+ static void enter_exc(arm60_t *c, uint32_t mode, uint32_t ret, uint32_t vec, uint32_t extra){
+-    if (c->debug_log) c->debug_log(c->ud, "[ARM60] ENTER_EXC: PC=%08x -> vec=%08x mode=%d extra=%08x", ret, vec, mode, extra);
++    if (c->trace && c->debug_log) c->debug_log(c->ud, "[ARM60] ENTER_EXC: PC=%08x -> vec=%08x mode=%d extra=%08x", ret, vec, mode, extra);
++    if (mode == M_FIQ) c->stat_fiq++; else if (mode == M_IRQ) c->stat_irq++;
+     uint32_t old=c->cpsr;
+     arm60_set_mode(c,mode);
+     c->spsr[bank_of(mode)]=old;
+@@ -158,10 +159,6 @@
+ 
+ int arm60_step(arm60_t *c){
+     uint32_t pc=c->r[15], op=c->fetch(c->ud,pc);
+-    /* DEBUG: trace instruction at crash point */
+-    if (pc >= 0x1900 && pc <= 0x1A00) {
+-        if (c->debug_log) c->debug_log(c->ud, "[ARM60] PC=%08x OP=%08x CPSR=%08x MODE=%d", pc, op, c->cpsr, c->cpsr & 0x1F);
+-    }
+     c->cyc=-1; c->shc=(c->cpsr>>29)&1;
+     if(!((cond_tab[op>>28]>>(c->cpsr>>28))&1)){ c->r[15]=pc+4; return 1; }
+     c->r[15]=pc+4;
+@@ -210,10 +207,11 @@
+         c->r[15]=pc+8+o; c->cyc=-5; } break;
+     case 30:case 31: { uint32_t imm=op&0xffffff;
+         if(c->swi_hook && c->swi_hook(c->ud,imm)){ c->cyc-=4; break; }
+-        if (c->debug_log) c->debug_log(c->ud, "[ARM60] SWI at PC=%08x imm=%06x", pc, imm);
++        if (c->trace && c->debug_log) c->debug_log(c->ud, "[ARM60] SWI at PC=%08x imm=%06x", pc, imm);
+         enter_exc(c,M_SVC,pc+4,8,0); c->cyc=-5; } break;
+     default: 
+-        if (c->debug_log) c->debug_log(c->ud, "[ARM60] UNDEFINED INSTRUCTION at PC=%08x OP=%08x", pc, op);
++        if (c->stat_undef++ == 0) { c->undef_pc = pc; c->undef_op = op; }
++        if (c->trace && c->debug_log) c->debug_log(c->ud, "[ARM60] UNDEFINED INSTRUCTION at PC=%08x OP=%08x", pc, op);
+         enter_exc(c,M_UND,pc+4,4,0); 
+         c->cyc=-5; 
+         break;
+--- user/phoenix/cd.c	2026-10-22 15:52:08.000000000 +0000
++++ merged/cd.c	2026-10-23 00:54:48.198307192 +0000
+@@ -7,6 +7,7 @@
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <strings.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+@@ -158,18 +159,42 @@
+     return 0;
+ }
+ 
+-/* so .iso e .chd (.bin/.cue recusados). Falha nao derruba a imagem que ja estava carregada. */
++/* .cue: pega o primeiro FILE "x" BINARY (relativo a pasta do .cue) e abre como imagem bruta/cooked (a deteccao 2048/2352 e feita
++ * por cd_load_iso). 3DO = disco de dados unico: faixas seguintes (audio) ficam dentro do mesmo arquivo e sao ignoradas. */
++static int cd_load_cue(cd_t *cd, const char *cue) {
++    FILE *f = fopen(cue, "rb"); char line[1024], name[1024], full[2048];
++    if (!f) return -1;
++    name[0] = 0;
++    while (fgets(line, sizeof line, f)) {
++        char *p = line; while (*p == ' ' || *p == '\t' || (unsigned char)*p == 0xEF || (unsigned char)*p == 0xBB || (unsigned char)*p == 0xBF) p++;
++        if (strncasecmp(p, "FILE", 4) != 0) continue;
++        p += 4; while (*p == ' ' || *p == '\t') p++;
++        if (*p == '"') { p++; char *q = strchr(p, '"'); if (!q) continue; *q = 0; snprintf(name, sizeof name, "%s", p); }
++        else { char *q = p; while (*q && *q != ' ' && *q != '\t' && *q != '\r' && *q != '\n') q++; *q = 0; snprintf(name, sizeof name, "%s", p); }
++        break;
++    }
++    fclose(f);
++    if (!name[0]) return -1;
++    const char *sl = strrchr(cue, '/'), *bs = strrchr(cue, '\\');
++    if (bs && (!sl || bs > sl)) sl = bs;
++    if (sl && name[0] != '/' && !(name[1] == ':')) snprintf(full, sizeof full, "%.*s%s", (int)(sl - cue + 1), cue, name);
++    else snprintf(full, sizeof full, "%s", name);
++    return cd_load_iso(cd, full);
++}
++
++/* .iso/.img/.bin (cooked 2048 ou bruto 2352), .cue e .chd. Falha nao derruba a imagem que ja estava carregada. */
+ int cd_load_image(cd_t *cd, const char *path) {
+     if (!path) return -1;
+     if (has_ext(path, ".chd")) return cd_load_chd(cd, path);
+-    if (has_ext(path, ".iso")) return cd_load_iso(cd, path);
++    if (has_ext(path, ".cue")) return cd_load_cue(cd, path);
++    if (has_ext(path, ".iso") || has_ext(path, ".img") || has_ext(path, ".bin")) return cd_load_iso(cd, path);
+     return -1;
+ }
+ 
+ /* 2048 bytes de dados do setor `lba`; 1 = ok, 0 = fora da imagem / erro de leitura.
+  * Ordem: image (memoria, so testes) -> iso_fp -> chd. */
+ int cd_read_sector(cd_t *cd, uint32_t lba, uint8_t *out) {
+-    if (lba >= cd->num_sectors) return 0;
++    if (lba >= cd->num_sectors) { cd->stat_read_oob++; return 0; }
+     if (cd->image) {
+         if (((size_t)lba + 1u) * CD_SECTOR_SIZE > cd->image_size) return 0;
+         memcpy(out, cd->image + (size_t)lba * CD_SECTOR_SIZE, CD_SECTOR_SIZE);
+@@ -348,6 +373,7 @@
+     cd_tr("CDT cmd %02x | %02x %02x %02x %02x %02x %02x S=%02x lba=%u R=%02x", op, CDB(1), CDB(2), CDB(3), CDB(4), CDB(5), CDB(6), Sraw, (unsigned)cd->lba, Rraw);
+     if (op > 0x93) return;
+ 
++    cd->stat_cmd[op]++;
+     switch (op) {
+     case 0x02:
+         if (READY40) { cd->state = 0; cd->R = (uint8_t)(Rm | 0x21); }
+@@ -513,6 +539,7 @@
+         P(cd->R);
+         break;
+     default:
++        cd->stat_unk_cmd++; if (cd->stat_unk_cmd == 1) cd->unk_cmd_first = op;
+         return;                                       /* switchD_004aa4d5_caseD_0: nao toca em nada */
+     }
+ 
+--- user/phoenix/cel.c	2026-10-22 15:44:30.000000000 +0000
++++ merged/cel.c	2026-10-23 00:55:06.960829014 +0000
+@@ -10,7 +10,7 @@
+ static uint32_t rd32(const uint32_t *ram, uint32_t a) { return a < CEL_RAM_BYTES ? ram[a >> 2] : 0; }  /* o .exe devolve 0 fora de 3 MB */
+ static uint32_t rd16(const uint32_t *ram, uint32_t a) {             /* ushort em (a ^ 2), a par */
+     return a < CEL_RAM_BYTES ? ((const uint16_t *)ram)[(a ^ 2) >> 1] : 0; }
+-static uint8_t  rd8 (const uint32_t *ram, uint32_t a) { return ((const uint8_t *)ram)[a ^ 3]; }
++static uint8_t  rd8 (const uint32_t *ram, uint32_t a) { return a < CEL_RAM_BYTES ? ((const uint8_t *)ram)[a ^ 3] : 0; }
+ 
+ int cel_ccb_read(cel_ccb_t *c, const uint32_t *ram) {
+     if (c->next == 0) return -1;
+--- user/phoenix/celexec.c	2026-10-22 15:44:30.000000000 +0000
++++ merged/celexec.c	2026-10-23 00:55:06.980678057 +0000
+@@ -29,13 +29,20 @@
+ uint32_t celexec_run(celexec_t *s, madam_t *m, uint32_t *ram, uint8_t async) {
+     if (async) return 0;
+     cel_ccb_t *c = &s->ccb;
+-    load(s, m);
++    load(s, m); s->chains++;
+     for (;;) {
+         int r = cel_ccb_read(c, ram);
+         if (r < 0) break;
+         cel_geom_t g = cel_geometry(c);
+         int h = g.height;
+         if (r == 1) {
++            s->bpp_n[c->pre0 & 7]++; if (c->flags & CCB_PACKED) s->n_packed++; else s->n_unpacked++;
++            if (c->pre1 & 0x800) s->n_lrform++;
++            if (c->hddx || c->hddy) s->n_hdd++;
++            if (!cel_is_unit_blit(c)) s->n_scaled++;
++            s->flags_seen |= c->flags; s->pre0_seen |= c->pre0; s->pre1_seen |= c->pre1;
++            if ((c->ppmp & 0xffffu) != 0x1f00u || (c->ppmp >> 16) != 0x1f00u) s->ppmp_nonid++;
++            if (m->cel_w[4]) s->pixc_nonzero++;
+             cel_pix_t px; cel_raster_t ras;
+             cel_pix_setup(&px, c, m->cel_w[4]);
+             cel_raster_setup(&ras, c, m->cel_w[13], m->cel_w[14], m->cel_w[15], m->cel_w21c, m->cel_w220);
+--- user/phoenix/libretro.c	2026-10-22 16:27:38.000000000 +0000
++++ merged/libretro.c	2026-10-23 00:54:56.565198467 +0000
+@@ -42,6 +42,8 @@
+ static int          g_pal;                      /* opcao phoenix_region */
+ static int          g_fmt = LR_XRGB8888;        /* opcao phoenix_pixel_format */
+ static char         g_bios_choice[32] = "auto";
++static int          g_debug;                    /* opcao phoenix_debug: diagnostico no log (padrao desligado) */
++static int          g_hle;                      /* opcao phoenix_hle_audio: HLEs temporarios de audio (padrao desligado) */
+ static char         g_system_dir[1024];
+ static char         g_disc_path[1024];
+ static int16_t      g_audio[SAMPLES_MAX * 2];
+@@ -61,6 +63,8 @@
+     { "phoenix_region",       "Regiao (reiniciar); NTSC|PAL" },
+     { "phoenix_pixel_format", "Formato de video (reiniciar); xrgb8888|rgb565" },
+     { "phoenix_bios",         "BIOS (reiniciar); auto|fz10|fz1|goldstar|sanyotry|panafz10" },
++    { "phoenix_hle_audio",    "HLE temporario de audio, so p/ diagnostico (reiniciar); off|on" },
++    { "phoenix_debug",        "Diagnostico no log (reiniciar); off|on" },
+     { NULL, NULL }
+ };
+ static void read_options(void) {
+@@ -69,6 +73,10 @@
+     if (env_cb && env_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &v) && v.value) g_pal = !strcmp(v.value, "PAL");
+     v.key = "phoenix_pixel_format"; v.value = NULL;
+     if (env_cb && env_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &v) && v.value) g_fmt = !strcmp(v.value, "rgb565") ? LR_RGB565 : LR_XRGB8888;
++    v.key = "phoenix_hle_audio"; v.value = NULL;
++    if (env_cb && env_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &v) && v.value) g_hle = !strcmp(v.value, "on");
++    v.key = "phoenix_debug"; v.value = NULL;
++    if (env_cb && env_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &v) && v.value) g_debug = !strcmp(v.value, "on");
+     v.key = "phoenix_bios"; v.value = NULL;
+     if (env_cb && env_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &v) && v.value) { strncpy(g_bios_choice, v.value, sizeof g_bios_choice - 1); g_bios_choice[sizeof g_bios_choice - 1] = 0; }
+ }
+@@ -91,6 +99,15 @@
+         if (n != 0x100000 && n != 0x200000) { logf_(RETRO_LOG_WARN, "BIOS ignorada (tamanho %zu): %s\n", n, p); free(b); continue; }
+         ph_load_bios(m, b, n); free(b);
+         logf_(RETRO_LOG_INFO, "BIOS: %s (%zu bytes)\n", p, n);
++        if (n == 0x100000) {   /* FONT-ROM (kanji) no 2o banco: jogos japoneses que usam a fonte do sistema mostram texto em branco sem ela */
++            static const char *fn[] = { "kanji.bin", "fontrom.bin", "font.bin", "fonts.bin", "kanjifont.bin", "3do_font.bin", "panafz1-kanji.bin", "fz1-font.bin" };
++            for (unsigned k = 0; k < sizeof fn / sizeof *fn; k++) for (unsigned j = 0; j < sizeof sub / sizeof *sub; j++) {
++                char q[1400]; snprintf(q, sizeof q, "%s/%s%s", dir, sub[j], fn[k]); size_t fnn = 0; uint8_t *fb = slurp(q, &fnn);
++                if (!fb) continue;
++                if (fnn == 0x100000) { ph_load_font_rom(m, fb, fnn); logf_(RETRO_LOG_INFO, "FONT-ROM: %s\n", q); free(fb); return 1; }
++                free(fb);
++            }
++        }
+         return 1;
+     }
+     return 0;
+@@ -116,7 +133,7 @@
+ }
+ static void h_blit(void *ud, uint32_t id, int y0, int count, const uint8_t *rgb, int width) {
+     (void)ud; (void)id;
+-    if (!g_fb || width <= 0 || width > LR_MAX_W || y0 < 0) { logf_(RETRO_LOG_INFO, "h_blit: early return"); return; }
++    if (!g_fb || width <= 0 || width > LR_MAX_W || y0 < 0) return;
+     if (y0 + count > LR_MAX_H) count = LR_MAX_H - y0;
+     for (int y = 0; y < count; y++) {
+         const uint8_t *src = rgb + (size_t)y * (size_t)width * 3;
+@@ -180,7 +197,7 @@
+         if (g_pc_valid && it == g_pc_item) g_pc_val = v;
+         g_lw_item = it; g_lw_val = v; g_lw_valid = 1;
+     }
+-    if (imm == 0x40007 && g_a7_logged < 3 && (g_swi[i].n == 1 || g_swi[i].n == 5000)) {   /* audio folio, funcao 7: le registradores de hardware */
++    if (g_debug && imm == 0x40007 && g_a7_logged < 3 && (g_swi[i].n == 1 || g_swi[i].n == 5000)) {   /* audio folio, funcao 7: le registradores de hardware */
+         uint32_t a = g_m.cpu.r[0] & 0x3ffffcu; char b[400]; int n = 0;
+         for (int k = 0; k < 16 && a + 4u * (unsigned)k < 0x300000u; k++) n += snprintf(b + n, sizeof b - (size_t)n, " %08x", g_m.ram[(a >> 2) + (unsigned)k]);
+         g_a7_logged++;
+@@ -190,7 +207,7 @@
+         for (int k = 0; k < 33; k++) logf_(RETRO_LOG_INFO, " %08x", ph_read32(&g_m, 0x03300400u + 4u * (unsigned)k));
+         logf_(RETRO_LOG_INFO, "\n");
+     }
+-    if (imm == 0x4001e) {                    /* HLE temporario: contador de tempo do audio (qualquer item: o jogo usa 0x1005e e depois 0x3009e) */
++    if (g_hle && imm == 0x4001e) {                    /* HLE temporario: contador de tempo do audio (qualquer item: o jogo usa 0x1005e e depois 0x3009e) */
+         static uint32_t seen[8]; static unsigned nseen; unsigned q;
+         for (q = 0; q < nseen && seen[q] != g_m.cpu.r[0]; q++) {}
+         if (q == nseen && nseen < 8) { seen[nseen++] = g_m.cpu.r[0]; logf_(RETRO_LOG_INFO, "HLE-1E: item novo %08x\n", g_m.cpu.r[0]); }
+@@ -198,7 +215,7 @@
+         if (++g_t1e_hits == 1) logf_(RETRO_LOG_INFO, "HLE-1E: contador de audio ligado (temporario, sem DSP real)\n");
+         return 1;
+     }
+-    if (imm == 0x40007 && g_m.cpu.r[1] == 9u) {                       /* HLE temporario: eco do PlayControl */
++    if (g_hle && imm == 0x40007 && g_m.cpu.r[1] == 9u) {                       /* HLE temporario: eco do PlayControl */
+         if (g_lw_valid && g_lw_val <= 1u && !(g_pc_valid && g_lw_item == g_pc_item)) g_m.cpu.r[0] = g_lw_val;
+         else g_m.cpu.r[0] = g_pc_valid ? g_pc_val : 0u;
+         if (++g_pc_hits == 1) logf_(RETRO_LOG_INFO, "HLE-A7: eco do PlayControl ligado (temporario, sem DSP real)\n");
+@@ -244,6 +261,7 @@
+     }
+ }
+ static void diag_second(unsigned sec) {
++    if (!g_debug) return;
+     char tag[16]; snprintf(tag, sizeof tag, "t=%us", sec);
+     logf_(RETRO_LOG_INFO, "STAT t=%us PC=%08x CPSR=%08x IRQ0=%08x EN0=%08x IRQ1=%08x EN1=%08x cel(drawn=%u unsup=%u poly=%u) cd(S=%02x lba=%d) otherSWI=%u\n",
+           sec, g_m.cpu.r[15], g_m.cpu.cpsr, g_m.clio.R[0x40 >> 2], g_m.clio.R[0x48 >> 2], g_m.clio.R[0x60 >> 2], g_m.clio.R[0x68 >> 2],
+@@ -299,7 +317,7 @@
+     /* HLE TEMPORARIO 3: relogio do audio folio. A biblioteca de audio le o tempo em [[0x7bf10]+0x9c], que o folio incrementa
+      * ~239,7 vezes/s (44100/184) a partir de uma interrupcao do DSP; sem DSP o valor fica em 0 e os fades de paleta do
+      * jogo nunca terminam. Incrementamos esse contador aqui (so depois de o folio existir). Enderecos da BIOS fz1. */
+-    if (g_have_machine && ++g_afolio_acc >= 184u) {
++    if (g_hle && g_have_machine && ++g_afolio_acc >= 184u) {
+         g_afolio_acc = 0;
+         uint32_t kb = g_m.ram[0x7bf10u >> 2];
+         if (kb >= 0x1000u && kb < 0x2ffe00u && !(kb & 3u)) g_m.ram[(kb + 0x9cu) >> 2]++;
+@@ -359,8 +377,8 @@
+         machine_free(); return 0;
+     }
+     memcpy(g_m.nvram, g_nvram_keep, PH_NVRAM_BYTES);
+-    cd_trace_hook = cd_trace_cb;
+-    clio_trace_hook = clio_trace_cb;
++    cd_trace_hook = g_debug ? cd_trace_cb : NULL;
++    clio_trace_hook = g_debug ? clio_trace_cb : NULL;
+     if (g_disc_path[0]) {                       /* CD no XBUS ID 0 (PARTE20): a BIOS enxerga o disco pelos registradores 0x03400500.. do CLIO */
+         if (ph_cd_insert(&g_m, g_disc_path) != 0) { logf_(RETRO_LOG_ERROR, "nao consegui ler a imagem: %s\n", g_disc_path); machine_free(); return 0; }
+         logf_(RETRO_LOG_INFO, "CD: %s (%u setores de %d bytes)\n", g_disc_path, (unsigned)g_m.cd.num_sectors, CD_SECTOR_SIZE);
+@@ -380,7 +398,8 @@
+      * 3do_phoenix.zip ainda NAO tem isso (PC=0, vram_flag=0): se for o caso, o front-end completa o reset aqui, sem alterar o nucleo. */
+     if (g_m.cpu.r[15] == 0) { g_m.cpu.r[15] = 0x03000000u; g_m.vram_flag = 1; }
+     g_audio_n = 0;
+-    g_m.cpu.swi_hook = diag_swi;
++    g_m.cpu.trace = g_debug;
++    g_m.cpu.swi_hook = (g_debug || g_hle) ? diag_swi : NULL;
+     return 1;
+ }
+ 
+@@ -425,7 +444,7 @@
+     memset(info, 0, sizeof *info);
+     info->library_name     = "Phoenix 3DO";
+     info->library_version  = "0.1-dev";
+-    info->valid_extensions = "iso|chd";
++    info->valid_extensions = "iso|chd|cue|bin|img";
+     info->need_fullpath    = true;
+     info->block_extract    = false;
+ }
+@@ -476,7 +495,7 @@
+ 
+ RETRO_API bool retro_load_game_special(unsigned type, const struct retro_game_info *info, size_t num) { (void)type; (void)info; (void)num; return false; }
+ RETRO_API void retro_unload_game(void) {
+-    if (g_have_machine) { memcpy(g_nvram_keep, g_m.nvram, PH_NVRAM_BYTES); if (!g_dumped) diag_dump(); }
++    if (g_have_machine) { memcpy(g_nvram_keep, g_m.nvram, PH_NVRAM_BYTES); if (g_debug && !g_dumped) diag_dump(); }
+     machine_free();
+ }
+ 
+@@ -504,7 +523,7 @@
+             k = (input_state_cb(0, RETRO_DEVICE_KEYBOARD, 0, RETROK_RETURN) ? 1u : 0) | (input_state_cb(0, RETRO_DEVICE_KEYBOARD, 0, RETROK_UP) ? 2u : 0) |
+                 (input_state_cb(0, RETRO_DEVICE_KEYBOARD, 0, RETROK_z) ? 4u : 0) | (input_state_cb(0, RETRO_DEVICE_KEYBOARD, 0, RETROK_x) ? 8u : 0);
+         }
+-        if (g_have_machine && (((raw[0] != lastraw[0] || raw[1] != lastraw[1] || k != lastk) && nraw < 300) || frame_dbg % 600 == 0)) {
++        if (g_debug && g_have_machine && (((raw[0] != lastraw[0] || raw[1] != lastraw[1] || k != lastk) && nraw < 300) || frame_dbg % 600 == 0)) {
+             lastraw[0] = raw[0]; lastraw[1] = raw[1]; lastk = k; nraw++;
+             logf_(RETRO_LOG_INFO, "[pad] RAW retropad P1=%04x P2=%04x kbd(Enter,Up,Z,X)=%x state_cb=%s poll_cb=%s frame=%u",
+                   raw[0], raw[1], k, input_state_cb ? "ok" : "NULL", input_poll_cb ? "ok" : "NULL", frame_dbg);
+@@ -512,7 +531,7 @@
+     }
+     {   /* diagnostico: registra no log do RetroArch cada mudanca do pacote PBUS (so quando algum botao muda; limitado a 300 linhas) */
+         static uint8_t last[16] = {0}; static unsigned nlog = 0;
+-        if (g_have_machine && memcmp(last, g_m.joybus.buf, 16) && nlog < 300) {
++        if (g_debug && g_have_machine && memcmp(last, g_m.joybus.buf, 16) && nlog < 300) {
+             memcpy(last, g_m.joybus.buf, 16); nlog++;
+             logf_(RETRO_LOG_INFO, "[pad] PBUS: %02x %02x %02x %02x (P1=%02x%02x P2=%02x%02x) frame=%u",
+                   last[0], last[1], last[2], last[3], last[0], last[1], last[2], last[3], frame_dbg);
+@@ -521,7 +540,7 @@
+     
+     if (g_have_machine) {
+         frame_dbg++;
+-        if (frame_dbg <= 10 || frame_dbg % 60 == 0) {
++        if (g_debug && (frame_dbg <= 10 || frame_dbg % 60 == 0)) {
+             logf_(RETRO_LOG_INFO, "retro_run: frame=%u PC=%08x IRQ0=%08x EN0=%08x cdS=%02x cdR=%02x lba=%d remain=%d",
+                   frame_dbg, g_m.cpu.r[15], g_m.clio.R[0x40 >> 2], g_m.clio.R[0x48 >> 2],
+                   g_m.cd.S, g_m.cd.R, g_m.cd.lba, g_m.cd.remain);
+@@ -541,21 +560,25 @@
+             spent += g_m.total_cycles - t0;
+         }
+     }
+-    if (g_have_machine) check_relaunch(frame_dbg);     /* checa TODO quadro, nao so 1x/s: pega o instante exato do relancamento */
++    if (g_debug && g_have_machine) check_relaunch(frame_dbg);     /* checa TODO quadro, nao so 1x/s: pega o instante exato do relancamento */
+     if (video_cb) {
+         size_t bpp = (g_fmt == LR_RGB565) ? 2 : 4;
+         video_cb(g_have_machine ? g_fb : NULL, w, h, w * bpp);
+     }
+     flush_audio();
+-    if (g_have_machine) {                    /* diagnostico: uma linha STAT por segundo (ate 240) */
++    if (g_debug && g_have_machine) {         /* diagnostico: uma linha STAT por segundo (ate 240) */
+         static unsigned nrun, nlog;
+         if (++nrun % 60 == 0 && nlog < 240) { nlog++; diag_second(nrun / 60); }
+     }
+ }
+ 
+-RETRO_API size_t retro_serialize_size(void)                       { return 0; }
+-RETRO_API bool   retro_serialize(void *data, size_t size)         { (void)data; (void)size; return false; }
+-RETRO_API bool   retro_unserialize(const void *data, size_t size) { (void)data; (void)size; return false; }
++RETRO_API size_t retro_serialize_size(void)                       { return g_have_machine ? ph_state_size(&g_m) : 0; }
++RETRO_API bool   retro_serialize(void *data, size_t size)         { return g_have_machine && ph_state_save(&g_m, data, size) == 0; }
++RETRO_API bool   retro_unserialize(const void *data, size_t size) {
++    if (!g_have_machine || ph_state_load(&g_m, data, size) != 0) return false;
++    g_audio_n = 0; g_frame_ready = 0;                        /* os ganchos do front-end sobrevivem ao load (ph_state_load religa o host) */
++    return true;
++}
+ RETRO_API void   retro_cheat_reset(void) {}
+ RETRO_API void   retro_cheat_set(unsigned index, bool enabled, const char *code) { (void)index; (void)enabled; (void)code; }
+ RETRO_API unsigned retro_get_region(void)                         { return g_pal ? RETRO_REGION_PAL : RETRO_REGION_NTSC; }
