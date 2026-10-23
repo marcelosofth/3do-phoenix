@@ -1,0 +1,426 @@
+PC chegou em 000284e0  cyc=107033190  (RAM gravada em G:/Internet_Temp/Batocera_add/Projetos/phoenix_opencode/ram_antes.bin)
+r0..r3 = 00000200 00000000 00000000 00000000   r7=00020230 r9=00020230 r10=000360d0 sp=000360cc lr=000117d4 cpsr=00000010
+
+ultimos saltos (mais antigo primeiro): origem(+4 = instrucao seguinte ao salto) -> destino
+  cyc=107030468  00040244 -> 00040010   lr=00040010 sp=001ff65c r0=0000004f r9=00000000
+  cyc=107030596  0004001c -> 0003fff4   lr=00040010 sp=001ff65c r0=00000000 r9=00000000
+  cyc=107030596  00040000 -> 00040230   lr=00040004 sp=001ff65c r0=0000006d r9=00000000
+  cyc=107030596  00040244 -> 00040004   lr=00040004 sp=001ff65c r0=0000004d r9=00000000
+  cyc=107030596  0004000c -> 00040230   lr=00040010 sp=001ff65c r0=0000006d r9=00000000
+  cyc=107030596  00040244 -> 00040010   lr=00040010 sp=001ff65c r0=0000004d r9=00000000
+  cyc=107030596  0004001c -> 0003fff4   lr=00040010 sp=001ff65c r0=00000000 r9=00000000
+  cyc=107030596  00040000 -> 00040230   lr=00040004 sp=001ff65c r0=00000000 r9=00000000
+  cyc=107030596  00040244 -> 00040004   lr=00040004 sp=001ff65c r0=00000000 r9=00000000
+  cyc=107030596  0004000c -> 00040230   lr=00040010 sp=001ff65c r0=00000000 r9=00000000
+  cyc=107030728  00040244 -> 00040010   lr=00040010 sp=001ff65c r0=00000000 r9=00000000
+  cyc=107030728  00040024 -> 0003b8dc   lr=00040010 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107030728  0003b8e0 -> 0003b8f8   lr=00040010 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107030728  0003b8fc -> 0003b924   lr=00040010 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107030728  0003b92c -> 0003d15c   lr=0003b930 sp=001ff680 r0=001f3600 r9=00000000
+  cyc=107030728  0003d170 -> 000404e8   lr=0003b930 sp=001ff680 r0=0000003c r9=00000000
+  cyc=107030728  000404ec -> 000381a4   lr=0003b930 sp=001ff680 r0=0000003c r9=00000000
+  cyc=107030728  000381c0 -> 00014748   lr=000381c4 sp=001ff678 r0=0000003c r9=00020230
+  cyc=107030728  00014764 -> 0001344c   lr=00014768 sp=001ff668 r0=0000003c r9=00020230
+  cyc=107030862  00013468 -> 00013390   lr=0001346c sp=001ff650 r0=0000003c r9=00020230
+  cyc=107030862  000133a8 -> 00013240   lr=000133ac sp=001ff640 r0=0000003c r9=00020230
+  cyc=107030862  00013274 -> 000133ac   lr=000133ac sp=001ff640 r0=001ffde0 r9=00020230
+  cyc=107030862  000133cc -> 0001346c   lr=000133ac sp=001ff650 r0=001f35b0 r9=00020230
+  cyc=107030862  00013490 -> 00014768   lr=000133ac sp=001ff668 r0=001f35b0 r9=00020230
+  cyc=107030991  00014788 -> 000146c8   lr=000381c4 sp=001ff678 r0=001f35b0 r9=00020230
+  cyc=107030991  00014700 -> 0001f00c   lr=00014704 sp=001ff660 r0=001f35e0 r9=00020230
+  cyc=107030991  0001f014 -> 0000e124   lr=00014704 sp=001ff660 r0=001f35e0 r9=00020230
+  cyc=107030991  0000e138 -> 00014704   lr=00014704 sp=001ff660 r0=00000000 r9=00020230
+  cyc=107030991  00014708 -> 00014730   lr=00014704 sp=001ff660 r0=00000000 r9=00020230
+  cyc=107030991  00014744 -> 000381c4   lr=00014704 sp=001ff678 r0=00000000 r9=00020230
+  cyc=107031128  000381c4 -> 0003b930   lr=00014704 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107031128  0003b938 -> 0003c2cc   lr=00014704 sp=001ff680 r0=001f0e80 r9=00000000
+  cyc=107031128  0003c2d8 -> 0003b2a0   lr=00014704 sp=001ff680 r0=00000053 r9=00000000
+  cyc=107031128  0003b2ac -> 0003b310   lr=00014704 sp=001ff680 r0=00000053 r9=00000000
+  cyc=107031128  0003b314 -> 0003b380   lr=00014704 sp=001ff680 r0=00000053 r9=00000000
+  cyc=107031128  0003b3a8 -> 0003b3c8   lr=00014704 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107031128  0003b3cc -> 0003b450   lr=00014704 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107031128  0003b454 -> 0003b5e8   lr=00014704 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107031128  0003b608 -> 0003b388   lr=00014704 sp=001ff680 r0=00000001 r9=00000000
+  cyc=107031257  0003b3a8 -> 0003b3c8   lr=00014704 sp=001ff680 r0=00000001 r9=00000000
+  cyc=107031257  0003b3cc -> 0003b450   lr=00014704 sp=001ff680 r0=00000001 r9=00000000
+  cyc=107031257  0003b454 -> 0003b5e8   lr=00014704 sp=001ff680 r0=00000001 r9=00000000
+  cyc=107031257  0003b608 -> 0003b388   lr=00014704 sp=001ff680 r0=00000002 r9=00000000
+  cyc=107031257  0003b3a8 -> 0003b3c8   lr=00014704 sp=001ff680 r0=00000002 r9=00000000
+  cyc=107031257  0003b3cc -> 0003b450   lr=00014704 sp=001ff680 r0=00000002 r9=00000000
+  cyc=107031257  0003b454 -> 0003b5e8   lr=00014704 sp=001ff680 r0=00000002 r9=00000000
+  cyc=107031257  0003b608 -> 0003b388   lr=00014704 sp=001ff680 r0=00000003 r9=00000000
+  cyc=107031385  0003b3a8 -> 0003b3c8   lr=00014704 sp=001ff680 r0=00000003 r9=00000000
+  cyc=107031385  0003b3cc -> 0003b450   lr=00014704 sp=001ff680 r0=00000003 r9=00000000
+  cyc=107031385  0003b454 -> 0003b5e8   lr=00014704 sp=001ff680 r0=00000003 r9=00000000
+  cyc=107031385  0003b608 -> 0003b388   lr=00014704 sp=001ff680 r0=00000004 r9=00000000
+  cyc=107031385  0003b3a8 -> 0003b3c8   lr=00014704 sp=001ff680 r0=00000004 r9=00000000
+  cyc=107031385  0003b3cc -> 0003b450   lr=00014704 sp=001ff680 r0=00000004 r9=00000000
+  cyc=107031385  0003b454 -> 0003b5e8   lr=00014704 sp=001ff680 r0=00000004 r9=00000000
+  cyc=107031385  0003b608 -> 0003b388   lr=00014704 sp=001ff680 r0=00000005 r9=00000000
+  cyc=107031513  0003b3a8 -> 0003b3c8   lr=00014704 sp=001ff680 r0=00000005 r9=00000000
+  cyc=107031513  0003b3cc -> 0003b450   lr=00014704 sp=001ff680 r0=00000005 r9=00000000
+  cyc=107031513  0003b454 -> 0003b5e8   lr=00014704 sp=001ff680 r0=00000005 r9=00000000
+  cyc=107031513  0003b608 -> 0003b388   lr=00014704 sp=001ff680 r0=00000006 r9=00000000
+  cyc=107031513  0003b3c4 -> 0003b4ac   lr=00014704 sp=001ff680 r0=001f194f r9=00000000
+  cyc=107031513  0003b4b4 -> 0003b61c   lr=00014704 sp=001ff680 r0=00000053 r9=00000000
+  cyc=107031513  0003b624 -> 0003ffb4   lr=0003b628 sp=001ff680 r0=001ff6a4 r9=00000000
+  cyc=107031641  0003ffc4 -> 0003b628   lr=0003b628 sp=001ff680 r0=00000025 r9=00000000
+  cyc=107031641  0003b638 -> 0003ffb4   lr=0003b63c sp=001ff680 r0=001ff6a4 r9=00000000
+  cyc=107031641  0003ffc4 -> 0003b63c   lr=0003b63c sp=001ff680 r0=00000025 r9=00000000
+  cyc=107031641  0003b640 -> 0003b6c8   lr=0003b63c sp=001ff680 r0=00000025 r9=00000000
+  cyc=107031641  0003b6d0 -> 0003ffb4   lr=0003b6d4 sp=001ff680 r0=001ff6a4 r9=00000000
+  cyc=107031641  0003ffc4 -> 0003b6d4   lr=0003b6d4 sp=001ff680 r0=fffffff5 r9=00000000
+  cyc=107031641  0003b6d8 -> 0003b6f8   lr=0003b6d4 sp=001ff680 r0=fffffff5 r9=00000000
+  cyc=107031641  0003b700 -> 0003b79c   lr=0003b6d4 sp=001ff680 r0=00000000 r9=00000000
+  cyc=107031641  0003b7a4 -> 0003d13c   lr=0003b7a8 sp=001ff680 r0=001f0e80 r9=00000000
+  cyc=107031641  0003d154 -> 000404c0   lr=0003b7a8 sp=001ff680 r0=00000054 r9=00000000
+  cyc=107031641  000404c4 -> 000381a4   lr=0003b7a8 sp=001ff680 r0=00000054 r9=00000000
+  cyc=107031769  000381c0 -> 0001467c   lr=000381c4 sp=001ff678 r0=00000054 r9=00020230
+  cyc=107031769  0001469c -> 0001344c   lr=000146a0 sp=001ff664 r0=00000054 r9=00020230
+  cyc=107031769  00013468 -> 00013390   lr=0001346c sp=001ff64c r0=00000054 r9=00020230
+  cyc=107031769  000133a8 -> 00013240   lr=000133ac sp=001ff63c r0=00000054 r9=00020230
+  cyc=107031769  00013274 -> 000133ac   lr=000133ac sp=001ff63c r0=001ffea0 r9=00020230
+  cyc=107031897  000133cc -> 0001346c   lr=000133ac sp=001ff64c r0=001f0e30 r9=00020230
+  cyc=107031897  00013490 -> 000146a0   lr=000133ac sp=001ff664 r0=001f0e30 r9=00020230
+  cyc=107031897  000146b8 -> 0001459c   lr=000381c4 sp=001ff678 r0=001f0e30 r9=00020230
+  cyc=107031897  000145c8 -> 00011e94   lr=000145cc sp=001ff648 r0=001f0e54 r9=00020230
+  cyc=107031897  00011e98 -> 000145cc   lr=000145cc sp=001ff648 r0=00000001 r9=00020230
+  cyc=107031897  000145d4 -> 000145ec   lr=000145cc sp=001ff648 r0=00000001 r9=00020230
+  cyc=107032025  000145f8 -> 00014610   lr=000145cc sp=001ff648 r0=0000001a r9=00020230
+  cyc=107032025  0001463c -> 0001f424   lr=00014640 sp=001ff648 r0=001ff874 r9=00020230
+  cyc=107032025  0001f444 -> 00014640   lr=00014640 sp=001ff648 r0=00000108 r9=00020230
+  cyc=107032025  00014648 -> 0001efe8   lr=0001464c sp=001ff648 r0=001f0e60 r9=00020230
+  cyc=107032025  0001eff0 -> 0000e19c   lr=0001464c sp=001ff648 r0=001f0e60 r9=00020230
+  cyc=107032153  0000e1b4 -> 0001464c   lr=0001464c sp=001ff648 r0=001f0e60 r9=00020230
+  cyc=107032153  00014650 -> 0001beb0   lr=00014654 sp=001ff648 r0=00000020 r9=00020230
+  cyc=107032153  0001bee0 -> 00011b14   lr=0001bee4 sp=001ff628 r0=00000000 r9=00020230
+  cyc=107032153  00011b20 -> 0001bee4   lr=0001bee4 sp=001ff628 r0=60000093 r9=00020230
+  cyc=107032153  0001bef0 -> 0001bf0c   lr=0001bee4 sp=001ff628 r0=60000093 r9=00020230
+  cyc=107032153  0001bf18 -> 0001efe8   lr=0001bf1c sp=001ff628 r0=0001fc20 r9=00020230
+  cyc=107032153  0001eff0 -> 0000e19c   lr=0001bf1c sp=001ff628 r0=0001fc20 r9=00020230
+  cyc=107032282  0000e1b4 -> 0001bf1c   lr=0001bf1c sp=001ff628 r0=0001fc20 r9=00020230
+  cyc=107032282  0001bf20 -> 00019024   lr=0001bf24 sp=001ff628 r0=001ff840 r9=00020230
+  cyc=107032282  0001903c -> 00018f44   lr=00019040 sp=001ff614 r0=001ff840 r9=00020230
+  cyc=107032282  00018f68 -> 00018f98   lr=00019040 sp=001ff5f8 r0=001ff840 r9=00020230
+  cyc=107032282  00018fa8 -> 00015d0c   lr=00018fac sp=001ff5f8 r0=00000003 r9=00020230
+  cyc=107032282  00015d1c -> 00018fac   lr=00018fac sp=001ff5f8 r0=0000039b r9=00020230
+  cyc=107032282  00018fb4 -> 00018fd0   lr=00018fac sp=001ff5f8 r0=0000039b r9=00020230
+  cyc=107032282  00018fd8 -> 00015efc   lr=00018fdc sp=001ff5f8 r0=0000000d r9=00020230
+  cyc=107032282  00015f04 -> 00018fdc   lr=00018fdc sp=001ff5f8 r0=000000d0 r9=00020230
+  cyc=107032411  00018ff4 -> 00019010   lr=00018fdc sp=001ff5f8 r0=0002ca50 r9=00020230
+  cyc=107032411  00019020 -> 00019040   lr=00018fdc sp=001ff614 r0=000000b9 r9=00020230
+  cyc=107032411  00019048 -> 00011ae0   lr=0001bf24 sp=001ff628 r0=001ff840 r9=00020230
+  cyc=107032411  00011b0c -> 0001bf24   lr=0001bf24 sp=001ff628 r0=00000000 r9=00020230
+  cyc=107032539  0001bf28 -> 0001bf4c   lr=0001bf24 sp=001ff628 r0=00000000 r9=00020230
+  cyc=107032539  0001bf60 -> 00011b34   lr=0001bf64 sp=001ff628 r0=60000093 r9=00020230
+  cyc=107032539  00011b48 -> 0001bf64   lr=0001bf64 sp=001ff628 r0=00000080 r9=00020230
+  cyc=107032539  0001bf64 -> 00011b14   lr=0001bf68 sp=001ff628 r0=00000080 r9=00020230
+  cyc=107032539  00011b20 -> 0001bf68   lr=0001bf68 sp=001ff628 r0=40000093 r9=00020230
+  cyc=107032539  0001bf6c -> 0001f00c   lr=0001bf70 sp=001ff628 r0=0001fc40 r9=00020230
+  cyc=107032539  0001f014 -> 0000e124   lr=0001bf70 sp=001ff628 r0=0001fc40 r9=00020230
+  cyc=107032539  0000e14c -> 0001bf70   lr=0001bf70 sp=001ff628 r0=001fede0 r9=00020230
+  cyc=107032539  0001bf74 -> 000190f0   lr=0001bf78 sp=001ff628 r0=001fede0 r9=00020230
+  cyc=107032669  00019108 -> 0001904c   lr=0001910c sp=001ff614 r0=001fede0 r9=00020230
+  cyc=107032669  00019084 -> 0001cd50   lr=00019088 sp=001ff5f8 r0=001fede0 r9=00020230
+  cyc=107032801  0001cda0 -> 00019088   lr=00019088 sp=001ff5f8 r0=00000000 r9=00020230
+  cyc=107032801  00019094 -> 000190c4   lr=00019088 sp=001ff5f8 r0=00000000 r9=00020230
+  cyc=107032801  000190d8 -> 00015cec   lr=000190dc sp=001ff5f8 r0=00000003 r9=00020230
+  cyc=107032801  00015d08 -> 000190dc   lr=000190dc sp=001ff5f8 r0=0340011c r9=00020230
+  cyc=107032801  000190ec -> 00015c2c   lr=0001910c sp=001ff614 r0=001ffa80 r9=00020230
+  cyc=107032929  00015ce8 -> 0001910c   lr=00001000 sp=001ff614 r0=00000002 r9=00020230
+  cyc=107032929  00019114 -> 00011a9c   lr=0001bf78 sp=001ff628 r0=001fede0 r9=00020230
+  cyc=107032929  00011ac0 -> 000284e0   lr=000117d4 sp=000360d0 r0=00000000 r9=00020230
+
+Stack (palavras a partir de SP):
+  [000360cc] = 00000200
+  [000360d0] = 00000400
+  [000360d4] = 00037fb4
+  [000360d8] = 01010000
+  [000360dc] = 000016a0
+  [000360e0] = 00000000
+  [000360e4] = 00000000
+  [000360e8] = 00000000
+  [000360ec] = 00000000
+  [000360f0] = 00000000
+  [000360f4] = 00000000
+  [000360f8] = 00000000
+  [000360fc] = 00000000
+  [00036100] = 00000000
+  [00036104] = 00000000
+  [00036108] = 00000000
+
+--- origem do salto 00011ac0 -> 000284e0 (=> marca a instrucao que saltou) ---
+   00011aa4: e2802044  add r2, r0, #0x44                 
+   00011aa8: e21b100f  ands r1, r11, #0xf                
+   00011aac: 1a000004  bne 0x00011ac4                    
+   00011ab0: e169f00b  msr spsr_all, r11                 
+   00011ab4: e1a0e00a  mov lr, r10                       
+   00011ab8: e8d27fff  ldmia r2, {r0-lr}^                
+   00011abc: e1a00000  mov r0, r0                        
+=> 00011ac0: e1b0f00e  movs pc, lr                       
+   00011ac4: e2801090  add r1, r0, #0x90                 
+   00011ac8: e8d16000  ldmia r1, {sp,lr}^                
+
+--- origem do salto 00019114 -> 00011a9c (=> marca a instrucao que saltou) ---
+   000190f8: e24cb004  sub r11, r12, #4                  
+   000190fc: e15d000a  cmp sp, r10                       
+   00019100: bbffe297  bllt 0x00011b64                   
+   00019104: e1a04000  mov r4, r0                        
+   00019108: ebffffcf  bl 0x0001904c                     
+   0001910c: e1a00004  mov r0, r4                        
+   00019110: e91b6810  ldmdb r11, {r4,r11,sp,lr}         
+=> 00019114: eaffe260  b 0x00011a9c                      
+   00019118: e1a0c00d  mov r12, sp                       
+   0001911c: e92dd830  stmdb sp!, {r4,r5,r11,r12,lr,pc}  
+
+--- origem do salto 00015ce8 -> 0001910c (=> marca a instrucao que saltou) ---
+   00015ccc: 13a01001  movne r1, #1                      
+   00015cd0: 1b00140c  blne 0x0001ad08                   
+   00015cd4: e3150020  tst r5, #0x20                     
+   00015cd8: 15d40026  ldrneb r0, [r4, #0x26]            
+   00015cdc: 13a01002  movne r1, #2                      
+   00015ce0: 191b68f0  ldmnedb r11, {r4-r7,r11,sp,lr}    
+   00015ce4: 1a001407  bne 0x0001ad08                    
+=> 00015ce8: e91ba8f0  ldmdb r11, {r4-r7,r11,sp,pc}      
+   00015cec: e1a01801  mov r1, r1, lsl #16               
+   00015cf0: e1a01821  mov r1, r1, lsr #16               
+
+--- origem do salto 000190ec -> 00015c2c (=> marca a instrucao que saltou) ---
+   000190d0: e5940000  ldr r0, [r4]                      
+   000190d4: e5d00024  ldrb r0, [r0, #0x24]              
+   000190d8: ebfff303  bl 0x00015cec                     
+   000190dc: e3a02000  mov r2, #0                        
+   000190e0: e3a01001  mov r1, #1                        
+   000190e4: e5940000  ldr r0, [r4]                      
+   000190e8: e91b6870  ldmdb r11, {r4-r6,r11,sp,lr}      
+=> 000190ec: eafff2ce  b 0x00015c2c                      
+   000190f0: e1a0c00d  mov r12, sp                       
+   000190f4: e92dd810  stmdb sp!, {r4,r11,r12,lr,pc}     
+
+--- origem do salto 00015d08 -> 000190dc (=> marca a instrucao que saltou) ---
+   00015cec: e1a01801  mov r1, r1, lsl #16               
+   00015cf0: e1a01821  mov r1, r1, lsr #16               
+   00015cf4: e3a03c01  mov r3, #0x100                    
+   00015cf8: e283350d  add r3, r3, #0x3400000            
+   00015cfc: e0830180  add r0, r3, r0, lsl #3            
+   00015d00: e5801000  str r1, [r0]                      
+   00015d04: e5a02004  str r2, [r0, #4]!                 
+=> 00015d08: e1a0f00e  mov pc, lr                        
+   00015d0c: e3a01c01  mov r1, #0x100                    
+   00015d10: e281150d  add r1, r1, #0x3400000            
+
+--- origem do salto 000190d8 -> 00015cec (=> marca a instrucao que saltou) ---
+   000190bc: e3350000  teq r5, #0                        
+   000190c0: 1afffff4  bne 0x00019098                    
+   000190c4: e5b420bc  ldr r2, [r4, #0xbc]!              
+   000190c8: e1a01002  mov r1, r2                        
+   000190cc: e51f4108  ldr r4, [pc, #-0x108]             ; [0x00018fcc] = 0x0001f90c
+   000190d0: e5940000  ldr r0, [r4]                      
+   000190d4: e5d00024  ldrb r0, [r0, #0x24]              
+=> 000190d8: ebfff303  bl 0x00015cec                     
+   000190dc: e3a02000  mov r2, #0                        
+   000190e0: e3a01001  mov r1, #1                        
+
+--- origem do salto 00019094 -> 000190c4 (=> marca a instrucao que saltou) ---
+   00019078: e3c11003  bic r1, r1, #3                    
+   0001907c: e3811004  orr r1, r1, #4                    
+   00019080: e5c0100b  strb r1, [r0, #0xb]               
+   00019084: eb000f31  bl 0x0001cd50                     
+   00019088: e3a06001  mov r6, #1                        
+   0001908c: e59450b0  ldr r5, [r4, #0xb0]               
+   00019090: e3350000  teq r5, #0                        
+=> 00019094: 0a00000a  beq 0x000190c4                    
+   00019098: e1a00005  mov r0, r5                        
+   0001909c: ebffe380  bl 0x00011ea4                     
+
+--- origem do salto 0001cda0 -> 00019088 (=> marca a instrucao que saltou) ---
+   0001cd84: e59f3018  ldr r3, [pc, #0x18]               ; [0x0001cda4] = 0x0001f8d0
+   0001cd88: e5d33000  ldrb r3, [r3]                     
+   0001cd8c: e3330000  teq r3, #0                        
+   0001cd90: 15920000  ldrne r0, [r2]                    
+   0001cd94: 1590001c  ldrne r0, [r0, #0x1c]             
+   0001cd98: e5900000  ldr r0, [r0]                      
+   0001cd9c: e5a1003c  str r0, [r1, #0x3c]!              
+=> 0001cda0: e1a0f00e  mov pc, lr                        
+   0001cda4: 0001f8d0  undef  (0001f8d0)                 
+   0001cda8: e59010a8  ldr r1, [r0, #0xa8]               
+
+--- 28148 (tratador chamado por 'bllt' quando sp<r10) ---
+   00028148: e1a0c00d  mov r12, sp                       
+   0002814c: e24dd004  sub sp, sp, #4                    
+   00028150: e92d0001  stmdb sp!, {r0}                   
+   00028154: e51f0024  ldr r0, [pc, #-0x24]              ; [0x00028138] = 0x00034d74
+   00028158: e5900000  ldr r0, [r0]                      
+   0002815c: e510007c  ldr r0, [r0, #-0x7c]              
+   00028160: e58d0004  str r0, [sp, #4]                  
+   00028164: e8bd8001  ldmia sp!, {r0,pc}                
+   00028168: eafffffe  b 0x00028168                      
+   0002816c: 00034d74  andeq r4, r3, r4, ror sp          
+   00028170: e92d4200  stmdb sp!, {r9,lr}                
+   00028174: e51f9010  ldr r9, [pc, #-0x10]              ; [0x0002816c] = 0x00034d74
+
+--- funcao vizinha 284f8 ---
+   000284f8: e1a0c00d  mov r12, sp                       
+   000284fc: e92dd800  stmdb sp!, {r11,r12,lr,pc}        
+   00028500: e24cb004  sub r11, r12, #4                  
+   00028504: e15d000a  cmp sp, r10                       
+   00028508: bbffff0e  bllt 0x00028148                   
+   0002850c: e59f0094  ldr r0, [pc, #0x94]               ; [0x000285a8] = 0x00034d74
+   00028510: e5900000  ldr r0, [r0]                      
+   00028514: e5900098  ldr r0, [r0, #0x98]               
+   00028518: e59000a8  ldr r0, [r0, #0xa8]               
+   0002851c: e3a02000  mov r2, #0                        
+   00028520: e3a01080  mov r1, #0x80                     
+   00028524: eb003122  bl 0x000349b4                     
+   00028528: e3300000  teq r0, #0                        
+   0002852c: 059fe078  ldreq lr, [pc, #0x78]             ; [0x000285ac] = 0xd57b9006
+   00028530: 0a000015  beq 0x0002858c                    
+   00028534: e3a03000  mov r3, #0                        
+   00028538: e3a02000  mov r2, #0                        
+   0002853c: e3a01017  mov r1, #0x17                     
+   00028540: e2800080  add r0, r0, #0x80                 
+   00028544: e92d000f  stmdb sp!, {r0-r3}                
+   00028548: e3a0300f  mov r3, #0xf                      
+   0002854c: e3a02080  mov r2, #0x80                     
+   00028550: e3a0100c  mov r1, #0xc                      
+   00028554: e59f0054  ldr r0, [pc, #0x54]               ; [0x000285b0] = 0x000284e0
+
+--- strings interessantes da RAM (todas em strings.txt) ---
+00006350: cd-rom
+00011fab: 0Operator
+00012c0c: Operator
+00012c18: sherry: unable to locate Operator
+00012c3c: FileSystem
+00012c48: sherry: unable to locate File System
+00012c70: sherry: unable to decode FileSystem's AIF header
+0001330f: 0GetItem: unable to extend system item table
+00018508: CreateTask error
+000187a4: task vram bank 1 ml
+000187b8: task vram bank 2 ml
+000187cc: task dram ml
+00018c77: &Task VRAM Bank 1 MemList
+00018c94: Task Aligned Tracked VRAM Allocs
+00018cb8: Task VRAM Bank 2 MemList
+00018cd4: Task DRAM MemList
+00018ce8: Task Aligned Tracked DRAM Allocs
+00019f0f:  TaskWaitQ
+00019f2f: @TaskReadyQ
+00019f78: Tasks
+0001bb2c: Opus system error, prefetch abort in supervisor mode
+0001bc09: 4VxOpus system error, data abort in supervisor mode
+0001bd08: Illegal Instruction task=%lx addr=%lx
+0001bf8c: Idle Task missing
+0001d4fc: System
+0001d5f0: Evil system error, should not occur!
+0001d618: ptr/range is illegal for this task
+0001d63c: operation aborted
+0001d6c4: Operation not supported at this time
+0001d8b4: illegal operation for thread
+0001d904: RSA failed in CreateTask
+0001da0c: Task got killed
+0001f67f: Any unauthorized duplication, disclosure or use is prohibited.
+0001f6c0: cd-rom
+000280c0: Operator
+000285b4: IdleTask
+000285c0: oper: no idle task, err %d
+000287d8: FileSystem
+00028828: oper: no FS task, err %d
+000288e8: /on.ram.1.0/System
+000288fc: /flash/System
+000289d4: /%s/System
+000289e0: /rom/System
+00028a14: $boot/System/Audio
+00028a30: $boot/System/Folios
+00028a4c: $boot/System/Devices
+00028a6c: $boot/System/Drivers
+00028a8c: $boot/System/Tasks
+00028aa0: tasks
+00028aa8: $boot/System/Scripts
+00028b9b: 0Operamath
+00028d0c: oper: could not launch folio loader thread, err %d
+00028d96: A$$tasks/shell $%x
+00028dac: oper: no shell task, err %d
+0002a12c: Dipir wait-start Queue
+0002a148: Dipir wait-end Queue
+0002c424: LCCD-ROM
+0002c430: CD-ROM
+0002c8ff: 0CD-ROM#
+0002c908: LCCD:  >ERROR<  Could not create CD-ROM device
+0002d99b: 9LCCD:  Someone tried to swap discs in the clamshell drive!
+0002dfcc: LCCD:  >ERROR<  Problem setting up dipir recover ioReq
+00030bbc: MKE CD-ROM
+00030bc8: CD-ROM
+00031084: CD-ROM
+00034e2b: Any unauthorized duplication, disclosure or use is prohibited.
+00035634: CD-ROM1
+000380c0: FileSystem
+00038550: No such filesystem
+000385bc: Filesystem full
+000385cc: Filesystem damaged
+000385e0: File[system] busy
+00038608: Read-only file[system]
+000387ec: Filesystems
+0003a078: filesystem
+0003d6df: 4Automount
+0003d6ec: Filesystem startup completed.
+000405c7: Any unauthorized duplication, disclosure or use is prohibited.
+001f0e21: cd-rom
+001f0ea4: cd-rom
+001f10b4: cd-rom
+001f10f4: on.CD-ROM.0.150
+001f1168: cd-rom
+001f11c4: duckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduckiamaduck
+001f1971: filesystem
+001f1f0c: Disc label
+001f2157: ($folios/Operamath.privfolio
+001f2436: $8$boot/System/Tasks
+001f2476: $x$boot/System/Drivers
+001f24b8: $boot/System/Devices
+001f2546: %H$boot/System/Scripts
+001f2588: $boot/System/Audio
+001f25c8: /cd-rom
+001f2621: cd-rom
+001f2ac1: filesystem
+001f2c31: tasks
+001fc667: h$boot/System/Folios
+001fc7d1: Automount
+001fc7e1: FileSystem
+001fe9f1: CD-ROM
+001fea11: MKE CD-ROM
+001fece1: task vram bank 1 ml
+001fed51: task dram ml
+001fedd1: IdleTask
+001ff6a4: System
+001ff831: Operator
+
+--- RAM em 001f1b70 (bytes na ordem do 3DO) ---
+001f1b70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1b90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1ba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1bb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1bc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+
+--- RAM em 001f0620 (bytes na ordem do 3DO) ---
+001f0620: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0630: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0640: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0650: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0660: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0670: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+
+--- RAM em 001f0540 (bytes na ordem do 3DO) ---
+001f0540: 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0550: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0560: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0570: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f0590: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+
+--- RAM em 001f1140 (bytes na ordem do 3DO) ---
+001f1140: 01 5a 5a 5a 5a 5a 01 00 00 00 00 00 00 00 00 00  .ZZZZZ..........
+001f1150: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1160: 00 00 00 00 00 00 00 00 63 64 2d 72 6f 6d 00 00  ........cd-rom..
+001f1170: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+001f1180: 00 00 00 00 00 00 00 00 26 87 e8 12 00 00 08 00  ........&.......
+001f1190: 00 00 32 00 17 db 48 ad 00 00 00 01 00 00 08 00  ..2...H.........
