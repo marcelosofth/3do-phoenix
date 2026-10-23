@@ -1,0 +1,2 @@
+imagem,frames,flags,pc_final,tela_nao_preta_pct,cores,undef,bad_fetch,bad_read,bad_write,cel_desenhados,cel_cru,cel_empacotado,cel_poly,cel_nao_suportado,cel_lrform,xbus_ids,cd_cmd_ignorados,cd_leitura_fora,video_hires_linhas,irq11,ack_semaforo,captura
+"./aitd.chd",7200,"!STATIC_IMAGE_10S i:BAD_READ(1) i:CEL_POLY_APPROX i:CEL_LRFORM",00058c24,62.4,97,0,0,1,0,15199,15197,2,1040,0,1,ffff,0,0,0,26146,0,"auditoria/aitd.chd.bmp"
