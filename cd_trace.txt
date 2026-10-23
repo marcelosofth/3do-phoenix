@@ -1,0 +1,1600 @@
+setores=13100
+it=0 pc=00100000 cyc=262144 lba=0 remain=0 S=80 R=e1
+it=50 pc=000004b0 cyc=13369582 lba=0 remain=0 S=80 R=e1
+[it pc=000227a0 cyc=23107313] CD> CDT poll_read 80
+[it pc=00021a0c cyc=23337237] CD> CDT poll_write v=80 S: 80 -> 00 lba=0
+it=100 pc=00000770 cyc=26479007 lba=0 remain=0 S=00 R=e1
+[it pc=00000f68 cyc=27247212] CD> CDT poll_read 00
+[it pc=00000f74 cyc=27247340] CD> CDT poll_write v=80 S: 00 -> 00 lba=0
+[it pc=0000088c cyc=27247470] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=0 R=e1
+[it pc=000006d0 cyc=27247470] CD> CDT poll_read 10
+[it pc=00000830 cyc=27248253] CD> CDT poll_read 00
+[it pc=0000088c cyc=27248646] CD> CDT cmd 82 | 00 00 00 00 00 00 S=00 lba=0 R=e1
+[it pc=000006d0 cyc=27248646] CD> CDT poll_read 10
+[it pc=00000830 cyc=27249297] CD> CDT poll_read 00
+[it pc=0000088c cyc=27249686] CD> CDT cmd 8b | 00 00 00 00 00 00 S=00 lba=0 R=e1
+[it pc=000006d0 cyc=27249686] CD> CDT poll_read 10
+[it pc=00000830 cyc=27250208] CD> CDT poll_read 00
+[it pc=0000088c cyc=27250464] CD> CDT cmd 8d | 00 00 00 00 00 00 S=00 lba=0 R=e1
+[it pc=000006d0 cyc=27250596] CD> CDT poll_read 10
+[it pc=00000830 cyc=27250991] CD> CDT poll_read 00
+[it pc=0000088c cyc=27251380] CD> CDT cmd 8c | 00 01 00 00 00 00 S=00 lba=0 R=e1
+[it pc=000006d0 cyc=27251380] CD> CDT poll_read 10
+[it pc=00000830 cyc=27252029] CD> CDT poll_read 00
+[it pc=0000088c cyc=27252681] CD> CDT cmd 10 | 00 02 00 00 00 01 S=00 lba=0 R=e1
+[it pc=000006d0 cyc=27252810] CD> CDT poll_read 30
+[it pc=00000830 cyc=27312317] CD> CDT poll_read 10
+[it pc=00000830 cyc=27312445] CD> CDT poll_read 00
+[it pc=0000088c cyc=27315704] CD> CDT cmd 10 | 00 02 01 00 00 01 S=00 lba=1 R=e1
+[it pc=000006d0 cyc=27336036] CD> CDT poll_read 30
+[it pc=00000830 cyc=27395538] CD> CDT poll_read 10
+[it pc=00000830 cyc=27395538] CD> CDT poll_read 00
+[it pc=0000088c cyc=27396448] CD> CDT cmd 10 | 00 02 02 00 00 01 S=00 lba=2 R=e1
+[it pc=000006d0 cyc=27419386] CD> CDT poll_read 30
+[it pc=00000830 cyc=27478888] CD> CDT poll_read 10
+[it pc=00000830 cyc=27478888] CD> CDT poll_read 00
+[it pc=0000088c cyc=27479534] CD> CDT cmd 10 | 00 02 03 00 00 01 S=00 lba=3 R=e1
+[it pc=000006d0 cyc=27502735] CD> CDT poll_read 30
+[it pc=00000830 cyc=27562242] CD> CDT poll_read 10
+[it pc=00000830 cyc=27562242] CD> CDT poll_read 00
+[it pc=0000088c cyc=27562888] CD> CDT cmd 10 | 00 02 04 00 00 01 S=00 lba=4 R=e1
+[it pc=000006d0 cyc=27586089] CD> CDT poll_read 30
+[it pc=00000830 cyc=27645596] CD> CDT poll_read 10
+[it pc=00000830 cyc=27645596] CD> CDT poll_read 00
+[it pc=0000088c cyc=27646242] CD> CDT cmd 10 | 00 02 05 00 00 01 S=00 lba=5 R=e1
+[it pc=000006d0 cyc=27669443] CD> CDT poll_read 30
+[it pc=00000830 cyc=27728950] CD> CDT poll_read 10
+[it pc=00000830 cyc=27728950] CD> CDT poll_read 00
+it=150 pc=00005910 cyc=39589658 lba=6 remain=0 S=00 R=e1
+[it pc=0000088c cyc=40834111] CD> CDT cmd 8d | 00 00 00 00 00 00 S=00 lba=6 R=e1
+[it pc=000006d0 cyc=40834242] CD> CDT poll_read 10
+[it pc=00000830 cyc=40834761] CD> CDT poll_read 00
+[it pc=0000088c cyc=40835150] CD> CDT cmd 8b | 00 00 00 00 00 00 S=00 lba=6 R=e1
+[it pc=000006d0 cyc=40835150] CD> CDT poll_read 10
+[it pc=00000830 cyc=40835672] CD> CDT poll_read 00
+[it pc=0000088c cyc=40835936] CD> CDT cmd 8c | 00 01 00 00 00 00 S=00 lba=6 R=e1
+[it pc=000006d0 cyc=40836076] CD> CDT poll_read 10
+[it pc=00000830 cyc=40836600] CD> CDT poll_read 00
+[it pc=0000088c cyc=40845437] CD> CDT cmd 10 | 02 29 15 00 00 01 S=00 lba=6 R=e1
+[it pc=000006d0 cyc=40928848] CD> CDT poll_read 30
+[it pc=00000830 cyc=40988352] CD> CDT poll_read 10
+[it pc=00000830 cyc=40988352] CD> CDT poll_read 00
+[it pc=0000088c cyc=40989014] CD> CDT cmd 10 | 02 29 16 00 00 01 S=00 lba=11947 R=e1
+[it pc=000006d0 cyc=41074811] CD> CDT poll_read 30
+[it pc=00000830 cyc=41134317] CD> CDT poll_read 10
+[it pc=00000830 cyc=41134317] CD> CDT poll_read 00
+[it pc=0000088c cyc=41134829] CD> CDT cmd 10 | 02 29 17 00 00 01 S=00 lba=11948 R=e1
+[it pc=000006d0 cyc=41221289] CD> CDT poll_read 30
+[it pc=00000830 cyc=41280798] CD> CDT poll_read 10
+[it pc=00000830 cyc=41280926] CD> CDT poll_read 00
+[it pc=0000088c cyc=41281441] CD> CDT cmd 10 | 02 29 18 00 00 01 S=00 lba=11949 R=e1
+[it pc=000006d0 cyc=41367369] CD> CDT poll_read 30
+[it pc=00000830 cyc=41426877] CD> CDT poll_read 10
+[it pc=00000830 cyc=41427005] CD> CDT poll_read 00
+[it pc=0000088c cyc=41427520] CD> CDT cmd 10 | 02 29 19 00 00 01 S=00 lba=11950 R=e1
+[it pc=000006d0 cyc=41513200] CD> CDT poll_read 30
+[it pc=00000830 cyc=41572706] CD> CDT poll_read 10
+[it pc=00000830 cyc=41572706] CD> CDT poll_read 00
+[it pc=0000088c cyc=41573347] CD> CDT cmd 10 | 02 29 1a 00 00 01 S=00 lba=11951 R=e1
+[it pc=000006d0 cyc=41659406] CD> CDT poll_read 30
+[it pc=00000830 cyc=41718909] CD> CDT poll_read 10
+[it pc=00000830 cyc=41719037] CD> CDT poll_read 00
+[it pc=0000088c cyc=41719552] CD> CDT cmd 10 | 02 29 1b 00 00 01 S=00 lba=11952 R=e1
+[it pc=000006d0 cyc=41805616] CD> CDT poll_read 30
+[it pc=00000830 cyc=41865118] CD> CDT poll_read 10
+[it pc=00000830 cyc=41865250] CD> CDT poll_read 00
+[it pc=0000088c cyc=41865765] CD> CDT cmd 10 | 02 29 1c 00 00 01 S=00 lba=11953 R=e1
+[it pc=000006d0 cyc=41951586] CD> CDT poll_read 30
+[it pc=00000830 cyc=42011089] CD> CDT poll_read 10
+[it pc=00000830 cyc=42011217] CD> CDT poll_read 00
+[it pc=0000088c cyc=46083311] CD> CDT cmd 10 | 00 1a 08 00 00 01 S=00 lba=11954 R=e1
+[it pc=000006d0 cyc=46166723] CD> CDT poll_read 30
+[it pc=00000830 cyc=46226230] CD> CDT poll_read 10
+[it pc=00000830 cyc=46226230] CD> CDT poll_read 00
+[it pc=0000088c cyc=46226747] CD> CDT cmd 10 | 00 1a 09 00 00 01 S=00 lba=1809 R=e1
+[it pc=000006d0 cyc=46312427] CD> CDT poll_read 30
+[it pc=00000830 cyc=46371935] CD> CDT poll_read 10
+[it pc=00000830 cyc=46372064] CD> CDT poll_read 00
+[it pc=0000088c cyc=46372584] CD> CDT cmd 10 | 00 1a 0a 00 00 01 S=00 lba=1810 R=e1
+[it pc=000006d0 cyc=46458128] CD> CDT poll_read 30
+[it pc=00000830 cyc=46517765] CD> CDT poll_read 10
+[it pc=00000830 cyc=46517765] CD> CDT poll_read 00
+[it pc=0000088c cyc=46518280] CD> CDT cmd 10 | 00 1a 0b 00 00 01 S=00 lba=1811 R=e1
+[it pc=000006d0 cyc=46603982] CD> CDT poll_read 30
+[it pc=00000830 cyc=46663491] CD> CDT poll_read 10
+[it pc=00000830 cyc=46663491] CD> CDT poll_read 00
+[it pc=0000088c cyc=46664009] CD> CDT cmd 10 | 00 1a 0c 00 00 01 S=00 lba=1812 R=e1
+[it pc=000006d0 cyc=46749693] CD> CDT poll_read 30
+[it pc=00000830 cyc=46809196] CD> CDT poll_read 10
+[it pc=00000830 cyc=46809324] CD> CDT poll_read 00
+[it pc=0000088c cyc=46809839] CD> CDT cmd 10 | 00 1a 0d 00 00 01 S=00 lba=1813 R=e1
+[it pc=000006d0 cyc=46895507] CD> CDT poll_read 30
+[it pc=00000830 cyc=46955014] CD> CDT poll_read 10
+[it pc=00000830 cyc=46955014] CD> CDT poll_read 00
+[it pc=0000088c cyc=46955532] CD> CDT cmd 10 | 00 1a 0e 00 00 01 S=00 lba=1814 R=e1
+[it pc=000006d0 cyc=47041211] CD> CDT poll_read 30
+[it pc=00000830 cyc=47100714] CD> CDT poll_read 10
+[it pc=00000830 cyc=47100842] CD> CDT poll_read 00
+[it pc=0000088c cyc=47101357] CD> CDT cmd 10 | 00 1a 0f 00 00 01 S=00 lba=1815 R=e1
+[it pc=000006d0 cyc=47187025] CD> CDT poll_read 30
+[it pc=00000830 cyc=47246532] CD> CDT poll_read 10
+[it pc=00000830 cyc=47246532] CD> CDT poll_read 00
+[it pc=0000088c cyc=47247050] CD> CDT cmd 10 | 00 1a 10 00 00 01 S=00 lba=1816 R=e1
+[it pc=000006d0 cyc=47332729] CD> CDT poll_read 30
+[it pc=00000830 cyc=47392232] CD> CDT poll_read 10
+[it pc=00000830 cyc=47392360] CD> CDT poll_read 00
+[it pc=0000088c cyc=47392875] CD> CDT cmd 10 | 00 1a 11 00 00 01 S=00 lba=1817 R=e1
+[it pc=000006d0 cyc=47478543] CD> CDT poll_read 30
+[it pc=00000830 cyc=47538050] CD> CDT poll_read 10
+[it pc=00000830 cyc=47538050] CD> CDT poll_read 00
+[it pc=0000088c cyc=47538568] CD> CDT cmd 10 | 00 1a 12 00 00 01 S=00 lba=1818 R=e1
+[it pc=000006d0 cyc=47624247] CD> CDT poll_read 30
+[it pc=00000830 cyc=47683750] CD> CDT poll_read 10
+[it pc=00000830 cyc=47683878] CD> CDT poll_read 00
+[it pc=0000088c cyc=47684393] CD> CDT cmd 10 | 00 1a 13 00 00 01 S=00 lba=1819 R=e1
+[it pc=000006d0 cyc=47770061] CD> CDT poll_read 30
+[it pc=00000830 cyc=47829568] CD> CDT poll_read 10
+[it pc=00000830 cyc=47829568] CD> CDT poll_read 00
+[it pc=0000088c cyc=47830086] CD> CDT cmd 10 | 00 1a 14 00 00 01 S=00 lba=1820 R=e1
+[it pc=000006d0 cyc=47915765] CD> CDT poll_read 30
+[it pc=00000830 cyc=47975268] CD> CDT poll_read 10
+[it pc=00000830 cyc=47975396] CD> CDT poll_read 00
+[it pc=0000088c cyc=47975911] CD> CDT cmd 10 | 00 1a 15 00 00 01 S=00 lba=1821 R=e1
+[it pc=000006d0 cyc=48061579] CD> CDT poll_read 30
+[it pc=00000830 cyc=48121086] CD> CDT poll_read 10
+[it pc=00000830 cyc=48121086] CD> CDT poll_read 00
+[it pc=0000088c cyc=48121604] CD> CDT cmd 10 | 00 1a 16 00 00 01 S=00 lba=1822 R=e1
+[it pc=000006d0 cyc=48207283] CD> CDT poll_read 30
+[it pc=00000830 cyc=48266786] CD> CDT poll_read 10
+[it pc=00000830 cyc=48266914] CD> CDT poll_read 00
+[it pc=0000088c cyc=48267429] CD> CDT cmd 10 | 00 1a 17 00 00 01 S=00 lba=1823 R=e1
+[it pc=000006d0 cyc=48353099] CD> CDT poll_read 30
+[it pc=00000830 cyc=48412605] CD> CDT poll_read 10
+[it pc=00000830 cyc=48412605] CD> CDT poll_read 00
+[it pc=0000088c cyc=48504889] CD> CDT cmd 10 | 00 1e 1c 00 00 01 S=00 lba=1824 R=e1
+[it pc=000006d0 cyc=48588302] CD> CDT poll_read 30
+[it pc=00000830 cyc=48647806] CD> CDT poll_read 10
+[it pc=00000830 cyc=48647806] CD> CDT poll_read 00
+[it pc=0000088c cyc=48648452] CD> CDT cmd 10 | 00 1e 1d 00 00 01 S=00 lba=2129 R=e1
+[it pc=000006d0 cyc=48733980] CD> CDT poll_read 30
+[it pc=00000830 cyc=48793617] CD> CDT poll_read 10
+[it pc=00000830 cyc=48793617] CD> CDT poll_read 00
+[it pc=0000088c cyc=48794132] CD> CDT cmd 10 | 00 1e 1e 00 00 01 S=00 lba=2130 R=e1
+[it pc=000006d0 cyc=48879834] CD> CDT poll_read 30
+[it pc=00000830 cyc=48939343] CD> CDT poll_read 10
+[it pc=00000830 cyc=48939343] CD> CDT poll_read 00
+[it pc=0000088c cyc=48939861] CD> CDT cmd 10 | 00 1e 1f 00 00 01 S=00 lba=2131 R=e1
+[it pc=000006d0 cyc=49025545] CD> CDT poll_read 30
+[it pc=00000830 cyc=49085048] CD> CDT poll_read 10
+[it pc=00000830 cyc=49085176] CD> CDT poll_read 00
+[it pc=0000088c cyc=49085691] CD> CDT cmd 10 | 00 1e 20 00 00 01 S=00 lba=2132 R=e1
+[it pc=000006d0 cyc=49171359] CD> CDT poll_read 30
+[it pc=00000830 cyc=49230866] CD> CDT poll_read 10
+[it pc=00000830 cyc=49230866] CD> CDT poll_read 00
+[it pc=0000088c cyc=49231384] CD> CDT cmd 10 | 00 1e 21 00 00 01 S=00 lba=2133 R=e1
+[it pc=000006d0 cyc=49317063] CD> CDT poll_read 30
+[it pc=00000830 cyc=49376566] CD> CDT poll_read 10
+[it pc=00000830 cyc=49376694] CD> CDT poll_read 00
+[it pc=0000088c cyc=49377209] CD> CDT cmd 10 | 00 1e 22 00 00 01 S=00 lba=2134 R=e1
+[it pc=000006d0 cyc=49462877] CD> CDT poll_read 30
+[it pc=00000830 cyc=49522384] CD> CDT poll_read 10
+[it pc=00000830 cyc=49522384] CD> CDT poll_read 00
+[it pc=0000088c cyc=49522902] CD> CDT cmd 10 | 00 1e 23 00 00 01 S=00 lba=2135 R=e1
+[it pc=000006d0 cyc=49608581] CD> CDT poll_read 30
+[it pc=00000830 cyc=49668084] CD> CDT poll_read 10
+[it pc=00000830 cyc=49668212] CD> CDT poll_read 00
+[it pc=0000088c cyc=49668727] CD> CDT cmd 10 | 00 1e 24 00 00 01 S=00 lba=2136 R=e1
+[it pc=000006d0 cyc=49754395] CD> CDT poll_read 30
+[it pc=00000830 cyc=49813902] CD> CDT poll_read 10
+[it pc=00000830 cyc=49813902] CD> CDT poll_read 00
+[it pc=0000088c cyc=49814420] CD> CDT cmd 10 | 00 1e 25 00 00 01 S=00 lba=2137 R=e1
+[it pc=000006d0 cyc=49900099] CD> CDT poll_read 30
+[it pc=00000830 cyc=49959602] CD> CDT poll_read 10
+[it pc=00000830 cyc=49959730] CD> CDT poll_read 00
+[it pc=0000088c cyc=49960245] CD> CDT cmd 10 | 00 1e 26 00 00 01 S=00 lba=2138 R=e1
+[it pc=000006d0 cyc=50045913] CD> CDT poll_read 30
+[it pc=00000830 cyc=50105420] CD> CDT poll_read 10
+[it pc=00000830 cyc=50105420] CD> CDT poll_read 00
+[it pc=0000088c cyc=50105938] CD> CDT cmd 10 | 00 1e 27 00 00 01 S=00 lba=2139 R=e1
+[it pc=000006d0 cyc=50191617] CD> CDT poll_read 30
+[it pc=00000830 cyc=50251120] CD> CDT poll_read 10
+[it pc=00000830 cyc=50251248] CD> CDT poll_read 00
+[it pc=0000088c cyc=50251763] CD> CDT cmd 10 | 00 1e 28 00 00 01 S=00 lba=2140 R=e1
+[it pc=000006d0 cyc=50337431] CD> CDT poll_read 30
+[it pc=00000830 cyc=50396938] CD> CDT poll_read 10
+[it pc=00000830 cyc=50396938] CD> CDT poll_read 00
+[it pc=0000088c cyc=50397456] CD> CDT cmd 10 | 00 1e 29 00 00 01 S=00 lba=2141 R=e1
+[it pc=000006d0 cyc=50483135] CD> CDT poll_read 30
+[it pc=00000830 cyc=50542638] CD> CDT poll_read 10
+[it pc=00000830 cyc=50542766] CD> CDT poll_read 00
+[it pc=0000088c cyc=50543281] CD> CDT cmd 10 | 00 1e 2a 00 00 01 S=00 lba=2142 R=e1
+[it pc=000006d0 cyc=50628949] CD> CDT poll_read 30
+[it pc=00000830 cyc=50688456] CD> CDT poll_read 10
+[it pc=00000830 cyc=50688456] CD> CDT poll_read 00
+[it pc=0000088c cyc=50688974] CD> CDT cmd 10 | 00 1e 2b 00 00 01 S=00 lba=2143 R=e1
+[it pc=000006d0 cyc=50774654] CD> CDT poll_read 30
+[it pc=00000830 cyc=50834163] CD> CDT poll_read 10
+[it pc=00000830 cyc=50834291] CD> CDT poll_read 00
+[it pc=0000088c cyc=50926451] CD> CDT cmd 10 | 00 1f 21 00 00 01 S=00 lba=2144 R=e1
+[it pc=000006d0 cyc=51009868] CD> CDT poll_read 30
+[it pc=00000830 cyc=51069372] CD> CDT poll_read 10
+[it pc=00000830 cyc=51069372] CD> CDT poll_read 00
+[it pc=0000088c cyc=51069896] CD> CDT cmd 10 | 00 1f 22 00 00 01 S=00 lba=2209 R=e1
+[it pc=000006d0 cyc=51155587] CD> CDT poll_read 30
+[it pc=00000830 cyc=51215090] CD> CDT poll_read 10
+[it pc=00000830 cyc=51215218] CD> CDT poll_read 00
+[it pc=0000088c cyc=51215733] CD> CDT cmd 10 | 00 1f 23 00 00 01 S=00 lba=2210 R=e1
+[it pc=000006d0 cyc=51301401] CD> CDT poll_read 30
+[it pc=00000830 cyc=51360908] CD> CDT poll_read 10
+[it pc=00000830 cyc=51360908] CD> CDT poll_read 00
+[it pc=0000088c cyc=51361426] CD> CDT cmd 10 | 00 1f 24 00 00 01 S=00 lba=2211 R=e1
+[it pc=000006d0 cyc=51447105] CD> CDT poll_read 30
+[it pc=00000830 cyc=51506608] CD> CDT poll_read 10
+[it pc=00000830 cyc=51506736] CD> CDT poll_read 00
+[it pc=0000088c cyc=51507251] CD> CDT cmd 10 | 00 1f 25 00 00 01 S=00 lba=2212 R=e1
+[it pc=000006d0 cyc=51592919] CD> CDT poll_read 30
+[it pc=00000830 cyc=51652426] CD> CDT poll_read 10
+[it pc=00000830 cyc=51652426] CD> CDT poll_read 00
+[it pc=0000088c cyc=51652944] CD> CDT cmd 10 | 00 1f 26 00 00 01 S=00 lba=2213 R=e1
+[it pc=000006d0 cyc=51738623] CD> CDT poll_read 30
+[it pc=00000830 cyc=51798126] CD> CDT poll_read 10
+[it pc=00000830 cyc=51798254] CD> CDT poll_read 00
+[it pc=0000088c cyc=51798769] CD> CDT cmd 10 | 00 1f 27 00 00 01 S=00 lba=2214 R=e1
+[it pc=000006d0 cyc=51884437] CD> CDT poll_read 30
+[it pc=00000830 cyc=51943944] CD> CDT poll_read 10
+[it pc=00000830 cyc=51943944] CD> CDT poll_read 00
+[it pc=0000088c cyc=51944462] CD> CDT cmd 10 | 00 1f 28 00 00 01 S=00 lba=2215 R=e1
+[it pc=000006d0 cyc=52030141] CD> CDT poll_read 30
+[it pc=00000830 cyc=52089644] CD> CDT poll_read 10
+[it pc=00000830 cyc=52089772] CD> CDT poll_read 00
+[it pc=0000088c cyc=52090287] CD> CDT cmd 10 | 00 1f 29 00 00 01 S=00 lba=2216 R=e1
+[it pc=000006d0 cyc=52175955] CD> CDT poll_read 30
+[it pc=00000830 cyc=52235462] CD> CDT poll_read 10
+[it pc=00000830 cyc=52235462] CD> CDT poll_read 00
+[it pc=0000088c cyc=52235980] CD> CDT cmd 10 | 00 1f 2a 00 00 01 S=00 lba=2217 R=e1
+[it pc=000006d0 cyc=52321659] CD> CDT poll_read 30
+[it pc=00000830 cyc=52381162] CD> CDT poll_read 10
+[it pc=00000830 cyc=52381290] CD> CDT poll_read 00
+[it pc=0000088c cyc=52381805] CD> CDT cmd 10 | 00 1f 2b 00 00 01 S=00 lba=2218 R=e1
+[it pc=000006d0 cyc=52467473] CD> CDT poll_read 30
+[it pc=00000830 cyc=52526980] CD> CDT poll_read 10
+[it pc=00000830 cyc=52526980] CD> CDT poll_read 00
+[it pc=0000088c cyc=52527498] CD> CDT cmd 10 | 00 1f 2c 00 00 01 S=00 lba=2219 R=e1
+[it pc=000006d0 cyc=52613177] CD> CDT poll_read 30
+[it pc=00000830 cyc=52672680] CD> CDT poll_read 10
+[it pc=00000830 cyc=52672808] CD> CDT poll_read 00
+[it pc=0000088c cyc=52673323] CD> CDT cmd 10 | 00 1f 2d 00 00 01 S=00 lba=2220 R=e1
+it=200 pc=0000203c cyc=52699728 lba=2221 remain=0 S=30 R=e1
+[it pc=000006d0 cyc=52758991] CD> CDT poll_read 30
+[it pc=00000830 cyc=52818498] CD> CDT poll_read 10
+[it pc=00000830 cyc=52818498] CD> CDT poll_read 00
+[it pc=0000088c cyc=52819016] CD> CDT cmd 10 | 00 1f 2e 00 00 01 S=00 lba=2221 R=e1
+[it pc=000006d0 cyc=52904695] CD> CDT poll_read 30
+[it pc=00000830 cyc=52964198] CD> CDT poll_read 10
+[it pc=00000830 cyc=52964326] CD> CDT poll_read 00
+[it pc=0000088c cyc=52964841] CD> CDT cmd 10 | 00 1f 2f 00 00 01 S=00 lba=2222 R=e1
+[it pc=000006d0 cyc=53050509] CD> CDT poll_read 30
+[it pc=00000830 cyc=53110016] CD> CDT poll_read 10
+[it pc=00000830 cyc=53110016] CD> CDT poll_read 00
+[it pc=0000088c cyc=53110534] CD> CDT cmd 10 | 00 1f 30 00 00 01 S=00 lba=2223 R=e1
+[it pc=000006d0 cyc=53196214] CD> CDT poll_read 30
+[it pc=00000830 cyc=53255723] CD> CDT poll_read 10
+[it pc=00000830 cyc=53255851] CD> CDT poll_read 00
+[it pc=0000088c cyc=53348011] CD> CDT cmd 10 | 00 20 06 00 00 01 S=00 lba=2224 R=e1
+[it pc=000006d0 cyc=53431428] CD> CDT poll_read 30
+[it pc=00000830 cyc=53490932] CD> CDT poll_read 10
+[it pc=00000830 cyc=53490932] CD> CDT poll_read 00
+[it pc=0000088c cyc=53491456] CD> CDT cmd 10 | 00 20 07 00 00 01 S=00 lba=2257 R=e1
+[it pc=000006d0 cyc=53577147] CD> CDT poll_read 30
+[it pc=00000830 cyc=53636650] CD> CDT poll_read 10
+[it pc=00000830 cyc=53636778] CD> CDT poll_read 00
+[it pc=0000088c cyc=53637293] CD> CDT cmd 10 | 00 20 08 00 00 01 S=00 lba=2258 R=e1
+[it pc=000006d0 cyc=53722961] CD> CDT poll_read 30
+[it pc=00000830 cyc=53782468] CD> CDT poll_read 10
+[it pc=00000830 cyc=53782468] CD> CDT poll_read 00
+[it pc=0000088c cyc=53782986] CD> CDT cmd 10 | 00 20 09 00 00 01 S=00 lba=2259 R=e1
+[it pc=000006d0 cyc=53868665] CD> CDT poll_read 30
+[it pc=00000830 cyc=53928168] CD> CDT poll_read 10
+[it pc=00000830 cyc=53928296] CD> CDT poll_read 00
+[it pc=0000088c cyc=53928811] CD> CDT cmd 10 | 00 20 0a 00 00 01 S=00 lba=2260 R=e1
+[it pc=000006d0 cyc=54014479] CD> CDT poll_read 30
+[it pc=00000830 cyc=54073986] CD> CDT poll_read 10
+[it pc=00000830 cyc=54073986] CD> CDT poll_read 00
+[it pc=0000088c cyc=54074504] CD> CDT cmd 10 | 00 20 0b 00 00 01 S=00 lba=2261 R=e1
+[it pc=000006d0 cyc=54160183] CD> CDT poll_read 30
+[it pc=00000830 cyc=54219686] CD> CDT poll_read 10
+[it pc=00000830 cyc=54219814] CD> CDT poll_read 00
+[it pc=0000088c cyc=54220329] CD> CDT cmd 10 | 00 20 0c 00 00 01 S=00 lba=2262 R=e1
+[it pc=000006d0 cyc=54305997] CD> CDT poll_read 30
+[it pc=00000830 cyc=54365504] CD> CDT poll_read 10
+[it pc=00000830 cyc=54365504] CD> CDT poll_read 00
+[it pc=0000088c cyc=54366022] CD> CDT cmd 10 | 00 20 0d 00 00 01 S=00 lba=2263 R=e1
+[it pc=000006d0 cyc=54451701] CD> CDT poll_read 30
+[it pc=00000830 cyc=54511204] CD> CDT poll_read 10
+[it pc=00000830 cyc=54511332] CD> CDT poll_read 00
+[it pc=0000088c cyc=54511847] CD> CDT cmd 10 | 00 20 0e 00 00 01 S=00 lba=2264 R=e1
+[it pc=000006d0 cyc=54597515] CD> CDT poll_read 30
+[it pc=00000830 cyc=54657022] CD> CDT poll_read 10
+[it pc=00000830 cyc=54657022] CD> CDT poll_read 00
+[it pc=0000088c cyc=54657540] CD> CDT cmd 10 | 00 20 0f 00 00 01 S=00 lba=2265 R=e1
+[it pc=000006d0 cyc=54743219] CD> CDT poll_read 30
+[it pc=00000830 cyc=54802722] CD> CDT poll_read 10
+[it pc=00000830 cyc=54802850] CD> CDT poll_read 00
+[it pc=0000088c cyc=54803365] CD> CDT cmd 10 | 00 20 10 00 00 01 S=00 lba=2266 R=e1
+[it pc=000006d0 cyc=54889033] CD> CDT poll_read 30
+[it pc=00000830 cyc=54948540] CD> CDT poll_read 10
+[it pc=00000830 cyc=54948540] CD> CDT poll_read 00
+[it pc=0000088c cyc=54949058] CD> CDT cmd 10 | 00 20 11 00 00 01 S=00 lba=2267 R=e1
+[it pc=000006d0 cyc=55034737] CD> CDT poll_read 30
+[it pc=00000830 cyc=55094240] CD> CDT poll_read 10
+[it pc=00000830 cyc=55094368] CD> CDT poll_read 00
+[it pc=0000088c cyc=55094883] CD> CDT cmd 10 | 00 20 12 00 00 01 S=00 lba=2268 R=e1
+[it pc=000006d0 cyc=55180551] CD> CDT poll_read 30
+[it pc=00000830 cyc=55240058] CD> CDT poll_read 10
+[it pc=00000830 cyc=55240058] CD> CDT poll_read 00
+[it pc=0000088c cyc=55240576] CD> CDT cmd 10 | 00 20 13 00 00 01 S=00 lba=2269 R=e1
+[it pc=000006d0 cyc=55326255] CD> CDT poll_read 30
+[it pc=00000830 cyc=55385758] CD> CDT poll_read 10
+[it pc=00000830 cyc=55385886] CD> CDT poll_read 00
+[it pc=0000088c cyc=55386401] CD> CDT cmd 10 | 00 20 14 00 00 01 S=00 lba=2270 R=e1
+[it pc=000006d0 cyc=55472069] CD> CDT poll_read 30
+[it pc=00000830 cyc=55531576] CD> CDT poll_read 10
+[it pc=00000830 cyc=55531576] CD> CDT poll_read 00
+[it pc=0000088c cyc=55532094] CD> CDT cmd 10 | 00 20 15 00 00 01 S=00 lba=2271 R=e1
+[it pc=000006d0 cyc=55617774] CD> CDT poll_read 30
+[it pc=00000830 cyc=55677283] CD> CDT poll_read 10
+[it pc=00000830 cyc=55677411] CD> CDT poll_read 00
+[it pc=0000088c cyc=55769571] CD> CDT cmd 10 | 00 21 2b 00 00 01 S=00 lba=2272 R=e1
+[it pc=000006d0 cyc=55852988] CD> CDT poll_read 30
+[it pc=00000830 cyc=55912492] CD> CDT poll_read 10
+[it pc=00000830 cyc=55912492] CD> CDT poll_read 00
+[it pc=0000088c cyc=55913016] CD> CDT cmd 10 | 00 21 2c 00 00 01 S=00 lba=2369 R=e1
+[it pc=000006d0 cyc=55998707] CD> CDT poll_read 30
+[it pc=00000830 cyc=56058210] CD> CDT poll_read 10
+[it pc=00000830 cyc=56058338] CD> CDT poll_read 00
+[it pc=0000088c cyc=56058853] CD> CDT cmd 10 | 00 21 2d 00 00 01 S=00 lba=2370 R=e1
+[it pc=000006d0 cyc=56144521] CD> CDT poll_read 30
+[it pc=00000830 cyc=56204028] CD> CDT poll_read 10
+[it pc=00000830 cyc=56204028] CD> CDT poll_read 00
+[it pc=0000088c cyc=56204546] CD> CDT cmd 10 | 00 21 2e 00 00 01 S=00 lba=2371 R=e1
+[it pc=000006d0 cyc=56290225] CD> CDT poll_read 30
+[it pc=00000830 cyc=56349728] CD> CDT poll_read 10
+[it pc=00000830 cyc=56349856] CD> CDT poll_read 00
+[it pc=0000088c cyc=56350371] CD> CDT cmd 10 | 00 21 2f 00 00 01 S=00 lba=2372 R=e1
+[it pc=000006d0 cyc=56436039] CD> CDT poll_read 30
+[it pc=00000830 cyc=56495546] CD> CDT poll_read 10
+[it pc=00000830 cyc=56495546] CD> CDT poll_read 00
+[it pc=0000088c cyc=56496064] CD> CDT cmd 10 | 00 21 30 00 00 01 S=00 lba=2373 R=e1
+[it pc=000006d0 cyc=56581743] CD> CDT poll_read 30
+[it pc=00000830 cyc=56641246] CD> CDT poll_read 10
+[it pc=00000830 cyc=56641374] CD> CDT poll_read 00
+[it pc=0000088c cyc=56641889] CD> CDT cmd 10 | 00 21 31 00 00 01 S=00 lba=2374 R=e1
+[it pc=000006d0 cyc=56727557] CD> CDT poll_read 30
+[it pc=00000830 cyc=56787064] CD> CDT poll_read 10
+[it pc=00000830 cyc=56787064] CD> CDT poll_read 00
+[it pc=0000088c cyc=56787582] CD> CDT cmd 10 | 00 21 32 00 00 01 S=00 lba=2375 R=e1
+[it pc=000006d0 cyc=56873261] CD> CDT poll_read 30
+[it pc=00000830 cyc=56932764] CD> CDT poll_read 10
+[it pc=00000830 cyc=56932892] CD> CDT poll_read 00
+[it pc=0000088c cyc=56933407] CD> CDT cmd 10 | 00 21 33 00 00 01 S=00 lba=2376 R=e1
+[it pc=000006d0 cyc=57019075] CD> CDT poll_read 30
+[it pc=00000830 cyc=57078582] CD> CDT poll_read 10
+[it pc=00000830 cyc=57078582] CD> CDT poll_read 00
+[it pc=0000088c cyc=57079100] CD> CDT cmd 10 | 00 21 34 00 00 01 S=00 lba=2377 R=e1
+[it pc=000006d0 cyc=57164779] CD> CDT poll_read 30
+[it pc=00000830 cyc=57224282] CD> CDT poll_read 10
+[it pc=00000830 cyc=57224410] CD> CDT poll_read 00
+[it pc=0000088c cyc=57224925] CD> CDT cmd 10 | 00 21 35 00 00 01 S=00 lba=2378 R=e1
+[it pc=000006d0 cyc=57310593] CD> CDT poll_read 30
+[it pc=00000830 cyc=57370100] CD> CDT poll_read 10
+[it pc=00000830 cyc=57370100] CD> CDT poll_read 00
+[it pc=0000088c cyc=57370618] CD> CDT cmd 10 | 00 21 36 00 00 01 S=00 lba=2379 R=e1
+[it pc=000006d0 cyc=57456297] CD> CDT poll_read 30
+[it pc=00000830 cyc=57515800] CD> CDT poll_read 10
+[it pc=00000830 cyc=57515928] CD> CDT poll_read 00
+[it pc=0000088c cyc=57516443] CD> CDT cmd 10 | 00 21 37 00 00 01 S=00 lba=2380 R=e1
+[it pc=000006d0 cyc=57602111] CD> CDT poll_read 30
+[it pc=00000830 cyc=57661618] CD> CDT poll_read 10
+[it pc=00000830 cyc=57661618] CD> CDT poll_read 00
+[it pc=0000088c cyc=57662136] CD> CDT cmd 10 | 00 21 38 00 00 01 S=00 lba=2381 R=e1
+[it pc=000006d0 cyc=57747815] CD> CDT poll_read 30
+[it pc=00000830 cyc=57807318] CD> CDT poll_read 10
+[it pc=00000830 cyc=57807446] CD> CDT poll_read 00
+[it pc=0000088c cyc=57807961] CD> CDT cmd 10 | 00 21 39 00 00 01 S=00 lba=2382 R=e1
+[it pc=000006d0 cyc=57893629] CD> CDT poll_read 30
+[it pc=00000830 cyc=57953136] CD> CDT poll_read 10
+[it pc=00000830 cyc=57953136] CD> CDT poll_read 00
+[it pc=0000088c cyc=57953654] CD> CDT cmd 10 | 00 21 3a 00 00 01 S=00 lba=2383 R=e1
+[it pc=000006d0 cyc=58039334] CD> CDT poll_read 30
+[it pc=00000830 cyc=58098843] CD> CDT poll_read 10
+[it pc=00000830 cyc=58098971] CD> CDT poll_read 00
+[it pc=0000088c cyc=58191131] CD> CDT cmd 10 | 00 2a 28 00 00 01 S=00 lba=2384 R=e1
+[it pc=000006d0 cyc=58274548] CD> CDT poll_read 30
+[it pc=00000830 cyc=58334052] CD> CDT poll_read 10
+[it pc=00000830 cyc=58334052] CD> CDT poll_read 00
+[it pc=0000088c cyc=58334576] CD> CDT cmd 10 | 00 2a 29 00 00 01 S=00 lba=3041 R=e1
+[it pc=000006d0 cyc=58420267] CD> CDT poll_read 30
+[it pc=00000830 cyc=58479770] CD> CDT poll_read 10
+[it pc=00000830 cyc=58479898] CD> CDT poll_read 00
+[it pc=0000088c cyc=58480413] CD> CDT cmd 10 | 00 2a 2a 00 00 01 S=00 lba=3042 R=e1
+[it pc=000006d0 cyc=58566081] CD> CDT poll_read 30
+[it pc=00000830 cyc=58625588] CD> CDT poll_read 10
+[it pc=00000830 cyc=58625588] CD> CDT poll_read 00
+[it pc=0000088c cyc=58626106] CD> CDT cmd 10 | 00 2a 2b 00 00 01 S=00 lba=3043 R=e1
+[it pc=000006d0 cyc=58711785] CD> CDT poll_read 30
+[it pc=00000830 cyc=58771288] CD> CDT poll_read 10
+[it pc=00000830 cyc=58771416] CD> CDT poll_read 00
+[it pc=0000088c cyc=58771931] CD> CDT cmd 10 | 00 2a 2c 00 00 01 S=00 lba=3044 R=e1
+[it pc=000006d0 cyc=58857599] CD> CDT poll_read 30
+[it pc=00000830 cyc=58917106] CD> CDT poll_read 10
+[it pc=00000830 cyc=58917106] CD> CDT poll_read 00
+[it pc=0000088c cyc=58917624] CD> CDT cmd 10 | 00 2a 2d 00 00 01 S=00 lba=3045 R=e1
+[it pc=000006d0 cyc=59003303] CD> CDT poll_read 30
+[it pc=00000830 cyc=59062806] CD> CDT poll_read 10
+[it pc=00000830 cyc=59062934] CD> CDT poll_read 00
+[it pc=0000088c cyc=59063449] CD> CDT cmd 10 | 00 2a 2e 00 00 01 S=00 lba=3046 R=e1
+[it pc=000006d0 cyc=59149117] CD> CDT poll_read 30
+[it pc=00000830 cyc=59208624] CD> CDT poll_read 10
+[it pc=00000830 cyc=59208624] CD> CDT poll_read 00
+[it pc=0000088c cyc=59209142] CD> CDT cmd 10 | 00 2a 2f 00 00 01 S=00 lba=3047 R=e1
+[it pc=000006d0 cyc=59294821] CD> CDT poll_read 30
+[it pc=00000830 cyc=59354324] CD> CDT poll_read 10
+[it pc=00000830 cyc=59354452] CD> CDT poll_read 00
+[it pc=0000088c cyc=59354967] CD> CDT cmd 10 | 00 2a 30 00 00 01 S=00 lba=3048 R=e1
+[it pc=000006d0 cyc=59440635] CD> CDT poll_read 30
+[it pc=00000830 cyc=59500142] CD> CDT poll_read 10
+[it pc=00000830 cyc=59500142] CD> CDT poll_read 00
+[it pc=0000088c cyc=59500660] CD> CDT cmd 10 | 00 2a 31 00 00 01 S=00 lba=3049 R=e1
+[it pc=000006d0 cyc=59586339] CD> CDT poll_read 30
+[it pc=00000830 cyc=59645842] CD> CDT poll_read 10
+[it pc=00000830 cyc=59645970] CD> CDT poll_read 00
+[it pc=0000088c cyc=59646485] CD> CDT cmd 10 | 00 2a 32 00 00 01 S=00 lba=3050 R=e1
+[it pc=000006d0 cyc=59732153] CD> CDT poll_read 30
+[it pc=00000830 cyc=59791660] CD> CDT poll_read 10
+[it pc=00000830 cyc=59791660] CD> CDT poll_read 00
+[it pc=0000088c cyc=59792178] CD> CDT cmd 10 | 00 2a 33 00 00 01 S=00 lba=3051 R=e1
+[it pc=000006d0 cyc=59877857] CD> CDT poll_read 30
+[it pc=00000830 cyc=59937360] CD> CDT poll_read 10
+[it pc=00000830 cyc=59937488] CD> CDT poll_read 00
+[it pc=0000088c cyc=59938003] CD> CDT cmd 10 | 00 2a 34 00 00 01 S=00 lba=3052 R=e1
+[it pc=000006d0 cyc=60023671] CD> CDT poll_read 30
+[it pc=00000830 cyc=60083178] CD> CDT poll_read 10
+[it pc=00000830 cyc=60083178] CD> CDT poll_read 00
+[it pc=0000088c cyc=60083696] CD> CDT cmd 10 | 00 2a 35 00 00 01 S=00 lba=3053 R=e1
+[it pc=000006d0 cyc=60169375] CD> CDT poll_read 30
+[it pc=00000830 cyc=60228878] CD> CDT poll_read 10
+[it pc=00000830 cyc=60229006] CD> CDT poll_read 00
+[it pc=0000088c cyc=60229521] CD> CDT cmd 10 | 00 2a 36 00 00 01 S=00 lba=3054 R=e1
+[it pc=000006d0 cyc=60315189] CD> CDT poll_read 30
+[it pc=00000830 cyc=60374696] CD> CDT poll_read 10
+[it pc=00000830 cyc=60374696] CD> CDT poll_read 00
+[it pc=0000088c cyc=60375214] CD> CDT cmd 10 | 00 2a 37 00 00 01 S=00 lba=3055 R=e1
+[it pc=000006d0 cyc=60460894] CD> CDT poll_read 30
+[it pc=00000830 cyc=60520403] CD> CDT poll_read 10
+[it pc=00000830 cyc=60520531] CD> CDT poll_read 00
+[it pc=0000088c cyc=60612691] CD> CDT cmd 10 | 01 04 06 00 00 01 S=00 lba=3056 R=e1
+[it pc=000006d0 cyc=60696108] CD> CDT poll_read 30
+[it pc=00000830 cyc=60755612] CD> CDT poll_read 10
+[it pc=00000830 cyc=60755612] CD> CDT poll_read 00
+[it pc=0000088c cyc=60756136] CD> CDT cmd 10 | 01 04 07 00 00 01 S=00 lba=4657 R=e1
+[it pc=000006d0 cyc=60841827] CD> CDT poll_read 30
+[it pc=00000830 cyc=60901330] CD> CDT poll_read 10
+[it pc=00000830 cyc=60901458] CD> CDT poll_read 00
+[it pc=0000088c cyc=60901973] CD> CDT cmd 10 | 01 04 08 00 00 01 S=00 lba=4658 R=e1
+[it pc=000006d0 cyc=60987641] CD> CDT poll_read 30
+[it pc=00000830 cyc=61047148] CD> CDT poll_read 10
+[it pc=00000830 cyc=61047148] CD> CDT poll_read 00
+[it pc=0000088c cyc=61047666] CD> CDT cmd 10 | 01 04 09 00 00 01 S=00 lba=4659 R=e1
+[it pc=000006d0 cyc=61133345] CD> CDT poll_read 30
+[it pc=00000830 cyc=61192848] CD> CDT poll_read 10
+[it pc=00000830 cyc=61192976] CD> CDT poll_read 00
+[it pc=0000088c cyc=61193491] CD> CDT cmd 10 | 01 04 0a 00 00 01 S=00 lba=4660 R=e1
+[it pc=000006d0 cyc=61279159] CD> CDT poll_read 30
+[it pc=00000830 cyc=61338666] CD> CDT poll_read 10
+[it pc=00000830 cyc=61338666] CD> CDT poll_read 00
+[it pc=0000088c cyc=61339184] CD> CDT cmd 10 | 01 04 0b 00 00 01 S=00 lba=4661 R=e1
+[it pc=000006d0 cyc=61424863] CD> CDT poll_read 30
+[it pc=00000830 cyc=61484366] CD> CDT poll_read 10
+[it pc=00000830 cyc=61484494] CD> CDT poll_read 00
+[it pc=0000088c cyc=61485009] CD> CDT cmd 10 | 01 04 0c 00 00 01 S=00 lba=4662 R=e1
+[it pc=000006d0 cyc=61570677] CD> CDT poll_read 30
+[it pc=00000830 cyc=61630184] CD> CDT poll_read 10
+[it pc=00000830 cyc=61630184] CD> CDT poll_read 00
+[it pc=0000088c cyc=61630702] CD> CDT cmd 10 | 01 04 0d 00 00 01 S=00 lba=4663 R=e1
+[it pc=000006d0 cyc=61716381] CD> CDT poll_read 30
+[it pc=00000830 cyc=61775884] CD> CDT poll_read 10
+[it pc=00000830 cyc=61776012] CD> CDT poll_read 00
+[it pc=0000088c cyc=61776527] CD> CDT cmd 10 | 01 04 0e 00 00 01 S=00 lba=4664 R=e1
+[it pc=000006d0 cyc=61862195] CD> CDT poll_read 30
+[it pc=00000830 cyc=61921702] CD> CDT poll_read 10
+[it pc=00000830 cyc=61921702] CD> CDT poll_read 00
+[it pc=0000088c cyc=61922220] CD> CDT cmd 10 | 01 04 0f 00 00 01 S=00 lba=4665 R=e1
+[it pc=000006d0 cyc=62007899] CD> CDT poll_read 30
+[it pc=00000830 cyc=62067402] CD> CDT poll_read 10
+[it pc=00000830 cyc=62067530] CD> CDT poll_read 00
+[it pc=0000088c cyc=62068045] CD> CDT cmd 10 | 01 04 10 00 00 01 S=00 lba=4666 R=e1
+[it pc=000006d0 cyc=62153713] CD> CDT poll_read 30
+[it pc=00000830 cyc=62213220] CD> CDT poll_read 10
+[it pc=00000830 cyc=62213220] CD> CDT poll_read 00
+[it pc=0000088c cyc=62213738] CD> CDT cmd 10 | 01 04 11 00 00 01 S=00 lba=4667 R=e1
+[it pc=000006d0 cyc=62299417] CD> CDT poll_read 30
+[it pc=00000830 cyc=62358920] CD> CDT poll_read 10
+[it pc=00000830 cyc=62359048] CD> CDT poll_read 00
+[it pc=0000088c cyc=62359563] CD> CDT cmd 10 | 01 04 12 00 00 01 S=00 lba=4668 R=e1
+[it pc=000006d0 cyc=62445231] CD> CDT poll_read 30
+[it pc=00000830 cyc=62504738] CD> CDT poll_read 10
+[it pc=00000830 cyc=62504738] CD> CDT poll_read 00
+[it pc=0000088c cyc=62505256] CD> CDT cmd 10 | 01 04 13 00 00 01 S=00 lba=4669 R=e1
+[it pc=000006d0 cyc=62590935] CD> CDT poll_read 30
+[it pc=00000830 cyc=62650438] CD> CDT poll_read 10
+[it pc=00000830 cyc=62650566] CD> CDT poll_read 00
+[it pc=0000088c cyc=62651081] CD> CDT cmd 10 | 01 04 14 00 00 01 S=00 lba=4670 R=e1
+[it pc=000006d0 cyc=62736749] CD> CDT poll_read 30
+[it pc=00000830 cyc=62796256] CD> CDT poll_read 10
+[it pc=00000830 cyc=62796256] CD> CDT poll_read 00
+[it pc=0000088c cyc=62796774] CD> CDT cmd 10 | 01 04 15 00 00 01 S=00 lba=4671 R=e1
+[it pc=000006d0 cyc=62882454] CD> CDT poll_read 30
+[it pc=00000830 cyc=62941963] CD> CDT poll_read 10
+[it pc=00000830 cyc=62942091] CD> CDT poll_read 00
+[it pc=0000088c cyc=63034251] CD> CDT cmd 10 | 01 13 41 00 00 01 S=00 lba=4672 R=e1
+[it pc=000006d0 cyc=63117668] CD> CDT poll_read 30
+[it pc=00000830 cyc=63177172] CD> CDT poll_read 10
+[it pc=00000830 cyc=63177172] CD> CDT poll_read 00
+[it pc=0000088c cyc=63177696] CD> CDT cmd 10 | 01 13 42 00 00 01 S=00 lba=5841 R=e1
+[it pc=000006d0 cyc=63263387] CD> CDT poll_read 30
+[it pc=00000830 cyc=63322890] CD> CDT poll_read 10
+[it pc=00000830 cyc=63323018] CD> CDT poll_read 00
+[it pc=0000088c cyc=63323533] CD> CDT cmd 10 | 01 13 43 00 00 01 S=00 lba=5842 R=e1
+[it pc=000006d0 cyc=63409201] CD> CDT poll_read 30
+[it pc=00000830 cyc=63468708] CD> CDT poll_read 10
+[it pc=00000830 cyc=63468708] CD> CDT poll_read 00
+[it pc=0000088c cyc=63469226] CD> CDT cmd 10 | 01 13 44 00 00 01 S=00 lba=5843 R=e1
+[it pc=000006d0 cyc=63554905] CD> CDT poll_read 30
+[it pc=00000830 cyc=63614408] CD> CDT poll_read 10
+[it pc=00000830 cyc=63614536] CD> CDT poll_read 00
+[it pc=0000088c cyc=63615051] CD> CDT cmd 10 | 01 13 45 00 00 01 S=00 lba=5844 R=e1
+[it pc=000006d0 cyc=63700719] CD> CDT poll_read 30
+[it pc=00000830 cyc=63760226] CD> CDT poll_read 10
+[it pc=00000830 cyc=63760226] CD> CDT poll_read 00
+[it pc=0000088c cyc=63760744] CD> CDT cmd 10 | 01 13 46 00 00 01 S=00 lba=5845 R=e1
+[it pc=000006d0 cyc=63846423] CD> CDT poll_read 30
+[it pc=00000830 cyc=63905926] CD> CDT poll_read 10
+[it pc=00000830 cyc=63906054] CD> CDT poll_read 00
+[it pc=0000088c cyc=63906569] CD> CDT cmd 10 | 01 13 47 00 00 01 S=00 lba=5846 R=e1
+[it pc=000006d0 cyc=63992237] CD> CDT poll_read 30
+[it pc=00000830 cyc=64051744] CD> CDT poll_read 10
+[it pc=00000830 cyc=64051744] CD> CDT poll_read 00
+[it pc=0000088c cyc=64052262] CD> CDT cmd 10 | 01 13 48 00 00 01 S=00 lba=5847 R=e1
+[it pc=000006d0 cyc=64137941] CD> CDT poll_read 30
+[it pc=00000830 cyc=64197444] CD> CDT poll_read 10
+[it pc=00000830 cyc=64197572] CD> CDT poll_read 00
+[it pc=0000088c cyc=64198087] CD> CDT cmd 10 | 01 13 49 00 00 01 S=00 lba=5848 R=e1
+[it pc=000006d0 cyc=64283755] CD> CDT poll_read 30
+[it pc=00000830 cyc=64343262] CD> CDT poll_read 10
+[it pc=00000830 cyc=64343262] CD> CDT poll_read 00
+[it pc=0000088c cyc=64343780] CD> CDT cmd 10 | 01 13 4a 00 00 01 S=00 lba=5849 R=e1
+[it pc=000006d0 cyc=64429459] CD> CDT poll_read 30
+[it pc=00000830 cyc=64488962] CD> CDT poll_read 10
+[it pc=00000830 cyc=64489090] CD> CDT poll_read 00
+[it pc=0000088c cyc=64489605] CD> CDT cmd 10 | 01 14 00 00 00 01 S=00 lba=5850 R=e1
+[it pc=000006d0 cyc=64575273] CD> CDT poll_read 30
+[it pc=00000830 cyc=64634780] CD> CDT poll_read 10
+[it pc=00000830 cyc=64634780] CD> CDT poll_read 00
+[it pc=0000088c cyc=64635298] CD> CDT cmd 10 | 01 14 01 00 00 01 S=00 lba=5851 R=e1
+[it pc=000006d0 cyc=64720977] CD> CDT poll_read 30
+[it pc=00000830 cyc=64780480] CD> CDT poll_read 10
+[it pc=00000830 cyc=64780608] CD> CDT poll_read 00
+[it pc=0000088c cyc=64781123] CD> CDT cmd 10 | 01 14 02 00 00 01 S=00 lba=5852 R=e1
+[it pc=000006d0 cyc=64866791] CD> CDT poll_read 30
+[it pc=00000830 cyc=64926298] CD> CDT poll_read 10
+[it pc=00000830 cyc=64926298] CD> CDT poll_read 00
+[it pc=0000088c cyc=64926816] CD> CDT cmd 10 | 01 14 03 00 00 01 S=00 lba=5853 R=e1
+[it pc=000006d0 cyc=65012495] CD> CDT poll_read 30
+[it pc=00000830 cyc=65071998] CD> CDT poll_read 10
+[it pc=00000830 cyc=65072126] CD> CDT poll_read 00
+[it pc=0000088c cyc=65072641] CD> CDT cmd 10 | 01 14 04 00 00 01 S=00 lba=5854 R=e1
+[it pc=000006d0 cyc=65158309] CD> CDT poll_read 30
+[it pc=00000830 cyc=65217816] CD> CDT poll_read 10
+[it pc=00000830 cyc=65217816] CD> CDT poll_read 00
+[it pc=0000088c cyc=65218334] CD> CDT cmd 10 | 01 14 05 00 00 01 S=00 lba=5855 R=e1
+[it pc=000006d0 cyc=65304014] CD> CDT poll_read 30
+[it pc=00000830 cyc=65363523] CD> CDT poll_read 10
+[it pc=00000830 cyc=65363651] CD> CDT poll_read 00
+[it pc=0000088c cyc=65455811] CD> CDT cmd 10 | 01 35 1b 00 00 01 S=00 lba=5856 R=e1
+[it pc=000006d0 cyc=65539228] CD> CDT poll_read 30
+[it pc=00000830 cyc=65598732] CD> CDT poll_read 10
+[it pc=00000830 cyc=65598732] CD> CDT poll_read 00
+[it pc=0000088c cyc=65599256] CD> CDT cmd 10 | 01 35 1c 00 00 01 S=00 lba=8353 R=e1
+[it pc=000006d0 cyc=65684947] CD> CDT poll_read 30
+[it pc=00000830 cyc=65744450] CD> CDT poll_read 10
+[it pc=00000830 cyc=65744578] CD> CDT poll_read 00
+[it pc=0000088c cyc=65745093] CD> CDT cmd 10 | 01 35 1d 00 00 01 S=00 lba=8354 R=e1
+it=250 pc=00002520 cyc=65809669 lba=8355 remain=0 S=30 R=e1
+[it pc=000006d0 cyc=65830761] CD> CDT poll_read 30
+[it pc=00000830 cyc=65890268] CD> CDT poll_read 10
+[it pc=00000830 cyc=65890268] CD> CDT poll_read 00
+[it pc=0000088c cyc=65890786] CD> CDT cmd 10 | 01 35 1e 00 00 01 S=00 lba=8355 R=e1
+[it pc=000006d0 cyc=65976465] CD> CDT poll_read 30
+[it pc=00000830 cyc=66035968] CD> CDT poll_read 10
+[it pc=00000830 cyc=66036096] CD> CDT poll_read 00
+[it pc=0000088c cyc=66036611] CD> CDT cmd 10 | 01 35 1f 00 00 01 S=00 lba=8356 R=e1
+[it pc=000006d0 cyc=66122279] CD> CDT poll_read 30
+[it pc=00000830 cyc=66181786] CD> CDT poll_read 10
+[it pc=00000830 cyc=66181786] CD> CDT poll_read 00
+[it pc=0000088c cyc=66182304] CD> CDT cmd 10 | 01 35 20 00 00 01 S=00 lba=8357 R=e1
+[it pc=000006d0 cyc=66267983] CD> CDT poll_read 30
+[it pc=00000830 cyc=66327486] CD> CDT poll_read 10
+[it pc=00000830 cyc=66327614] CD> CDT poll_read 00
+[it pc=0000088c cyc=66328129] CD> CDT cmd 10 | 01 35 21 00 00 01 S=00 lba=8358 R=e1
+[it pc=000006d0 cyc=66413797] CD> CDT poll_read 30
+[it pc=00000830 cyc=66473304] CD> CDT poll_read 10
+[it pc=00000830 cyc=66473304] CD> CDT poll_read 00
+[it pc=0000088c cyc=66473822] CD> CDT cmd 10 | 01 35 22 00 00 01 S=00 lba=8359 R=e1
+[it pc=000006d0 cyc=66559501] CD> CDT poll_read 30
+[it pc=00000830 cyc=66619004] CD> CDT poll_read 10
+[it pc=00000830 cyc=66619132] CD> CDT poll_read 00
+[it pc=0000088c cyc=66619647] CD> CDT cmd 10 | 01 35 23 00 00 01 S=00 lba=8360 R=e1
+[it pc=000006d0 cyc=66705315] CD> CDT poll_read 30
+[it pc=00000830 cyc=66764822] CD> CDT poll_read 10
+[it pc=00000830 cyc=66764822] CD> CDT poll_read 00
+[it pc=0000088c cyc=66765340] CD> CDT cmd 10 | 01 35 24 00 00 01 S=00 lba=8361 R=e1
+[it pc=000006d0 cyc=66851019] CD> CDT poll_read 30
+[it pc=00000830 cyc=66910522] CD> CDT poll_read 10
+[it pc=00000830 cyc=66910650] CD> CDT poll_read 00
+[it pc=0000088c cyc=66911165] CD> CDT cmd 10 | 01 35 25 00 00 01 S=00 lba=8362 R=e1
+[it pc=000006d0 cyc=66996833] CD> CDT poll_read 30
+[it pc=00000830 cyc=67056340] CD> CDT poll_read 10
+[it pc=00000830 cyc=67056340] CD> CDT poll_read 00
+[it pc=0000088c cyc=67056858] CD> CDT cmd 10 | 01 35 26 00 00 01 S=00 lba=8363 R=e1
+[it pc=000006d0 cyc=67142537] CD> CDT poll_read 30
+[it pc=00000830 cyc=67202040] CD> CDT poll_read 10
+[it pc=00000830 cyc=67202168] CD> CDT poll_read 00
+[it pc=0000088c cyc=67202683] CD> CDT cmd 10 | 01 35 27 00 00 01 S=00 lba=8364 R=e1
+[it pc=000006d0 cyc=67288351] CD> CDT poll_read 30
+[it pc=00000830 cyc=67347858] CD> CDT poll_read 10
+[it pc=00000830 cyc=67347858] CD> CDT poll_read 00
+[it pc=0000088c cyc=67348376] CD> CDT cmd 10 | 01 35 28 00 00 01 S=00 lba=8365 R=e1
+[it pc=000006d0 cyc=67434055] CD> CDT poll_read 30
+[it pc=00000830 cyc=67493558] CD> CDT poll_read 10
+[it pc=00000830 cyc=67493686] CD> CDT poll_read 00
+[it pc=0000088c cyc=67494201] CD> CDT cmd 10 | 01 35 29 00 00 01 S=00 lba=8366 R=e1
+[it pc=000006d0 cyc=67579869] CD> CDT poll_read 30
+[it pc=00000830 cyc=67639376] CD> CDT poll_read 10
+[it pc=00000830 cyc=67639376] CD> CDT poll_read 00
+[it pc=0000088c cyc=67639894] CD> CDT cmd 10 | 01 35 2a 00 00 01 S=00 lba=8367 R=e1
+[it pc=000006d0 cyc=67725574] CD> CDT poll_read 30
+[it pc=00000830 cyc=67785083] CD> CDT poll_read 10
+[it pc=00000830 cyc=67785211] CD> CDT poll_read 00
+[it pc=0000088c cyc=67877371] CD> CDT cmd 10 | 02 06 0c 00 00 01 S=00 lba=8368 R=e1
+[it pc=000006d0 cyc=67960788] CD> CDT poll_read 30
+[it pc=00000830 cyc=68020292] CD> CDT poll_read 10
+[it pc=00000830 cyc=68020292] CD> CDT poll_read 00
+[it pc=0000088c cyc=68020816] CD> CDT cmd 10 | 02 06 0d 00 00 01 S=00 lba=9313 R=e1
+[it pc=000006d0 cyc=68106507] CD> CDT poll_read 30
+[it pc=00000830 cyc=68166010] CD> CDT poll_read 10
+[it pc=00000830 cyc=68166138] CD> CDT poll_read 00
+[it pc=0000088c cyc=68166653] CD> CDT cmd 10 | 02 06 0e 00 00 01 S=00 lba=9314 R=e1
+[it pc=000006d0 cyc=68252321] CD> CDT poll_read 30
+[it pc=00000830 cyc=68311828] CD> CDT poll_read 10
+[it pc=00000830 cyc=68311828] CD> CDT poll_read 00
+[it pc=0000088c cyc=68312346] CD> CDT cmd 10 | 02 06 0f 00 00 01 S=00 lba=9315 R=e1
+[it pc=000006d0 cyc=68398025] CD> CDT poll_read 30
+[it pc=00000830 cyc=68457528] CD> CDT poll_read 10
+[it pc=00000830 cyc=68457656] CD> CDT poll_read 00
+[it pc=0000088c cyc=68458171] CD> CDT cmd 10 | 02 06 10 00 00 01 S=00 lba=9316 R=e1
+[it pc=000006d0 cyc=68543839] CD> CDT poll_read 30
+[it pc=00000830 cyc=68603346] CD> CDT poll_read 10
+[it pc=00000830 cyc=68603346] CD> CDT poll_read 00
+[it pc=0000088c cyc=68603864] CD> CDT cmd 10 | 02 06 11 00 00 01 S=00 lba=9317 R=e1
+[it pc=000006d0 cyc=68689543] CD> CDT poll_read 30
+[it pc=00000830 cyc=68749046] CD> CDT poll_read 10
+[it pc=00000830 cyc=68749174] CD> CDT poll_read 00
+[it pc=0000088c cyc=68749689] CD> CDT cmd 10 | 02 06 12 00 00 01 S=00 lba=9318 R=e1
+[it pc=000006d0 cyc=68835357] CD> CDT poll_read 30
+[it pc=00000830 cyc=68894864] CD> CDT poll_read 10
+[it pc=00000830 cyc=68894864] CD> CDT poll_read 00
+[it pc=0000088c cyc=68895382] CD> CDT cmd 10 | 02 06 13 00 00 01 S=00 lba=9319 R=e1
+[it pc=000006d0 cyc=68981061] CD> CDT poll_read 30
+[it pc=00000830 cyc=69040564] CD> CDT poll_read 10
+[it pc=00000830 cyc=69040692] CD> CDT poll_read 00
+[it pc=0000088c cyc=69041207] CD> CDT cmd 10 | 02 06 14 00 00 01 S=00 lba=9320 R=e1
+[it pc=000006d0 cyc=69126875] CD> CDT poll_read 30
+[it pc=00000830 cyc=69186382] CD> CDT poll_read 10
+[it pc=00000830 cyc=69186382] CD> CDT poll_read 00
+[it pc=0000088c cyc=69186900] CD> CDT cmd 10 | 02 06 15 00 00 01 S=00 lba=9321 R=e1
+[it pc=000006d0 cyc=69272579] CD> CDT poll_read 30
+[it pc=00000830 cyc=69332082] CD> CDT poll_read 10
+[it pc=00000830 cyc=69332210] CD> CDT poll_read 00
+[it pc=0000088c cyc=69332725] CD> CDT cmd 10 | 02 06 16 00 00 01 S=00 lba=9322 R=e1
+[it pc=000006d0 cyc=69418393] CD> CDT poll_read 30
+[it pc=00000830 cyc=69477900] CD> CDT poll_read 10
+[it pc=00000830 cyc=69477900] CD> CDT poll_read 00
+[it pc=0000088c cyc=69478418] CD> CDT cmd 10 | 02 06 17 00 00 01 S=00 lba=9323 R=e1
+[it pc=000006d0 cyc=69564097] CD> CDT poll_read 30
+[it pc=00000830 cyc=69623600] CD> CDT poll_read 10
+[it pc=00000830 cyc=69623728] CD> CDT poll_read 00
+[it pc=0000088c cyc=69624243] CD> CDT cmd 10 | 02 06 18 00 00 01 S=00 lba=9324 R=e1
+[it pc=000006d0 cyc=69709911] CD> CDT poll_read 30
+[it pc=00000830 cyc=69769418] CD> CDT poll_read 10
+[it pc=00000830 cyc=69769418] CD> CDT poll_read 00
+[it pc=0000088c cyc=69769936] CD> CDT cmd 10 | 02 06 19 00 00 01 S=00 lba=9325 R=e1
+[it pc=000006d0 cyc=69855615] CD> CDT poll_read 30
+[it pc=00000830 cyc=69915118] CD> CDT poll_read 10
+[it pc=00000830 cyc=69915246] CD> CDT poll_read 00
+[it pc=0000088c cyc=69915761] CD> CDT cmd 10 | 02 06 1a 00 00 01 S=00 lba=9326 R=e1
+[it pc=000006d0 cyc=70001429] CD> CDT poll_read 30
+[it pc=00000830 cyc=70060936] CD> CDT poll_read 10
+[it pc=00000830 cyc=70060936] CD> CDT poll_read 00
+[it pc=0000088c cyc=70061454] CD> CDT cmd 10 | 02 06 1b 00 00 01 S=00 lba=9327 R=e1
+[it pc=000006d0 cyc=70147134] CD> CDT poll_read 30
+[it pc=00000830 cyc=70206643] CD> CDT poll_read 10
+[it pc=00000830 cyc=70206771] CD> CDT poll_read 00
+[it pc=0000088c cyc=70298931] CD> CDT cmd 10 | 02 0e 14 00 00 01 S=00 lba=9328 R=e1
+[it pc=000006d0 cyc=70382348] CD> CDT poll_read 30
+[it pc=00000830 cyc=70441852] CD> CDT poll_read 10
+[it pc=00000830 cyc=70441852] CD> CDT poll_read 00
+[it pc=0000088c cyc=70442376] CD> CDT cmd 10 | 02 0e 15 00 00 01 S=00 lba=9921 R=e1
+[it pc=000006d0 cyc=70528067] CD> CDT poll_read 30
+[it pc=00000830 cyc=70587570] CD> CDT poll_read 10
+[it pc=00000830 cyc=70587698] CD> CDT poll_read 00
+[it pc=0000088c cyc=70588213] CD> CDT cmd 10 | 02 0e 16 00 00 01 S=00 lba=9922 R=e1
+[it pc=000006d0 cyc=70673881] CD> CDT poll_read 30
+[it pc=00000830 cyc=70733388] CD> CDT poll_read 10
+[it pc=00000830 cyc=70733388] CD> CDT poll_read 00
+[it pc=0000088c cyc=70733906] CD> CDT cmd 10 | 02 0e 17 00 00 01 S=00 lba=9923 R=e1
+[it pc=000006d0 cyc=70819585] CD> CDT poll_read 30
+[it pc=00000830 cyc=70879088] CD> CDT poll_read 10
+[it pc=00000830 cyc=70879216] CD> CDT poll_read 00
+[it pc=0000088c cyc=70879731] CD> CDT cmd 10 | 02 0e 18 00 00 01 S=00 lba=9924 R=e1
+[it pc=000006d0 cyc=70965399] CD> CDT poll_read 30
+[it pc=00000830 cyc=71024906] CD> CDT poll_read 10
+[it pc=00000830 cyc=71024906] CD> CDT poll_read 00
+[it pc=0000088c cyc=71025424] CD> CDT cmd 10 | 02 0e 19 00 00 01 S=00 lba=9925 R=e1
+[it pc=000006d0 cyc=71111103] CD> CDT poll_read 30
+[it pc=00000830 cyc=71170606] CD> CDT poll_read 10
+[it pc=00000830 cyc=71170734] CD> CDT poll_read 00
+[it pc=0000088c cyc=71171249] CD> CDT cmd 10 | 02 0e 1a 00 00 01 S=00 lba=9926 R=e1
+[it pc=000006d0 cyc=71256917] CD> CDT poll_read 30
+[it pc=00000830 cyc=71316424] CD> CDT poll_read 10
+[it pc=00000830 cyc=71316424] CD> CDT poll_read 00
+[it pc=0000088c cyc=71316942] CD> CDT cmd 10 | 02 0e 1b 00 00 01 S=00 lba=9927 R=e1
+[it pc=000006d0 cyc=71402621] CD> CDT poll_read 30
+[it pc=00000830 cyc=71462124] CD> CDT poll_read 10
+[it pc=00000830 cyc=71462252] CD> CDT poll_read 00
+[it pc=0000088c cyc=71462767] CD> CDT cmd 10 | 02 0e 1c 00 00 01 S=00 lba=9928 R=e1
+[it pc=000006d0 cyc=71548435] CD> CDT poll_read 30
+[it pc=00000830 cyc=71607942] CD> CDT poll_read 10
+[it pc=00000830 cyc=71607942] CD> CDT poll_read 00
+[it pc=0000088c cyc=71608460] CD> CDT cmd 10 | 02 0e 1d 00 00 01 S=00 lba=9929 R=e1
+[it pc=000006d0 cyc=71694139] CD> CDT poll_read 30
+[it pc=00000830 cyc=71753642] CD> CDT poll_read 10
+[it pc=00000830 cyc=71753770] CD> CDT poll_read 00
+[it pc=0000088c cyc=71754285] CD> CDT cmd 10 | 02 0e 1e 00 00 01 S=00 lba=9930 R=e1
+[it pc=000006d0 cyc=71839953] CD> CDT poll_read 30
+[it pc=00000830 cyc=71899460] CD> CDT poll_read 10
+[it pc=00000830 cyc=71899460] CD> CDT poll_read 00
+[it pc=0000088c cyc=71899978] CD> CDT cmd 10 | 02 0e 1f 00 00 01 S=00 lba=9931 R=e1
+[it pc=000006d0 cyc=71985657] CD> CDT poll_read 30
+[it pc=00000830 cyc=72045160] CD> CDT poll_read 10
+[it pc=00000830 cyc=72045288] CD> CDT poll_read 00
+[it pc=0000088c cyc=72045803] CD> CDT cmd 10 | 02 0e 20 00 00 01 S=00 lba=9932 R=e1
+[it pc=000006d0 cyc=72131471] CD> CDT poll_read 30
+[it pc=00000830 cyc=72190978] CD> CDT poll_read 10
+[it pc=00000830 cyc=72190978] CD> CDT poll_read 00
+[it pc=0000088c cyc=72191496] CD> CDT cmd 10 | 02 0e 21 00 00 01 S=00 lba=9933 R=e1
+[it pc=000006d0 cyc=72277175] CD> CDT poll_read 30
+[it pc=00000830 cyc=72336678] CD> CDT poll_read 10
+[it pc=00000830 cyc=72336806] CD> CDT poll_read 00
+[it pc=0000088c cyc=72337321] CD> CDT cmd 10 | 02 0e 22 00 00 01 S=00 lba=9934 R=e1
+[it pc=000006d0 cyc=72422989] CD> CDT poll_read 30
+[it pc=00000830 cyc=72482496] CD> CDT poll_read 10
+[it pc=00000830 cyc=72482496] CD> CDT poll_read 00
+[it pc=0000088c cyc=72483014] CD> CDT cmd 10 | 02 0e 23 00 00 01 S=00 lba=9935 R=e1
+[it pc=000006d0 cyc=72568694] CD> CDT poll_read 30
+[it pc=00000830 cyc=72628203] CD> CDT poll_read 10
+[it pc=00000830 cyc=72628331] CD> CDT poll_read 00
+[it pc=0000088c cyc=72720491] CD> CDT cmd 10 | 02 14 42 00 00 01 S=00 lba=9936 R=e1
+[it pc=000006d0 cyc=72803908] CD> CDT poll_read 30
+[it pc=00000830 cyc=72863412] CD> CDT poll_read 10
+[it pc=00000830 cyc=72863412] CD> CDT poll_read 00
+[it pc=0000088c cyc=72863936] CD> CDT cmd 10 | 02 14 43 00 00 01 S=00 lba=10417 R=e1
+[it pc=000006d0 cyc=72949627] CD> CDT poll_read 30
+[it pc=00000830 cyc=73009130] CD> CDT poll_read 10
+[it pc=00000830 cyc=73009258] CD> CDT poll_read 00
+[it pc=0000088c cyc=73009773] CD> CDT cmd 10 | 02 14 44 00 00 01 S=00 lba=10418 R=e1
+[it pc=000006d0 cyc=73095441] CD> CDT poll_read 30
+[it pc=00000830 cyc=73154948] CD> CDT poll_read 10
+[it pc=00000830 cyc=73154948] CD> CDT poll_read 00
+[it pc=0000088c cyc=73155466] CD> CDT cmd 10 | 02 14 45 00 00 01 S=00 lba=10419 R=e1
+[it pc=000006d0 cyc=73241145] CD> CDT poll_read 30
+[it pc=00000830 cyc=73300648] CD> CDT poll_read 10
+[it pc=00000830 cyc=73300776] CD> CDT poll_read 00
+[it pc=0000088c cyc=73301291] CD> CDT cmd 10 | 02 14 46 00 00 01 S=00 lba=10420 R=e1
+[it pc=000006d0 cyc=73386959] CD> CDT poll_read 30
+[it pc=00000830 cyc=73446466] CD> CDT poll_read 10
+[it pc=00000830 cyc=73446466] CD> CDT poll_read 00
+[it pc=0000088c cyc=73446984] CD> CDT cmd 10 | 02 14 47 00 00 01 S=00 lba=10421 R=e1
+[it pc=000006d0 cyc=73532663] CD> CDT poll_read 30
+[it pc=00000830 cyc=73592166] CD> CDT poll_read 10
+[it pc=00000830 cyc=73592294] CD> CDT poll_read 00
+[it pc=0000088c cyc=73592809] CD> CDT cmd 10 | 02 14 48 00 00 01 S=00 lba=10422 R=e1
+[it pc=000006d0 cyc=73678477] CD> CDT poll_read 30
+[it pc=00000830 cyc=73737984] CD> CDT poll_read 10
+[it pc=00000830 cyc=73737984] CD> CDT poll_read 00
+[it pc=0000088c cyc=73738502] CD> CDT cmd 10 | 02 14 49 00 00 01 S=00 lba=10423 R=e1
+[it pc=000006d0 cyc=73824181] CD> CDT poll_read 30
+[it pc=00000830 cyc=73883684] CD> CDT poll_read 10
+[it pc=00000830 cyc=73883812] CD> CDT poll_read 00
+[it pc=0000088c cyc=73884327] CD> CDT cmd 10 | 02 14 4a 00 00 01 S=00 lba=10424 R=e1
+[it pc=000006d0 cyc=73969995] CD> CDT poll_read 30
+[it pc=00000830 cyc=74029502] CD> CDT poll_read 10
+[it pc=00000830 cyc=74029502] CD> CDT poll_read 00
+[it pc=0000088c cyc=74030020] CD> CDT cmd 10 | 02 15 00 00 00 01 S=00 lba=10425 R=e1
+[it pc=000006d0 cyc=74115699] CD> CDT poll_read 30
+[it pc=00000830 cyc=74175202] CD> CDT poll_read 10
+[it pc=00000830 cyc=74175330] CD> CDT poll_read 00
+[it pc=0000088c cyc=74175845] CD> CDT cmd 10 | 02 15 01 00 00 01 S=00 lba=10426 R=e1
+[it pc=000006d0 cyc=74261513] CD> CDT poll_read 30
+[it pc=00000830 cyc=74321020] CD> CDT poll_read 10
+[it pc=00000830 cyc=74321020] CD> CDT poll_read 00
+[it pc=0000088c cyc=74321538] CD> CDT cmd 10 | 02 15 02 00 00 01 S=00 lba=10427 R=e1
+[it pc=000006d0 cyc=74407217] CD> CDT poll_read 30
+[it pc=00000830 cyc=74466720] CD> CDT poll_read 10
+[it pc=00000830 cyc=74466848] CD> CDT poll_read 00
+[it pc=0000088c cyc=74467363] CD> CDT cmd 10 | 02 15 03 00 00 01 S=00 lba=10428 R=e1
+[it pc=000006d0 cyc=74553031] CD> CDT poll_read 30
+[it pc=00000830 cyc=74612538] CD> CDT poll_read 10
+[it pc=00000830 cyc=74612538] CD> CDT poll_read 00
+[it pc=0000088c cyc=74613056] CD> CDT cmd 10 | 02 15 04 00 00 01 S=00 lba=10429 R=e1
+[it pc=000006d0 cyc=74698735] CD> CDT poll_read 30
+[it pc=00000830 cyc=74758238] CD> CDT poll_read 10
+[it pc=00000830 cyc=74758366] CD> CDT poll_read 00
+[it pc=0000088c cyc=74758881] CD> CDT cmd 10 | 02 15 05 00 00 01 S=00 lba=10430 R=e1
+[it pc=000006d0 cyc=74844549] CD> CDT poll_read 30
+[it pc=00000830 cyc=74904056] CD> CDT poll_read 10
+[it pc=00000830 cyc=74904056] CD> CDT poll_read 00
+[it pc=0000088c cyc=74904574] CD> CDT cmd 10 | 02 15 06 00 00 01 S=00 lba=10431 R=e1
+[it pc=000006d0 cyc=74990254] CD> CDT poll_read 30
+[it pc=00000830 cyc=75049763] CD> CDT poll_read 10
+[it pc=00000830 cyc=75049891] CD> CDT poll_read 00
+[it pc=0000088c cyc=75142051] CD> CDT cmd 10 | 02 17 11 00 00 01 S=00 lba=10432 R=e1
+[it pc=000006d0 cyc=75225468] CD> CDT poll_read 30
+[it pc=00000830 cyc=75284972] CD> CDT poll_read 10
+[it pc=00000830 cyc=75284972] CD> CDT poll_read 00
+[it pc=0000088c cyc=75285496] CD> CDT cmd 10 | 02 17 12 00 00 01 S=00 lba=10593 R=e1
+[it pc=000006d0 cyc=75371187] CD> CDT poll_read 30
+[it pc=00000830 cyc=75430690] CD> CDT poll_read 10
+[it pc=00000830 cyc=75430818] CD> CDT poll_read 00
+[it pc=0000088c cyc=75431333] CD> CDT cmd 10 | 02 17 13 00 00 01 S=00 lba=10594 R=e1
+[it pc=000006d0 cyc=75517001] CD> CDT poll_read 30
+[it pc=00000830 cyc=75576508] CD> CDT poll_read 10
+[it pc=00000830 cyc=75576508] CD> CDT poll_read 00
+[it pc=0000088c cyc=75577026] CD> CDT cmd 10 | 02 17 14 00 00 01 S=00 lba=10595 R=e1
+[it pc=000006d0 cyc=75662705] CD> CDT poll_read 30
+[it pc=00000830 cyc=75722208] CD> CDT poll_read 10
+[it pc=00000830 cyc=75722336] CD> CDT poll_read 00
+[it pc=0000088c cyc=75722851] CD> CDT cmd 10 | 02 17 15 00 00 01 S=00 lba=10596 R=e1
+[it pc=000006d0 cyc=75808519] CD> CDT poll_read 30
+[it pc=00000830 cyc=75868026] CD> CDT poll_read 10
+[it pc=00000830 cyc=75868026] CD> CDT poll_read 00
+[it pc=0000088c cyc=75868544] CD> CDT cmd 10 | 02 17 16 00 00 01 S=00 lba=10597 R=e1
+[it pc=000006d0 cyc=75954223] CD> CDT poll_read 30
+[it pc=00000830 cyc=76013726] CD> CDT poll_read 10
+[it pc=00000830 cyc=76013854] CD> CDT poll_read 00
+[it pc=0000088c cyc=76014369] CD> CDT cmd 10 | 02 17 17 00 00 01 S=00 lba=10598 R=e1
+[it pc=000006d0 cyc=76100037] CD> CDT poll_read 30
+[it pc=00000830 cyc=76159544] CD> CDT poll_read 10
+[it pc=00000830 cyc=76159544] CD> CDT poll_read 00
+[it pc=0000088c cyc=76160062] CD> CDT cmd 10 | 02 17 18 00 00 01 S=00 lba=10599 R=e1
+[it pc=000006d0 cyc=76245741] CD> CDT poll_read 30
+[it pc=00000830 cyc=76305244] CD> CDT poll_read 10
+[it pc=00000830 cyc=76305372] CD> CDT poll_read 00
+[it pc=0000088c cyc=76305887] CD> CDT cmd 10 | 02 17 19 00 00 01 S=00 lba=10600 R=e1
+[it pc=000006d0 cyc=76391555] CD> CDT poll_read 30
+[it pc=00000830 cyc=76451062] CD> CDT poll_read 10
+[it pc=00000830 cyc=76451062] CD> CDT poll_read 00
+[it pc=0000088c cyc=76451580] CD> CDT cmd 10 | 02 17 1a 00 00 01 S=00 lba=10601 R=e1
+[it pc=000006d0 cyc=76537259] CD> CDT poll_read 30
+[it pc=00000830 cyc=76596762] CD> CDT poll_read 10
+[it pc=00000830 cyc=76596890] CD> CDT poll_read 00
+[it pc=0000088c cyc=76597405] CD> CDT cmd 10 | 02 17 1b 00 00 01 S=00 lba=10602 R=e1
+[it pc=000006d0 cyc=76683073] CD> CDT poll_read 30
+[it pc=00000830 cyc=76742580] CD> CDT poll_read 10
+[it pc=00000830 cyc=76742580] CD> CDT poll_read 00
+[it pc=0000088c cyc=76743098] CD> CDT cmd 10 | 02 17 1c 00 00 01 S=00 lba=10603 R=e1
+[it pc=000006d0 cyc=76828777] CD> CDT poll_read 30
+[it pc=00000830 cyc=76888280] CD> CDT poll_read 10
+[it pc=00000830 cyc=76888408] CD> CDT poll_read 00
+[it pc=0000088c cyc=76888923] CD> CDT cmd 10 | 02 17 1d 00 00 01 S=00 lba=10604 R=e1
+[it pc=000006d0 cyc=76974591] CD> CDT poll_read 30
+[it pc=00000830 cyc=77034098] CD> CDT poll_read 10
+[it pc=00000830 cyc=77034098] CD> CDT poll_read 00
+[it pc=0000088c cyc=77034616] CD> CDT cmd 10 | 02 17 1e 00 00 01 S=00 lba=10605 R=e1
+[it pc=000006d0 cyc=77120295] CD> CDT poll_read 30
+[it pc=00000830 cyc=77179798] CD> CDT poll_read 10
+[it pc=00000830 cyc=77179926] CD> CDT poll_read 00
+[it pc=0000088c cyc=77180441] CD> CDT cmd 10 | 02 17 1f 00 00 01 S=00 lba=10606 R=e1
+[it pc=000006d0 cyc=77266109] CD> CDT poll_read 30
+[it pc=00000830 cyc=77325616] CD> CDT poll_read 10
+[it pc=00000830 cyc=77325616] CD> CDT poll_read 00
+[it pc=0000088c cyc=77326134] CD> CDT cmd 10 | 02 17 20 00 00 01 S=00 lba=10607 R=e1
+[it pc=000006d0 cyc=77411814] CD> CDT poll_read 30
+[it pc=00000830 cyc=77471323] CD> CDT poll_read 10
+[it pc=00000830 cyc=77471451] CD> CDT poll_read 00
+[it pc=0000088c cyc=77563611] CD> CDT cmd 10 | 02 23 1d 00 00 01 S=00 lba=10608 R=e1
+[it pc=000006d0 cyc=77647028] CD> CDT poll_read 30
+[it pc=00000830 cyc=77706532] CD> CDT poll_read 10
+[it pc=00000830 cyc=77706532] CD> CDT poll_read 00
+[it pc=0000088c cyc=77707056] CD> CDT cmd 10 | 02 23 1e 00 00 01 S=00 lba=11505 R=e1
+[it pc=000006d0 cyc=77792747] CD> CDT poll_read 30
+[it pc=00000830 cyc=77852250] CD> CDT poll_read 10
+[it pc=00000830 cyc=77852378] CD> CDT poll_read 00
+[it pc=0000088c cyc=77852893] CD> CDT cmd 10 | 02 23 1f 00 00 01 S=00 lba=11506 R=e1
+[it pc=000006d0 cyc=77938561] CD> CDT poll_read 30
+[it pc=00000830 cyc=77998068] CD> CDT poll_read 10
+[it pc=00000830 cyc=77998068] CD> CDT poll_read 00
+[it pc=0000088c cyc=77998586] CD> CDT cmd 10 | 02 23 20 00 00 01 S=00 lba=11507 R=e1
+[it pc=000006d0 cyc=78084265] CD> CDT poll_read 30
+[it pc=00000830 cyc=78143768] CD> CDT poll_read 10
+[it pc=00000830 cyc=78143896] CD> CDT poll_read 00
+[it pc=0000088c cyc=78144411] CD> CDT cmd 10 | 02 23 21 00 00 01 S=00 lba=11508 R=e1
+[it pc=000006d0 cyc=78230079] CD> CDT poll_read 30
+[it pc=00000830 cyc=78289586] CD> CDT poll_read 10
+[it pc=00000830 cyc=78289586] CD> CDT poll_read 00
+[it pc=0000088c cyc=78290104] CD> CDT cmd 10 | 02 23 22 00 00 01 S=00 lba=11509 R=e1
+[it pc=000006d0 cyc=78375783] CD> CDT poll_read 30
+[it pc=00000830 cyc=78435286] CD> CDT poll_read 10
+[it pc=00000830 cyc=78435414] CD> CDT poll_read 00
+[it pc=0000088c cyc=78435929] CD> CDT cmd 10 | 02 23 23 00 00 01 S=00 lba=11510 R=e1
+[it pc=000006d0 cyc=78521597] CD> CDT poll_read 30
+[it pc=00000830 cyc=78581104] CD> CDT poll_read 10
+[it pc=00000830 cyc=78581104] CD> CDT poll_read 00
+[it pc=0000088c cyc=78581622] CD> CDT cmd 10 | 02 23 24 00 00 01 S=00 lba=11511 R=e1
+[it pc=000006d0 cyc=78667301] CD> CDT poll_read 30
+[it pc=00000830 cyc=78726804] CD> CDT poll_read 10
+[it pc=00000830 cyc=78726932] CD> CDT poll_read 00
+[it pc=0000088c cyc=78727447] CD> CDT cmd 10 | 02 23 25 00 00 01 S=00 lba=11512 R=e1
+[it pc=000006d0 cyc=78813115] CD> CDT poll_read 30
+[it pc=00000830 cyc=78872622] CD> CDT poll_read 10
+[it pc=00000830 cyc=78872622] CD> CDT poll_read 00
+[it pc=0000088c cyc=78873140] CD> CDT cmd 10 | 02 23 26 00 00 01 S=00 lba=11513 R=e1
+it=300 pc=00002520 cyc=78919485 lba=11514 remain=0 S=30 R=e1
+[it pc=000006d0 cyc=78958819] CD> CDT poll_read 30
+[it pc=00000830 cyc=79018322] CD> CDT poll_read 10
+[it pc=00000830 cyc=79018450] CD> CDT poll_read 00
+[it pc=0000088c cyc=79018965] CD> CDT cmd 10 | 02 23 27 00 00 01 S=00 lba=11514 R=e1
+[it pc=000006d0 cyc=79104633] CD> CDT poll_read 30
+[it pc=00000830 cyc=79164140] CD> CDT poll_read 10
+[it pc=00000830 cyc=79164140] CD> CDT poll_read 00
+[it pc=0000088c cyc=79164658] CD> CDT cmd 10 | 02 23 28 00 00 01 S=00 lba=11515 R=e1
+[it pc=000006d0 cyc=79250337] CD> CDT poll_read 30
+[it pc=00000830 cyc=79309840] CD> CDT poll_read 10
+[it pc=00000830 cyc=79309968] CD> CDT poll_read 00
+[it pc=0000088c cyc=79310483] CD> CDT cmd 10 | 02 23 29 00 00 01 S=00 lba=11516 R=e1
+[it pc=000006d0 cyc=79396151] CD> CDT poll_read 30
+[it pc=00000830 cyc=79455658] CD> CDT poll_read 10
+[it pc=00000830 cyc=79455658] CD> CDT poll_read 00
+[it pc=0000088c cyc=79456176] CD> CDT cmd 10 | 02 23 2a 00 00 01 S=00 lba=11517 R=e1
+[it pc=000006d0 cyc=79541855] CD> CDT poll_read 30
+[it pc=00000830 cyc=79601358] CD> CDT poll_read 10
+[it pc=00000830 cyc=79601486] CD> CDT poll_read 00
+[it pc=0000088c cyc=79602001] CD> CDT cmd 10 | 02 23 2b 00 00 01 S=00 lba=11518 R=e1
+[it pc=000006d0 cyc=79687669] CD> CDT poll_read 30
+[it pc=00000830 cyc=79747176] CD> CDT poll_read 10
+[it pc=00000830 cyc=79747176] CD> CDT poll_read 00
+[it pc=0000088c cyc=79747694] CD> CDT cmd 10 | 02 23 2c 00 00 01 S=00 lba=11519 R=e1
+[it pc=000006d0 cyc=79833374] CD> CDT poll_read 30
+[it pc=00000830 cyc=79892883] CD> CDT poll_read 10
+[it pc=00000830 cyc=79893011] CD> CDT poll_read 00
+[it pc=0000088c cyc=79985432] CD> CDT cmd 10 | 00 02 46 00 00 01 S=00 lba=11520 R=e1
+[it pc=000006d0 cyc=80068842] CD> CDT poll_read 30
+[it pc=00000830 cyc=80128345] CD> CDT poll_read 10
+[it pc=00000830 cyc=80128345] CD> CDT poll_read 00
+[it pc=0000088c cyc=80253359] CD> CDT cmd 10 | 00 02 47 00 00 01 S=00 lba=71 R=e1
+[it pc=000006d0 cyc=80253491] CD> CDT poll_read 30
+[it pc=00000830 cyc=80312999] CD> CDT poll_read 10
+[it pc=00000830 cyc=80313127] CD> CDT poll_read 00
+[it pc=0000088c cyc=84364106] CD> CDT cmd 10 | 00 02 06 00 00 01 S=00 lba=72 R=e1
+[it pc=000006d0 cyc=84447510] CD> CDT poll_read 30
+[it pc=00000830 cyc=84507017] CD> CDT poll_read 10
+[it pc=00000830 cyc=84507017] CD> CDT poll_read 00
+[it pc=0000088c cyc=84507534] CD> CDT cmd 10 | 00 02 07 00 00 01 S=00 lba=7 R=e1
+[it pc=000006d0 cyc=84632152] CD> CDT poll_read 30
+[it pc=00000830 cyc=84691659] CD> CDT poll_read 10
+[it pc=00000830 cyc=84691787] CD> CDT poll_read 00
+[it pc=0000088c cyc=84692308] CD> CDT cmd 10 | 00 02 08 00 00 01 S=00 lba=8 R=e1
+[it pc=000006d0 cyc=84816946] CD> CDT poll_read 30
+[it pc=00000830 cyc=84876453] CD> CDT poll_read 10
+[it pc=00000830 cyc=84876453] CD> CDT poll_read 00
+[it pc=0000088c cyc=84876970] CD> CDT cmd 10 | 00 02 09 00 00 01 S=00 lba=9 R=e1
+[it pc=000006d0 cyc=85001588] CD> CDT poll_read 30
+[it pc=00000830 cyc=85061095] CD> CDT poll_read 10
+[it pc=00000830 cyc=85061223] CD> CDT poll_read 00
+[it pc=0000088c cyc=85061744] CD> CDT cmd 10 | 00 02 0a 00 00 01 S=00 lba=10 R=e1
+[it pc=000006d0 cyc=85186382] CD> CDT poll_read 30
+[it pc=00000830 cyc=85245889] CD> CDT poll_read 10
+[it pc=00000830 cyc=85245889] CD> CDT poll_read 00
+[it pc=0000088c cyc=85246406] CD> CDT cmd 10 | 00 02 0b 00 00 01 S=00 lba=11 R=e1
+[it pc=000006d0 cyc=85371024] CD> CDT poll_read 30
+[it pc=00000830 cyc=85430531] CD> CDT poll_read 10
+[it pc=00000830 cyc=85430659] CD> CDT poll_read 00
+[it pc=0000088c cyc=85431180] CD> CDT cmd 10 | 00 02 0c 00 00 01 S=00 lba=12 R=e1
+[it pc=000006d0 cyc=85555818] CD> CDT poll_read 30
+[it pc=00000830 cyc=85615325] CD> CDT poll_read 10
+[it pc=00000830 cyc=85615325] CD> CDT poll_read 00
+[it pc=0000088c cyc=85615842] CD> CDT cmd 10 | 00 02 0d 00 00 01 S=00 lba=13 R=e1
+[it pc=000006d0 cyc=85740460] CD> CDT poll_read 30
+[it pc=00000830 cyc=85799967] CD> CDT poll_read 10
+[it pc=00000830 cyc=85800095] CD> CDT poll_read 00
+[it pc=0000088c cyc=85800616] CD> CDT cmd 10 | 00 02 0e 00 00 01 S=00 lba=14 R=e1
+[it pc=000006d0 cyc=85925254] CD> CDT poll_read 30
+[it pc=00000830 cyc=85984761] CD> CDT poll_read 10
+[it pc=00000830 cyc=85984761] CD> CDT poll_read 00
+[it pc=0000088c cyc=85985278] CD> CDT cmd 10 | 00 02 0f 00 00 01 S=00 lba=15 R=e1
+[it pc=000006d0 cyc=86109896] CD> CDT poll_read 30
+[it pc=00000830 cyc=86169403] CD> CDT poll_read 10
+[it pc=00000830 cyc=86169531] CD> CDT poll_read 00
+[it pc=0000088c cyc=86170052] CD> CDT cmd 10 | 00 02 10 00 00 01 S=00 lba=16 R=e1
+[it pc=000006d0 cyc=86294690] CD> CDT poll_read 30
+[it pc=00000830 cyc=86354197] CD> CDT poll_read 10
+[it pc=00000830 cyc=86354197] CD> CDT poll_read 00
+[it pc=0000088c cyc=86354714] CD> CDT cmd 10 | 00 02 11 00 00 01 S=00 lba=17 R=e1
+[it pc=000006d0 cyc=86479332] CD> CDT poll_read 30
+[it pc=00000830 cyc=86538839] CD> CDT poll_read 10
+[it pc=00000830 cyc=86538967] CD> CDT poll_read 00
+[it pc=0000088c cyc=86539488] CD> CDT cmd 10 | 00 02 12 00 00 01 S=00 lba=18 R=e1
+[it pc=000006d0 cyc=86664126] CD> CDT poll_read 30
+[it pc=00000830 cyc=86723633] CD> CDT poll_read 10
+[it pc=00000830 cyc=86723633] CD> CDT poll_read 00
+[it pc=0000088c cyc=86724150] CD> CDT cmd 10 | 00 02 13 00 00 01 S=00 lba=19 R=e1
+[it pc=000006d0 cyc=86848768] CD> CDT poll_read 30
+[it pc=00000830 cyc=86908275] CD> CDT poll_read 10
+[it pc=00000830 cyc=86908403] CD> CDT poll_read 00
+[it pc=0000088c cyc=86908924] CD> CDT cmd 10 | 00 02 14 00 00 01 S=00 lba=20 R=e1
+[it pc=000006d0 cyc=87033562] CD> CDT poll_read 30
+[it pc=00000830 cyc=87093069] CD> CDT poll_read 10
+[it pc=00000830 cyc=87093069] CD> CDT poll_read 00
+[it pc=0000088c cyc=87093586] CD> CDT cmd 10 | 00 02 15 00 00 01 S=00 lba=21 R=e1
+[it pc=000006d0 cyc=87218204] CD> CDT poll_read 30
+[it pc=00000830 cyc=87277711] CD> CDT poll_read 10
+[it pc=00000830 cyc=87277839] CD> CDT poll_read 00
+[it pc=0000088c cyc=87278360] CD> CDT cmd 10 | 00 02 16 00 00 01 S=00 lba=22 R=e1
+[it pc=000006d0 cyc=87402998] CD> CDT poll_read 30
+[it pc=00000830 cyc=87462505] CD> CDT poll_read 10
+[it pc=00000830 cyc=87462505] CD> CDT poll_read 00
+[it pc=0000088c cyc=87463022] CD> CDT cmd 10 | 00 02 17 00 00 01 S=00 lba=23 R=e1
+[it pc=000006d0 cyc=87587640] CD> CDT poll_read 30
+[it pc=00000830 cyc=87647147] CD> CDT poll_read 10
+[it pc=00000830 cyc=87647275] CD> CDT poll_read 00
+[it pc=0000088c cyc=87647796] CD> CDT cmd 10 | 00 02 18 00 00 01 S=00 lba=24 R=e1
+[it pc=000006d0 cyc=87772434] CD> CDT poll_read 30
+[it pc=00000830 cyc=87831941] CD> CDT poll_read 10
+[it pc=00000830 cyc=87831941] CD> CDT poll_read 00
+[it pc=0000088c cyc=87832458] CD> CDT cmd 10 | 00 02 19 00 00 01 S=00 lba=25 R=e1
+[it pc=000006d0 cyc=87957076] CD> CDT poll_read 30
+[it pc=00000830 cyc=88016583] CD> CDT poll_read 10
+[it pc=00000830 cyc=88016711] CD> CDT poll_read 00
+[it pc=0000088c cyc=88017232] CD> CDT cmd 10 | 00 02 1a 00 00 01 S=00 lba=26 R=e1
+[it pc=000006d0 cyc=88141870] CD> CDT poll_read 30
+[it pc=00000830 cyc=88201377] CD> CDT poll_read 10
+[it pc=00000830 cyc=88201377] CD> CDT poll_read 00
+[it pc=0000088c cyc=88201894] CD> CDT cmd 10 | 00 02 1b 00 00 01 S=00 lba=27 R=e1
+[it pc=000006d0 cyc=88326512] CD> CDT poll_read 30
+[it pc=00000830 cyc=88386019] CD> CDT poll_read 10
+[it pc=00000830 cyc=88386147] CD> CDT poll_read 00
+[it pc=0000088c cyc=88386668] CD> CDT cmd 10 | 00 02 1c 00 00 01 S=00 lba=28 R=e1
+[it pc=000006d0 cyc=88511306] CD> CDT poll_read 30
+[it pc=00000830 cyc=88570813] CD> CDT poll_read 10
+[it pc=00000830 cyc=88570813] CD> CDT poll_read 00
+[it pc=0000088c cyc=88571330] CD> CDT cmd 10 | 00 02 1d 00 00 01 S=00 lba=29 R=e1
+[it pc=000006d0 cyc=88695948] CD> CDT poll_read 30
+[it pc=00000830 cyc=88755455] CD> CDT poll_read 10
+[it pc=00000830 cyc=88755583] CD> CDT poll_read 00
+[it pc=0000088c cyc=88756104] CD> CDT cmd 10 | 00 02 1e 00 00 01 S=00 lba=30 R=e1
+[it pc=000006d0 cyc=88880742] CD> CDT poll_read 30
+[it pc=00000830 cyc=88940249] CD> CDT poll_read 10
+[it pc=00000830 cyc=88940249] CD> CDT poll_read 00
+[it pc=0000088c cyc=88940766] CD> CDT cmd 10 | 00 02 1f 00 00 01 S=00 lba=31 R=e1
+[it pc=000006d0 cyc=89065384] CD> CDT poll_read 30
+[it pc=00000830 cyc=89124891] CD> CDT poll_read 10
+[it pc=00000830 cyc=89125019] CD> CDT poll_read 00
+[it pc=0000088c cyc=89125540] CD> CDT cmd 10 | 00 02 20 00 00 01 S=00 lba=32 R=e1
+[it pc=000006d0 cyc=89250178] CD> CDT poll_read 30
+[it pc=00000830 cyc=89309685] CD> CDT poll_read 10
+[it pc=00000830 cyc=89309685] CD> CDT poll_read 00
+[it pc=0000088c cyc=89310202] CD> CDT cmd 10 | 00 02 21 00 00 01 S=00 lba=33 R=e1
+[it pc=000006d0 cyc=89434820] CD> CDT poll_read 30
+[it pc=00000830 cyc=89494327] CD> CDT poll_read 10
+[it pc=00000830 cyc=89494455] CD> CDT poll_read 00
+[it pc=0000088c cyc=89494976] CD> CDT cmd 10 | 00 02 22 00 00 01 S=00 lba=34 R=e1
+[it pc=000006d0 cyc=89619614] CD> CDT poll_read 30
+[it pc=00000830 cyc=89679121] CD> CDT poll_read 10
+[it pc=00000830 cyc=89679121] CD> CDT poll_read 00
+[it pc=0000088c cyc=89679638] CD> CDT cmd 10 | 00 02 23 00 00 01 S=00 lba=35 R=e1
+[it pc=000006d0 cyc=89804256] CD> CDT poll_read 30
+[it pc=00000830 cyc=89863763] CD> CDT poll_read 10
+[it pc=00000830 cyc=89863891] CD> CDT poll_read 00
+[it pc=0000088c cyc=89864412] CD> CDT cmd 10 | 00 02 24 00 00 01 S=00 lba=36 R=e1
+[it pc=000006d0 cyc=89989050] CD> CDT poll_read 30
+[it pc=00000830 cyc=90048557] CD> CDT poll_read 10
+[it pc=00000830 cyc=90048557] CD> CDT poll_read 00
+[it pc=0000088c cyc=90049074] CD> CDT cmd 10 | 00 02 25 00 00 01 S=00 lba=37 R=e1
+[it pc=000006d0 cyc=90173692] CD> CDT poll_read 30
+[it pc=00000830 cyc=90233199] CD> CDT poll_read 10
+[it pc=00000830 cyc=90233327] CD> CDT poll_read 00
+[it pc=0000088c cyc=90233848] CD> CDT cmd 10 | 00 02 26 00 00 01 S=00 lba=38 R=e1
+[it pc=000006d0 cyc=90358486] CD> CDT poll_read 30
+[it pc=00000830 cyc=90417993] CD> CDT poll_read 10
+[it pc=00000830 cyc=90417993] CD> CDT poll_read 00
+[it pc=0000088c cyc=90418510] CD> CDT cmd 10 | 00 02 27 00 00 01 S=00 lba=39 R=e1
+[it pc=000006d0 cyc=90543128] CD> CDT poll_read 30
+[it pc=00000830 cyc=90602635] CD> CDT poll_read 10
+[it pc=00000830 cyc=90602763] CD> CDT poll_read 00
+[it pc=0000088c cyc=90603284] CD> CDT cmd 10 | 00 02 28 00 00 01 S=00 lba=40 R=e1
+[it pc=000006d0 cyc=90727922] CD> CDT poll_read 30
+[it pc=00000830 cyc=90787429] CD> CDT poll_read 10
+[it pc=00000830 cyc=90787429] CD> CDT poll_read 00
+[it pc=0000088c cyc=90787946] CD> CDT cmd 10 | 00 02 29 00 00 01 S=00 lba=41 R=e1
+[it pc=000006d0 cyc=90912564] CD> CDT poll_read 30
+[it pc=00000830 cyc=90972071] CD> CDT poll_read 10
+[it pc=00000830 cyc=90972199] CD> CDT poll_read 00
+[it pc=0000088c cyc=90972720] CD> CDT cmd 10 | 00 02 2a 00 00 01 S=00 lba=42 R=e1
+[it pc=000006d0 cyc=91097358] CD> CDT poll_read 30
+[it pc=00000830 cyc=91156865] CD> CDT poll_read 10
+[it pc=00000830 cyc=91156865] CD> CDT poll_read 00
+[it pc=0000088c cyc=91157382] CD> CDT cmd 10 | 00 02 2b 00 00 01 S=00 lba=43 R=e1
+[it pc=000006d0 cyc=91282000] CD> CDT poll_read 30
+[it pc=00000830 cyc=91341507] CD> CDT poll_read 10
+[it pc=00000830 cyc=91341635] CD> CDT poll_read 00
+[it pc=0000088c cyc=91342156] CD> CDT cmd 10 | 00 02 2c 00 00 01 S=00 lba=44 R=e1
+[it pc=000006d0 cyc=91466794] CD> CDT poll_read 30
+[it pc=00000830 cyc=91526301] CD> CDT poll_read 10
+[it pc=00000830 cyc=91526301] CD> CDT poll_read 00
+[it pc=0000088c cyc=91526818] CD> CDT cmd 10 | 00 02 2d 00 00 01 S=00 lba=45 R=e1
+[it pc=000006d0 cyc=91651436] CD> CDT poll_read 30
+[it pc=00000830 cyc=91710943] CD> CDT poll_read 10
+[it pc=00000830 cyc=91711071] CD> CDT poll_read 00
+[it pc=0000088c cyc=91711592] CD> CDT cmd 10 | 00 02 2e 00 00 01 S=00 lba=46 R=e1
+[it pc=000006d0 cyc=91836230] CD> CDT poll_read 30
+[it pc=00000830 cyc=91895737] CD> CDT poll_read 10
+[it pc=00000830 cyc=91895737] CD> CDT poll_read 00
+[it pc=0000088c cyc=91896254] CD> CDT cmd 10 | 00 02 2f 00 00 01 S=00 lba=47 R=e1
+[it pc=000006d0 cyc=92020872] CD> CDT poll_read 30
+it=350 pc=00000738 cyc=92029745 lba=48 remain=0 S=30 R=e1
+[it pc=00000830 cyc=92080379] CD> CDT poll_read 10
+[it pc=00000830 cyc=92080507] CD> CDT poll_read 00
+[it pc=0000088c cyc=92081028] CD> CDT cmd 10 | 00 02 30 00 00 01 S=00 lba=48 R=e1
+[it pc=000006d0 cyc=92205666] CD> CDT poll_read 30
+[it pc=00000830 cyc=92265173] CD> CDT poll_read 10
+[it pc=00000830 cyc=92265173] CD> CDT poll_read 00
+[it pc=0000088c cyc=92265690] CD> CDT cmd 10 | 00 02 31 00 00 01 S=00 lba=49 R=e1
+[it pc=000006d0 cyc=92390308] CD> CDT poll_read 30
+[it pc=00000830 cyc=92449815] CD> CDT poll_read 10
+[it pc=00000830 cyc=92449943] CD> CDT poll_read 00
+[it pc=0000088c cyc=92450464] CD> CDT cmd 10 | 00 02 32 00 00 01 S=00 lba=50 R=e1
+[it pc=000006d0 cyc=92575102] CD> CDT poll_read 30
+[it pc=00000830 cyc=92634609] CD> CDT poll_read 10
+[it pc=00000830 cyc=92634609] CD> CDT poll_read 00
+[it pc=0000088c cyc=92635126] CD> CDT cmd 10 | 00 02 33 00 00 01 S=00 lba=51 R=e1
+[it pc=000006d0 cyc=92759744] CD> CDT poll_read 30
+[it pc=00000830 cyc=92819251] CD> CDT poll_read 10
+[it pc=00000830 cyc=92819379] CD> CDT poll_read 00
+[it pc=0000088c cyc=92819900] CD> CDT cmd 10 | 00 02 34 00 00 01 S=00 lba=52 R=e1
+[it pc=000006d0 cyc=92944538] CD> CDT poll_read 30
+[it pc=00000830 cyc=93004045] CD> CDT poll_read 10
+[it pc=00000830 cyc=93004045] CD> CDT poll_read 00
+[it pc=0000088c cyc=93004562] CD> CDT cmd 10 | 00 02 35 00 00 01 S=00 lba=53 R=e1
+[it pc=000006d0 cyc=93129180] CD> CDT poll_read 30
+[it pc=00000830 cyc=93188687] CD> CDT poll_read 10
+[it pc=00000830 cyc=93188815] CD> CDT poll_read 00
+[it pc=0000088c cyc=93189336] CD> CDT cmd 10 | 00 02 36 00 00 01 S=00 lba=54 R=e1
+[it pc=000006d0 cyc=93313974] CD> CDT poll_read 30
+[it pc=00000830 cyc=93373481] CD> CDT poll_read 10
+[it pc=00000830 cyc=93373481] CD> CDT poll_read 00
+[it pc=0000088c cyc=93373998] CD> CDT cmd 10 | 00 02 37 00 00 01 S=00 lba=55 R=e1
+[it pc=000006d0 cyc=93498616] CD> CDT poll_read 30
+[it pc=00000830 cyc=93558123] CD> CDT poll_read 10
+[it pc=00000830 cyc=93558251] CD> CDT poll_read 00
+[it pc=0000088c cyc=93558772] CD> CDT cmd 10 | 00 02 38 00 00 01 S=00 lba=56 R=e1
+[it pc=000006d0 cyc=93683410] CD> CDT poll_read 30
+[it pc=00000830 cyc=93742917] CD> CDT poll_read 10
+[it pc=00000830 cyc=93742917] CD> CDT poll_read 00
+[it pc=0000088c cyc=93743434] CD> CDT cmd 10 | 00 02 39 00 00 01 S=00 lba=57 R=e1
+[it pc=000006d0 cyc=93868052] CD> CDT poll_read 30
+[it pc=00000830 cyc=93927559] CD> CDT poll_read 10
+[it pc=00000830 cyc=93927687] CD> CDT poll_read 00
+[it pc=0000088c cyc=93928208] CD> CDT cmd 10 | 00 02 3a 00 00 01 S=00 lba=58 R=e1
+[it pc=000006d0 cyc=94052846] CD> CDT poll_read 30
+[it pc=00000830 cyc=94112353] CD> CDT poll_read 10
+[it pc=00000830 cyc=94112353] CD> CDT poll_read 00
+[it pc=0000088c cyc=94112870] CD> CDT cmd 10 | 00 02 3b 00 00 01 S=00 lba=59 R=e1
+[it pc=000006d0 cyc=94237488] CD> CDT poll_read 30
+[it pc=00000830 cyc=94296995] CD> CDT poll_read 10
+[it pc=00000830 cyc=94297123] CD> CDT poll_read 00
+[it pc=0000088c cyc=94297644] CD> CDT cmd 10 | 00 02 3c 00 00 01 S=00 lba=60 R=e1
+[it pc=000006d0 cyc=94422282] CD> CDT poll_read 30
+[it pc=00000830 cyc=94481789] CD> CDT poll_read 10
+[it pc=00000830 cyc=94481789] CD> CDT poll_read 00
+[it pc=0000088c cyc=94482306] CD> CDT cmd 10 | 00 02 3d 00 00 01 S=00 lba=61 R=e1
+[it pc=000006d0 cyc=94606925] CD> CDT poll_read 30
+[it pc=00000830 cyc=94666428] CD> CDT poll_read 10
+[it pc=00000830 cyc=94666556] CD> CDT poll_read 00
+[it pc=0000088c cyc=94791468] CD> CDT cmd 10 | 00 02 3e 00 00 01 S=00 lba=62 R=e1
+[it pc=000006d0 cyc=94791599] CD> CDT poll_read 30
+[it pc=00000830 cyc=94851105] CD> CDT poll_read 10
+[it pc=00000830 cyc=94851235] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=104309147] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002a2ac cyc=104309147] CD> CDT poll_read 10
+it=400 pc=00040e30 cyc=105139949 lba=63 remain=0 S=00 R=e1
+[it pc=0002a248 cyc=106672411] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106673720] CD> CDT cmd 82 | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106673720] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106673720] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106673720] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106674241] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106674241] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106674381] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106675164] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106697056] CD> CDT cmd 80 | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106697056] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106697056] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106697056] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106697580] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106697580] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106697708] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106698095] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106704999] CD> CDT cmd 02 | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106704999] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106704999] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106704999] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106705520] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106705520] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106705660] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106705790] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106711662] CD> CDT cmd 8b | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106711662] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106711662] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106711662] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106712186] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106712186] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106712314] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106712960] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106719735] CD> CDT cmd 8c | 00 01 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106719735] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106719735] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106719735] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106720253] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106720381] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106720381] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106721162] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106728579] CD> CDT cmd 8d | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106728579] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106728579] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106728579] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106729094] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106729094] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106729222] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106729737] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106735084] CD> CDT cmd 85 | 00 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106735084] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106735084] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106735084] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106735604] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106735604] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106735732] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106736247] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106751880] CD> CDT cmd 09 | 00 00 08 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106751880] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106751880] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106751880] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106752401] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106752401] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106752541] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106752671] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106775815] CD> CDT cmd 09 | 01 00 08 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106775815] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106775815] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106775815] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106776336] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106776336] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106776476] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106776606] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106798597] CD> CDT cmd 09 | 02 00 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106798597] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106798597] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106798597] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106799112] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106799112] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106799240] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106799368] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106822022] CD> CDT cmd 09 | 03 80 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106822022] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106822022] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106822022] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106822546] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106822546] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106822674] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106822802] CD> CDT poll_read 00
+[it pc=0002aa48 cyc=106845043] CD> CDT cmd 09 | 04 01 00 00 00 00 S=00 lba=63 R=e1
+[it pc=0002aafc cyc=106845043] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=106845043] CD> CDT poll_write v=01 S: 10 -> 11 lba=63
+[it pc=0002ab08 cyc=106845043] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=106845558] CD> CDT poll_read 11
+[it pc=0002adbc cyc=106845558] CD> CDT poll_write v=10 S: 11 -> 10 lba=63
+[it pc=0002a2ac cyc=106845686] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106845814] CD> CDT poll_read 00
+[it pc=0002ab84 cyc=106867552] CD> CDT poll_write v=02 S: 00 -> 02 lba=63
+[it pc=0002a248 cyc=106868202] CD> CDT poll_read 02
+[it pc=0002aa48 cyc=106869523] CD> CDT cmd 10 | 00 02 00 00 00 01 S=02 lba=63 R=e1
+[it pc=0002ab08 cyc=106869655] CD> CDT poll_write v=03 S: 02 -> 03 lba=0
+[it pc=00040010 cyc=106952984] CD> CDT fiq=1 poll=13
+[it pc=00040010 cyc=106952984] CD> CDT fiq=1 poll=33
+[it pc=0002acc0 cyc=106953126] CD> CDT poll_read 33
+[it pc=0002ad0c cyc=106953126] CD> CDT poll_write v=31 S: 33 -> 31 lba=1
+[it pc=0002ad0c cyc=106953126] CD> CDT fiq=1 poll=31
+[it pc=0002a0cc cyc=106953517] CD> CDT poll_read 31
+[it pc=0002a0cc cyc=106953517] CD> CDT poll_read 11
+[pc=0002a0cc cyc=106953517] CLIO> dma addr=001f1140 len=2044 xfer=2048 left=-4 data_rdy=0 done=1
+[pc=0002a0cc cyc=106953517] CLIO> dma IRQ29 (completo) disparado
+[it pc=0002adbc cyc=106953517] CD> CDT poll_write v=10 S: 11 -> 10 lba=1
+[it pc=0002a2ac cyc=106953647] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=106953775] CD> CDT poll_read 00
+[it pc=0002ab84 cyc=107026424] CD> CDT poll_write v=02 S: 00 -> 02 lba=1
+[it pc=0002a248 cyc=107027196] CD> CDT poll_read 02
+[it pc=0002aa48 cyc=107028508] CD> CDT cmd 10 | 00 03 35 00 00 01 S=02 lba=1 R=e1
+[it pc=0002ab08 cyc=107028508] CD> CDT poll_write v=03 S: 02 -> 03 lba=128
+[it pc=000284e8 cyc=107111934] CD> CDT fiq=1 poll=13
+[it pc=000284e8 cyc=107111934] CD> CDT fiq=1 poll=33
+[it pc=0002acc0 cyc=107112076] CD> CDT poll_read 33
+[it pc=0002ad0c cyc=107112076] CD> CDT poll_write v=31 S: 33 -> 31 lba=129
+[it pc=0002ad0c cyc=107112076] CD> CDT fiq=1 poll=31
+[it pc=0002a0cc cyc=107112467] CD> CDT poll_read 31
+[it pc=0002a0cc cyc=107112467] CD> CDT poll_read 11
+[pc=0002a0cc cyc=107112467] CLIO> dma addr=001f0540 len=2044 xfer=2048 left=-4 data_rdy=0 done=1
+[pc=0002a0cc cyc=107112467] CLIO> dma IRQ29 (completo) disparado
+[it pc=0002adbc cyc=107112467] CD> CDT poll_write v=10 S: 11 -> 10 lba=129
+[it pc=0002a2ac cyc=107112597] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=107112725] CD> CDT poll_read 00
+[it pc=0002ab84 cyc=107386629] CD> CDT poll_write v=02 S: 00 -> 02 lba=129
+[it pc=0002a248 cyc=107387283] CD> CDT poll_read 02
+[it pc=0002aa48 cyc=107388706] CD> CDT cmd 10 | 00 03 32 00 00 01 S=02 lba=129 R=e1
+[it pc=0002ab08 cyc=107388706] CD> CDT poll_write v=03 S: 02 -> 03 lba=125
+[it pc=000284e8 cyc=107472127] CD> CDT fiq=1 poll=13
+[it pc=000284e8 cyc=107472127] CD> CDT fiq=1 poll=33
+[it pc=0002acc0 cyc=107472269] CD> CDT poll_read 33
+[it pc=0002ad0c cyc=107472269] CD> CDT poll_write v=31 S: 33 -> 31 lba=126
+[it pc=0002ad0c cyc=107472269] CD> CDT fiq=1 poll=31
+[it pc=0002a0cc cyc=107472660] CD> CDT poll_read 31
+[it pc=0002a0cc cyc=107472660] CD> CDT poll_read 11
+[pc=0002a0cc cyc=107472660] CLIO> dma addr=001f0620 len=2044 xfer=2048 left=-4 data_rdy=0 done=1
+[pc=0002a0cc cyc=107472660] CLIO> dma IRQ29 (completo) disparado
+[it pc=0002adbc cyc=107472660] CD> CDT poll_write v=10 S: 11 -> 10 lba=126
+[it pc=0002a2ac cyc=107472790] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=107472918] CD> CDT poll_read 00
+[it pc=0002ab84 cyc=107554143] CD> CDT poll_write v=02 S: 00 -> 02 lba=126
+[it pc=0002a248 cyc=107554797] CD> CDT poll_read 02
+[it pc=0002aa48 cyc=107556220] CD> CDT cmd 10 | 00 03 03 00 00 01 S=02 lba=126 R=e1
+[it pc=0002ab08 cyc=107556220] CD> CDT poll_write v=03 S: 02 -> 03 lba=78
+[it pc=000284f4 cyc=107639641] CD> CDT fiq=1 poll=13
+[it pc=000284f4 cyc=107639641] CD> CDT fiq=1 poll=33
+[it pc=0002acc0 cyc=107639783] CD> CDT poll_read 33
+[it pc=0002ad0c cyc=107639783] CD> CDT poll_write v=31 S: 33 -> 31 lba=79
+[it pc=0002ad0c cyc=107639783] CD> CDT fiq=1 poll=31
+[it pc=0002a0cc cyc=107640174] CD> CDT poll_read 31
+[it pc=0002a0cc cyc=107640174] CD> CDT poll_read 11
+[pc=0002a0cc cyc=107640174] CLIO> dma addr=001f0620 len=2044 xfer=2048 left=-4 data_rdy=0 done=1
+[pc=0002a0cc cyc=107640174] CLIO> dma IRQ29 (completo) disparado
+[it pc=0002adbc cyc=107640174] CD> CDT poll_write v=10 S: 11 -> 10 lba=79
+[it pc=0002a2ac cyc=107640304] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=107640432] CD> CDT poll_read 00
+[it pc=0002ab84 cyc=108133479] CD> CDT poll_write v=02 S: 00 -> 02 lba=79
+[it pc=0002a248 cyc=108134133] CD> CDT poll_read 02
+[it pc=0002aa48 cyc=108135556] CD> CDT cmd 10 | 00 03 08 00 00 01 S=02 lba=79 R=e1
+[it pc=0002ab08 cyc=108135556] CD> CDT poll_write v=03 S: 02 -> 03 lba=83
+[it pc=000284f4 cyc=108218977] CD> CDT fiq=1 poll=13
+[it pc=000284f4 cyc=108218977] CD> CDT fiq=1 poll=33
+[it pc=0002acc0 cyc=108219119] CD> CDT poll_read 33
+[it pc=0002ad0c cyc=108219119] CD> CDT poll_write v=31 S: 33 -> 31 lba=84
+[it pc=0002ad0c cyc=108219119] CD> CDT fiq=1 poll=31
+[it pc=0002a0cc cyc=108219510] CD> CDT poll_read 31
+[it pc=0002a0cc cyc=108219510] CD> CDT poll_read 11
+[pc=0002a0cc cyc=108219510] CLIO> dma addr=001f1b70 len=2044 xfer=2048 left=-4 data_rdy=0 done=1
+[pc=0002a0cc cyc=108219510] CLIO> dma IRQ29 (completo) disparado
+[it pc=0002adbc cyc=108219510] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=108219640] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=108219768] CD> CDT poll_read 00
+it=450 pc=000284e8 cyc=118250814 lba=84 remain=0 S=00 R=e1
+it=500 pc=000284f4 cyc=131361996 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=141859235] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=141859235] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=141859235] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=141859235] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=141859756] CD> CDT poll_read 11
+[it pc=0002adbc cyc=141859756] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=141859896] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=141860811] CD> CDT poll_read 00
+it=550 pc=000284e8 cyc=144473518 lba=84 remain=0 S=00 R=e1
+it=600 pc=000284f4 cyc=157584302 lba=84 remain=0 S=00 R=e1
+it=650 pc=000284e8 cyc=170695544 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=179352440] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=179352440] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=179352440] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=179352440] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=179352961] CD> CDT poll_read 11
+[it pc=0002adbc cyc=179352961] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=179353101] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=179354016] CD> CDT poll_read 00
+it=700 pc=000284ec cyc=183806828 lba=84 remain=0 S=00 R=e1
+it=750 pc=000284ec cyc=196917736 lba=84 remain=0 S=00 R=e1
+it=800 pc=000284e8 cyc=210029292 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=216845701] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=216845701] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=216845701] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=216845701] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=216846222] CD> CDT poll_read 11
+[it pc=0002adbc cyc=216846222] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=216846362] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=216847277] CD> CDT poll_read 00
+it=850 pc=000284f4 cyc=223140328 lba=84 remain=0 S=00 R=e1
+it=900 pc=000284f4 cyc=236251209 lba=84 remain=0 S=00 R=e1
+it=950 pc=000284e8 cyc=249362717 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=254339003] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=254339003] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=254339003] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=254339003] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=254339524] CD> CDT poll_read 11
+[it pc=0002adbc cyc=254339524] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=254339664] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=254340579] CD> CDT poll_read 00
+it=1000 pc=000284e8 cyc=262474268 lba=84 remain=0 S=00 R=e1
+it=1050 pc=000284ec cyc=275585052 lba=84 remain=0 S=00 R=e1
+it=1100 pc=000284f4 cyc=288696659 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=291832349] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=291832349] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=291832349] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=291832349] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=291832870] CD> CDT poll_read 11
+[it pc=0002adbc cyc=291832870] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=291833010] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=291833925] CD> CDT poll_read 00
+it=1150 pc=000284f4 cyc=301807812 lba=84 remain=0 S=00 R=e1
+it=1200 pc=000284ec cyc=314918618 lba=84 remain=0 S=00 R=e1
+it=1250 pc=000284f4 cyc=328029761 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=329325605] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=329325605] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=329325605] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=329325605] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=329326126] CD> CDT poll_read 11
+[it pc=0002adbc cyc=329326126] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=329326266] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=329327181] CD> CDT poll_read 00
+it=1300 pc=000284e8 cyc=341140552 lba=84 remain=0 S=00 R=e1
+it=1350 pc=000284e8 cyc=354251936 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=366818839] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=366818839] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=366818839] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=366818839] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=366819360] CD> CDT poll_read 11
+[it pc=0002adbc cyc=366819360] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=366819500] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=366820415] CD> CDT poll_read 00
+it=1400 pc=000284f4 cyc=367362814 lba=84 remain=0 S=00 R=e1
+it=1450 pc=000284e8 cyc=380474101 lba=84 remain=0 S=00 R=e1
+it=1500 pc=000284e8 cyc=393585135 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=404312197] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=404312197] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=404312197] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=404312197] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=404312718] CD> CDT poll_read 11
+[it pc=0002adbc cyc=404312718] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=404312858] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=404313773] CD> CDT poll_read 00
+it=1550 pc=000284f4 cyc=406696528 lba=84 remain=0 S=00 R=e1
+it=1600 pc=000284f4 cyc=419807817 lba=84 remain=0 S=00 R=e1
+it=1650 pc=000284f4 cyc=432918283 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=441805407] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=441805407] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=441805407] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=441805407] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=441805928] CD> CDT poll_read 11
+[it pc=0002adbc cyc=441805928] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=441806068] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=441806983] CD> CDT poll_read 00
+it=1700 pc=000284e8 cyc=446029447 lba=84 remain=0 S=00 R=e1
+it=1750 pc=000284ec cyc=459140129 lba=84 remain=0 S=00 R=e1
+it=1800 pc=000284f4 cyc=472251520 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=479298760] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=479298760] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=479298760] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=479298760] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=479299281] CD> CDT poll_read 11
+[it pc=0002adbc cyc=479299281] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=479299421] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=479300336] CD> CDT poll_read 00
+it=1850 pc=000284ec cyc=485363200 lba=84 remain=0 S=00 R=e1
+it=1900 pc=000284f4 cyc=498474377 lba=84 remain=0 S=00 R=e1
+it=1950 pc=000284ec cyc=511585931 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=516791953] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=516791953] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=516791953] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=516791953] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=516792474] CD> CDT poll_read 11
+[it pc=0002adbc cyc=516792474] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=516792614] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=516793529] CD> CDT poll_read 00
+it=2000 pc=000284e8 cyc=524696948 lba=84 remain=0 S=00 R=e1
+it=2050 pc=000284f4 cyc=537808198 lba=84 remain=0 S=00 R=e1
+it=2100 pc=000284ec cyc=550919973 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=554285345] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=554285345] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=554285345] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=554285345] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=554285866] CD> CDT poll_read 11
+[it pc=0002adbc cyc=554285866] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=554286006] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=554286921] CD> CDT poll_read 00
+it=2150 pc=000284e8 cyc=564030788 lba=84 remain=0 S=00 R=e1
+it=2200 pc=000284f4 cyc=577141691 lba=84 remain=0 S=00 R=e1
+it=2250 pc=000284f4 cyc=590253320 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=591778596] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=591778596] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=591778596] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=591778596] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=591779117] CD> CDT poll_read 11
+[it pc=0002adbc cyc=591779117] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=591779257] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=591780172] CD> CDT poll_read 00
+it=2300 pc=000284f4 cyc=603364599 lba=84 remain=0 S=00 R=e1
+it=2350 pc=000284f4 cyc=616475677 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=629271874] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=629271874] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=629271874] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=629271874] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=629272395] CD> CDT poll_read 11
+[it pc=0002adbc cyc=629272395] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=629272535] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=629273450] CD> CDT poll_read 00
+it=2400 pc=000284e8 cyc=629586803 lba=84 remain=0 S=00 R=e1
+it=2450 pc=000284f4 cyc=642698087 lba=84 remain=0 S=00 R=e1
+it=2500 pc=000284e8 cyc=655809731 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=666765181] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=666765181] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=666765181] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=666765181] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=666765702] CD> CDT poll_read 11
+[it pc=0002adbc cyc=666765702] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=666765842] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=666766757] CD> CDT poll_read 00
+it=2550 pc=000284e8 cyc=668921010 lba=84 remain=0 S=00 R=e1
+it=2600 pc=000284f4 cyc=682032175 lba=84 remain=0 S=00 R=e1
+it=2650 pc=000284e8 cyc=695143734 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=704258415] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=704258415] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=704258415] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=704258415] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=704258936] CD> CDT poll_read 11
+[it pc=0002adbc cyc=704258936] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=704259076] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=704259991] CD> CDT poll_read 00
+it=2700 pc=000284e8 cyc=708255030 lba=84 remain=0 S=00 R=e1
+it=2750 pc=000284ec cyc=721366408 lba=84 remain=0 S=00 R=e1
+it=2800 pc=000284ec cyc=734477935 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=741751744] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=741751744] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=741751744] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=741751744] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=741752265] CD> CDT poll_read 11
+[it pc=0002adbc cyc=741752265] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=741752405] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=741753320] CD> CDT poll_read 00
+it=2850 pc=000284ec cyc=747589112 lba=84 remain=0 S=00 R=e1
+it=2900 pc=000284e8 cyc=760700275 lba=84 remain=0 S=00 R=e1
+it=2950 pc=000284ec cyc=773811773 lba=84 remain=0 S=00 R=e1
+[it pc=0002aa48 cyc=779244978] CD> CDT cmd 83 | 00 00 00 00 00 00 S=00 lba=84 R=e1
+[it pc=0002aafc cyc=779244978] CD> CDT poll_read 10
+[it pc=0002ab08 cyc=779244978] CD> CDT poll_write v=01 S: 10 -> 11 lba=84
+[it pc=0002ab08 cyc=779244978] CD> CDT fiq=1 poll=11
+[it pc=0002acc0 cyc=779245499] CD> CDT poll_read 11
+[it pc=0002adbc cyc=779245499] CD> CDT poll_write v=10 S: 11 -> 10 lba=84
+[it pc=0002a2ac cyc=779245639] CD> CDT poll_read 10
+[it pc=0002a2ac cyc=779246554] CD> CDT poll_read 00
