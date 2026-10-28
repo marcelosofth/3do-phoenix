@@ -1,0 +1,106 @@
+# CI do Phoenix: testes + nucleo para cada plataforma, com tools/check_core.sh em cada binario (so os 25 retro_* exportados;
+# no Windows, sem dependencia de DLL do GCC). Jobs marcados [validado] foram reproduzidos localmente com os mesmos comandos;
+# [nao validado] nunca rodaram (sem macOS/NDK/emsdk la): se falharem na 1a vez, o log mostra o ajuste.
+name: build
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  # [validado] testes completos + ASAN/UBSAN + nucleo Linux x86_64 (Batocera PC)
+  linux-x86_64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: make                # compila e roda todos os testes
+      - run: make asan
+      - run: make libretro check-core
+      - uses: actions/upload-artifact@v4
+        with: { name: phoenix_libretro-linux-x86_64, path: phoenix_libretro.so }
+
+  # [validado por cross+qemu] aarch64 nativo (Batocera RK3588/Pi3/Pi4/Pi5, Odroid...): pega bugs de ARM como o char sem sinal.
+  # Runner ARM gratis so em repositorio publico; em privado troque por cross+qemu (job linux-armv7 abaixo mostra como).
+  linux-aarch64:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - run: make
+      - run: make libretro check-core
+      - uses: actions/upload-artifact@v4
+        with: { name: phoenix_libretro-linux-aarch64, path: phoenix_libretro.so }
+
+  # [validado] ARMv7 32 bits (Pi2/Pi3 em SO 32 bits, classic minis) por cross-compilacao, testes sob qemu
+  linux-armv7:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends gcc-arm-linux-gnueabihf libc6-dev-armhf-cross libc6-armhf-cross qemu-user
+      - run: |
+          make libretro check-core CROSS=arm-linux-gnueabihf- platform=rpi2
+          make test_cd test_libretro test_machine test_cel test_celexec CROSS=arm-linux-gnueabihf-
+          for t in test_cd test_libretro test_machine test_cel test_celexec; do qemu-arm -L /usr/arm-linux-gnueabihf ./$t || exit 1; done
+      - uses: actions/upload-artifact@v4
+        with: { name: phoenix_libretro-linux-armv7, path: phoenix_libretro.so }
+
+  # [validado] Windows x64 e x86 por MinGW cross (o mesmo toolchain do seu .dll); check-core falha se depender de libgcc_s_*.dll
+  windows:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: x64, pkg: gcc-mingw-w64-x86-64, cross: x86_64-w64-mingw32- }
+          - { name: x86, pkg: gcc-mingw-w64-i686,   cross: i686-w64-mingw32- }
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ${{ matrix.pkg }}
+      - run: make libretro check-core CROSS=${{ matrix.cross }}
+      - uses: actions/upload-artifact@v4
+        with: { name: "phoenix_libretro-windows-${{ matrix.name }}", path: phoenix_libretro.dll }
+
+  # [nao validado] macOS: arm64 nativo (com testes) e x86_64 (so compila)
+  macos:
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [arm64, x86_64]
+    steps:
+      - uses: actions/checkout@v4
+      - run: make libretro check-core ARCH=${{ matrix.arch }}
+      - if: matrix.arch == 'arm64'
+        continue-on-error: true      # testes nunca rodaram no mac; tire isto quando ficarem verdes
+        run: make
+      - uses: actions/upload-artifact@v4
+        with: { name: "phoenix_libretro-macos-${{ matrix.arch }}", path: phoenix_libretro.dylib }
+
+  # [nao validado] iOS / tvOS (so compila; sem testes)
+  apple-mobile:
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ios-arm64, tvos-arm64]
+    steps:
+      - uses: actions/checkout@v4
+      - run: make libretro platform=${{ matrix.platform }}
+      - uses: actions/upload-artifact@v4
+        with: { name: "phoenix_libretro-${{ matrix.platform }}", path: "phoenix_libretro_*.dylib" }
+
+  # [nao validado] Android via ndk-build (NDK ja vem no runner ubuntu)
+  android:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: $ANDROID_NDK_HOME/ndk-build -C jni -j4
+      - uses: actions/upload-artifact@v4
+        with: { name: phoenix_libretro-android, path: libs }
+
+  # [nao validado] emscripten (biblioteca estatica que o RetroArch web liga)
+  emscripten:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mymindstorm/setup-emsdk@v14
+        with: { version: 3.1.74 }
+      - run: make libretro platform=emscripten
+      - uses: actions/upload-artifact@v4
+        with: { name: phoenix_libretro-emscripten, path: phoenix_libretro_emscripten.bc }

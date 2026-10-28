@@ -1,0 +1,13 @@
+# Makefile.common - fontes e opcoes compartilhadas pelo Makefile (desktop/cross/mac/iOS/emscripten) e pelo jni/Android.mk (ndk-build).
+# So atribuicoes de variavel (o ndk-build tambem le este arquivo): nada de regras, ifeq de plataforma nem $(shell) aqui.
+
+# nucleo da emulacao (compartilhado com os testes)
+CORE = machine.c arm60.c clio.c madam.c sport.c vdlp.c cel.c cel_opera.c celexec.c cd.c cd_chd.c dsp.c joybus.c ph_audit.c ph_fixedpoint.c ph_swi_hle.c ph_file.c
+HDRS = machine.h arm60.h clio.h madam.h sport.h vdlp.h cel.h cel_opera.h celexec.h cd.h cd_chd.h dsp.h joybus.h ph_audit.h ph_fixedpoint.h ph_swi_hle.h ph_options.h ph_fontdata.h ph_biosdata.h ph_file.h
+
+# Leitor de CHD: rchd + codecs, copiados do libretro-common do opera-libretro (mesmos arquivos e defines do Makefile.common dele
+# com HAVE_CHD=1). Sao de terceiros: compilados a parte, sem -Wall/-Wextra e com -std=gnu99 (ver CHD_FLAGS no Makefile).
+CHD_SRC  = compat_strl.c rchd.c r7z_lzma.c rflac.c encoding_crc32.c encoding_deflate.c encoding_huffman.c encoding_rzstd.c features_cpu.c ph_sleep.c
+CHD_DIRS = libretro-common/compat libretro-common/formats/chd libretro-common/formats/7z libretro-common/formats/flac libretro-common/encodings libretro-common/features
+CHD_DEFS = -DINLINE=inline -DHAVE_SYS_PARAM_H -DHAVE_CHD -DHAVE_RCHD -DHAVE_RCHD_DEFLATE -DHAVE_RCHD_LZMA -DHAVE_RCHD_FLAC -DHAVE_RCHD_ZSTD -DHAVE_RFLAC
+INCFLAGS = -Ilibretro-common/include

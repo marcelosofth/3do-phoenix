@@ -1,0 +1,16 @@
+touch *.c *.h Makefile
+make clean
+make libretro
+
+--- Outras plataformas (item 9) ---
+make libretro                          nucleo desta maquina (.so Linux/Batocera x86_64 ou aarch64, .dll MinGW, .dylib macOS)
+make libretro CROSS=x86_64-w64-mingw32-    .dll Windows x64 (CROSS=i686-w64-mingw32- para 32 bits)
+make libretro CROSS=aarch64-linux-gnu-     .so ARM 64 bits (Batocera RK3588/Pi3/Pi4/Pi5)
+make libretro CROSS=arm-linux-gnueabihf- platform=rpi2     .so ARM 32 bits (rpi1..rpi4, odroidxu, classic_armv7_a7)
+make libretro ARCH=arm64|x86_64        macOS (.dylib)
+make libretro platform=ios-arm64|tvos-arm64|emscripten
+ndk-build -C jni                       Android (libs/<abi>/libretro.so)
+make check-core                        confere exports e dependencias do binario gerado
+make clean                             apaga tudo, inclusive obj/ (objetos ficam em obj/<plataforma>-<triple>/)
+Opcoes: PH_NO_CHD=1 (sem CHD)  DEBUG=1 (-O0 -g)
+NAO portados: consoles (libnx, vita, ctr, psp1, wiiu, ps3...) e MSVC.
