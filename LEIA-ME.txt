@@ -1,9 +1,0 @@
-Correcoes (substituir cd.c, dsp.c, machine.c; os .diff mostram o que mudou)
-  cd.c      cmd 0x85 e 0x8b devolvem o MSF do FIM do disco (num_sectors+150), nao a posicao atual.
-  dsp.c     dsp_reset nao faz mais memset nem apaga ctx/ganchos.
-  machine.c clio.ctx e a maquina: pontes c_dsp_* chamam dsp_*(&m->dsp,...) (antes casteava m como dsp_t*).
-Ferramentas (compilar como o trace_cd, com machine.c etc. mas SEM machine.c duplicado: elas fazem #include "machine.c"):
-  errtrace <bios> <img> <valor_hex> <ciclos> <n>   1a instrucao que poe <valor> num registrador + historico de PCs
-  swilog   <bios> <img> 0 <ciclos> 0               mostra o texto de debug do kernel (SWI 0x1000e, 1 char por chamada)
-  corrupt  <bios> <img> <ciclos>                   acha a instrucao que corrompe a struct da CPU
-Linux: chdobj/*.o do zip sao MinGW; recompilar rchd.c etc. (ver Makefile, CHD_FLAGS) em chdlin/.
